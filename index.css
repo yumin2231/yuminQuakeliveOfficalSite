@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+#title>span {
+    display: block;
+    margin-bottom: .3em;
+}
+
+#accounts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accounts>* {
+    padding: 1em;
+    border-radius: .5em;
+}
+
+#accounts>*:hover {
+    background-color: #80808080;
+}
+
+#accounts img {
+    width: 5em;
+}
