@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+}
+
+button.my-button {
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
+	background-color: #0f9bdb; /* ボタンの背景色 */
+    color: rgb(255, 255, 255); /* ボタンのテキスト色 */
+    font-size: 25px; /* ボタンのフォントサイズ */
+    border: none; /* ボタンの枠線をなくす */
+    padding: 12px 24px; /* ボタンの余白 */
+    text-align: center; /* テキストを中央揃えにする */
+    text-decoration: none; /* テキストの下線をなくす */
+    display: inline-block; /* ボタンの横幅をテキストに合わせる */
+    cursor: pointer; /* マウスカーソルをポインターにする */
+}
+
+button.my-button:hover {
+    box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+	transform: translateY(-4px);
+	text-decoration: none; /* テキストの下線をなくす */
+}
+
+#title>span {
+    display: block;
+    margin-bottom: .3em;
+}
+
+#accounts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accounts>* {
+    padding: 1em;
+    border-radius: .5em;
+}
+
+#accounts>*:hover {
+    background-color: #80808080;
+}
+
+#accounts img {
+    width: 5em;
+}
