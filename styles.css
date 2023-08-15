@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #7289da;
+    background-color: #5865f2;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -30,13 +30,13 @@ main {
 }
 
 h2 {
-    color: #7289da;
+    color: #000000;
 }
 
 a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #7289da;
+    background-color: #5865f2;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
