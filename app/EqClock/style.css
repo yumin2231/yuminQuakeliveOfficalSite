@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+
+.gradient { 
+	background:linear-gradient(#01B0F1, #ffffff); 
+	height: 1000px;
+	border: 1px solid #ffffff;
+}
