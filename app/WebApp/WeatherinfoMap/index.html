@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>yumin地震観測所┃Wather Info Map</title>
+
+	<!--ファイル読み込み-->
+
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" href="/YQL_-_icon_-_2022_-_model-removebg-preview">
+
+	<!--OGP-->
+
+	<meta name="description" content="yumin地震観測所の職員が開発した気象情報や地震情報を表示するWebAppです。" />
+	<meta name="keywords" content="YQL,yumin地震観測所" />
+	<meta property="og:title" content="yumin地震観測所┃震度分布図" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.yuminQuakelive.net/app/WebApp/WeatherinfoMap/" />
+	<meta property="og:site_name" content="yumin地震観測所┃WebApp" />
+	<meta property="og:image" content="https://www.yuminQuakelive.net/imges/imge.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@yuminQuakelive" />
+</head>
+
+<body>
+
+    <header>
+    <h4>
+    	　©2022 - 2023 yuminQuakelive.┃Version：1.0.0　
+    </h4>
+    </header>
+
+<div class="pusher">
+	<div id='map'></div>
+
+	<button id="location-button" class="circular ui icon large button">
+		<i class="icon crosshairs"></i>
+	</button>
+
+	<div id="location-popup" class="ui popup basic transition">現在地を取得中...</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
