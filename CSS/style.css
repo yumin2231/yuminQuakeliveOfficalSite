@@ -5,6 +5,9 @@ body{
 li{
     list-style: none;
 }
+img{
+    pointer-events: none;
+}
 footer{
     background-color: #ffffff;
 }
