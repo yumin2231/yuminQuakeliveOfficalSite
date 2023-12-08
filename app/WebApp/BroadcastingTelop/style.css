@@ -1,6 +1,14 @@
 body{
     background-color: #ffffff;
 }
+header{
+    position: absolute;
+    position: fixed;
+    right:10px;
+	top:10px;
+    width: 350px;
+    z-index: 9999;
+}
 .telop{
     position: fixed;
     left: 0;
