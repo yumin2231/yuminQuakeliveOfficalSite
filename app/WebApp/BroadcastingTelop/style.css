@@ -1,0 +1,27 @@
+body{
+    background-color: #ffffff;
+}
+.telop{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: solid 3px #01B0F1
+}
+.main {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main-contents{
+    width: 75%;
+    padding: 10px;
+    background-color: #00ff00;
+    border: solid 3px #7F7F7F
+}
+.x {
+    width: 20%;
+    padding: 10px;
+    border: solid 3px #FFE699
+}
