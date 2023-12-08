@@ -9,6 +9,9 @@ header{
     width: 350px;
     z-index: 9999;
 }
+h1{
+    text-align: center;
+}
 .telop{
     position: fixed;
     left: 0;
@@ -32,4 +35,7 @@ header{
     width: 20%;
     padding: 10px;
     border: solid 3px #FFE699
+}
+#info{
+    font-size: 32px;
 }
