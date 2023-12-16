@@ -7,7 +7,7 @@ var PolygonLayer_Style_nerv = {
 "opacity": 1,
 "fillColor": "#3a3a3a",
 "fillOpacity": 1}
-$.getJSON("https://japonyol.net/editor/article/geo/prefectures.geojson", function (data) {
+$.getJSON("prefectures.geojson", function (data) {
 L.geoJson(data, {
 style: PolygonLayer_Style_nerv
 }).addTo(map);
