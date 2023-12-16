@@ -3,3 +3,6 @@ html, body, #map {
     height: 100%;
     margin: 0;
 }
+#map {
+    background: #1d1d1d;
+}
