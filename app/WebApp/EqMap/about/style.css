@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+    background-color: #01B0F1;
+}
+header{
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    top: 0%;
+    background-color: #ffffff;
+}
