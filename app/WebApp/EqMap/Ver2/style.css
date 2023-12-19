@@ -36,3 +36,9 @@ html, body, #map {
     font-size: 80%;
     letter-spacing: 2px;
 }
+#eq_time {
+    font-size: 1.6rem;
+    color: #ffffff;
+    user-select: none;
+    width: 1080;
+}
