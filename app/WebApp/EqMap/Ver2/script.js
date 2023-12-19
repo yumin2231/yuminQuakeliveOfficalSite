@@ -21,5 +21,5 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
         data["0"]["earthquake"]["hypocenter"]["depth"]
     ]
     console.log(time+"ごろ、"+name+"で最大震度"+shindo/10+"の地震が発生しました。マグニチュードは"+magnitude+"、深さ"+depth+"kmと推定されています。");
-    
+
 });

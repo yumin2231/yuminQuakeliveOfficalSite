@@ -1,0 +1,92 @@
+#quakeinfo{
+    background-color: #000000;
+    color: #ffffff;
+    width: 1080;
+}
+#eq_time {
+    font-size: 1.6rem;
+    color: #ffffff;
+    user-select: none;
+    width: 1080;
+}
+
+#maxint{
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    width: 1080;
+}
+#maxint_sub{
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    width: 1080;
+}
+
+#magnitude{
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    width: 1080;
+}
+#magnitude_sub{
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    width: 1080;
+}
+
+#depth{
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    width: 1080;
+}
+#depth_sub{
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    width: 1080;
+}
+
+#hypocenter{
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    width: 1080;
+}
+#hypocenter_sub{
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    width: 1080;
+}
+
+#tsunami{
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    background-color: #000000;
+    width: 1080;
+}
+#tsunami_sub{
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    width: 1080;
+}
