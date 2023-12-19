@@ -42,3 +42,8 @@ html, body, #map {
     user-select: none;
     width: 1080;
 }
+#eqinfo{
+    position: absolute;
+    right: 0;
+    padding: 0.5em 1em;
+}
