@@ -18,6 +18,8 @@ html, body, #map {
 }
 #quakeinfo{
     background-color: #000000;
+    color: #ffffff;
+    z-index: 9999;
 }
 #title {
     position: absolute;
@@ -34,8 +36,7 @@ html, body, #map {
     color: #ffffff;
     user-select: none;
 }
-#title_time {
-    
+#eq_time {
     font-size: 1.6rem;
     color: white;
     user-select: none;
