@@ -11,10 +11,12 @@
     padding-left: 20px;
     font-weight: 600;
     width: 1080;
+    user-select: none;
 }
 #sub{
     color: #ffffff;
     font-size: 1.5rem;
     letter-spacing: 2px;
     width: 1080;
+    user-select: none;
 }
