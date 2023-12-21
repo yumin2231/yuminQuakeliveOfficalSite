@@ -2,7 +2,7 @@ html, body, #map {
     width: 100%;
     height: 100%;
     margin: 0;
-    z-index: 9999;
+    z-index: 0;
 }
 #map {
     background: #2c2c2c;
@@ -46,5 +46,5 @@ html, body, #map {
     position: absolute;
     right: 0;
     padding: 0.5em 1em;
-    z-index: 1;
+    z-index: 1000;
 }
