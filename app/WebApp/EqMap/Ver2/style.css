@@ -46,5 +46,5 @@ html, body, #map {
     position: absolute;
     right: 0;
     padding: 0.5em 1em;
-    z-index: 10000;
+    z-index: 1;
 }
