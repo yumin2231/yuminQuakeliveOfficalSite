@@ -7,11 +7,11 @@ html, body, #map {
 #map {
     background: #2c2c2c;
 }
-#copylight{
+#footer{
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 831px;
+    width: 900px;
     z-index: 10000;
     color: #ffffff;
     background-color: #2c2c2c;
@@ -48,3 +48,11 @@ html, body, #map {
     padding: 0.5em 1em;
     z-index: 1000;
 }
+#fullScreenButton {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+  }
