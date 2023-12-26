@@ -21,6 +21,15 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
         data["0"]["earthquake"]["hypocenter"]["depth"]
     ]
     console.log(time+"ごろ、"+name+"で最大震度"+shindo/10+"の地震が発生しました。マグニチュードは"+magnitude+"、深さ"+depth+"kmと推定されています。");
+
+    var shingenLatLng = new L.LatLng(data[0]["earthquake"]["hypocenter"]["latitude"], data[0]["earthquake"]["hypocenter"]["longitude"]);
+    var shingenIconImage = L.icon({
+        iconUrl: 'imges/shingen.png',
+        iconSize: [40,40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0,-40]
+        });
+        var shingenIcon = L.marker(shingenLatLng, {icon: shingenIconImage }).addTo(map);
 });
 function requestFullscreen(elem) {
     // 全画面表示をリクエストするメソッドを取得
