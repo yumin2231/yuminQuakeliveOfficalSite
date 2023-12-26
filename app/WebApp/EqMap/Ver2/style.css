@@ -7,6 +7,26 @@ html, body, #map {
 #map {
     background: #2c2c2c;
 }
+.leaflet-fade-anim .leaflet-popup {
+    transition: 0s;
+}
+.leaflet-popup-content-wrapper {
+	background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    user-select: none;
+	margin-bottom: 0;
+}
+.leaflet-popup-content {
+    color: black !important;
+    font-size: 1.2rem;
+    margin: 10px 8px 8px 8px;
+}
+.leaflet-popup-tip-container {
+    display: none;
+}
 #footer{
     position: fixed;
     left: 0;
