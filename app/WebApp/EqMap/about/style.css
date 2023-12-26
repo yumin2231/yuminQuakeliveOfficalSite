@@ -17,7 +17,13 @@ header{
     margin:0 auto;
 }
 #sub{
-    
+    max-width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin:0 auto;
+}
+#info{
     max-width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
