@@ -3,7 +3,7 @@ var PolygonLayer_Style_nerv = {
     "color": "#ffffff",
     "weight": 1.5,
     "opacity": 1,
-    "fillColor": "#404040",
+    "fillColor": "#454545",
     "fillOpacity": 1
 }
 $.getJSON("prefectures.geojson", function (data) {

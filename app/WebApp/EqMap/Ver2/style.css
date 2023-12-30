@@ -12,7 +12,7 @@ html, body, #map {
 }
 .leaflet-popup-content-wrapper {
 	background-color: #ffffffd9;
-    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 7px 2px #00000066;
     border-radius: 0!important;
     font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
     font-weight: 500;
