@@ -1,8 +1,14 @@
+body{
+    background-color: black;
+}
 #quakeinfo{
     background-color: #000000;
     color: #ffffff;
     width: 1080;
     border-radius: 100;
+}
+.point{
+    color: #ff7524;
 }
 #main{
     color: #ffffff;
