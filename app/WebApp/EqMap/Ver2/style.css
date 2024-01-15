@@ -82,3 +82,6 @@ html, body, #map {
     cursor: pointer;
     z-index: 1001;
 }
+.eninfo{
+    font-size: 1.5rem;
+}

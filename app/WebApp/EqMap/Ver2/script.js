@@ -54,15 +54,25 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
     shingenIcon.on('mouseout', function (e) {this.closePopup();});
 
 });
+
+//全画面表示ボタン
 function requestFullscreen(elem) {
-    // 全画面表示をリクエストするメソッドを取得
     const method = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.mozRequestFullScreen || elem.msRequestFullscreen;
     if (method) {
-      method.call(elem); // 全画面表示をリクエスト
+      method.call(elem);
     }
   }
-
   function openFullscreen() {
     const elem = document.documentElement;
     requestFullscreen(elem);
+}
+//時刻
+function updateCurrentTime() {
+    const currentTimeElement = document.getElementById('current-time');
+    const currentTime = new Date().toLocaleString('ja-JP');
+    currentTimeElement.textContent = currentTime;
   }
+
+  updateCurrentTime();
+
+  setInterval(updateCurrentTime, 1000);
