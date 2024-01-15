@@ -34,7 +34,7 @@ html, body, #map {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 835px;
+    width: 1065px;
     z-index: 10000;
     color: #ffffff;
     background-color: #303030;
