@@ -13,6 +13,9 @@ img{
 .sub {
     font-size: 32px;
 }
+a{
+    color: #000000;
+}
 footer{
     position: fixed;
     bottom: 0;
