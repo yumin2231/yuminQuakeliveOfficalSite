@@ -5,6 +5,6 @@ body{
 li{
     list-style: none;
 }
-footer{
-    background-color: #ffffff;
+a{
+    text-decoration: none;
 }
