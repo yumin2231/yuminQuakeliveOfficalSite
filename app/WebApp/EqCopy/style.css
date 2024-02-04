@@ -1,8 +1,10 @@
 .main{
     width: 380px;
+    
 }
 .version{
     text-align: right;
+    user-select: none;
 }
 #eqinfo{
     background-color: #000000;
@@ -12,9 +14,17 @@
 }
 .loading{
     font-size: 60px;
+    user-select: none;
 }
 footer{
+    user-select: none;
     position: fixed;
     left: 0;
     bottom: 0;
+}
+.reload{
+    user-select: none;
+}
+button{
+    user-select: none;
 }
