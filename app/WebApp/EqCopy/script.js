@@ -12,7 +12,7 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data
     
     //発生時刻を日本語にするやつ
     report_time.substring(0, 4) + '年' + report_time.substring(5, 7) + '月' + report_time.substring(8, 10) + '日 ' + report_time.substring(11, 13) + '時' + report_time.substring(14, 16) + '分';
-    ( + report_time.substring(17, 19) + '秒';)
+    ( + report_time.substring(17, 19) + '秒')
     
     //地震情報を受信して2秒後DevToolに待機状態と表示する
     setTimeout(function(){
