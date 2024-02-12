@@ -33,6 +33,8 @@ button {
     border-radius: 4px;
 }
 nav{
+    margin: 0 auto;
+    width: 875px;
     user-select: none;
 }
 nav ul {
