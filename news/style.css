@@ -11,14 +11,6 @@ footer {
     width: 100%;
     background-color: aqua;
 }
-#youtube{
-    text-align: center;
-    place-items: center;
-    width: 27%;
-    height: 15%;
-    background-color: #000000;
-    border: solid 3px #FFE699
-}
-#youtube a{
-    color: #ffffff;
+.twitter-tweet{
+    margin: 0 auto;
 }
