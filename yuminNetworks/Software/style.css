@@ -1,0 +1,40 @@
+body{
+    background-color: #01B0F1;
+}
+header{
+    max-width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin:0 auto;
+}
+#main{
+    text-align: center;
+    max-width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin:0 auto;
+}
+button {
+    background-color: #00c3ff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+footer{
+    text-align: center;
+    font-size: 20px;
+    max-width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin:0 auto;
+}
