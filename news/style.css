@@ -1,17 +1,5 @@
 body{
-    background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #01B0F1;
-}
-header{
     text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-    border: solid 3px #000000
 }
 a{
     color: #000000;
@@ -25,35 +13,4 @@ footer {
 }
 .twitter-tweet{
     margin: 0 auto;
-}
-.main{
-    text-align: center;
-        max-width: 944px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        overflow: hidden;
-        margin:0 auto;
-        border: solid 3px #000000
-}
-.footer{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin:0 auto;
-    border: solid 3px #000000
-}
-.or_info{
-    text-decoration: none;    
-}
-.or_info_color{
-    color: red;
-}
-::-webkit-scrollbar{
-    width: 15px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #FFE699;
-    border-radius: 8px;
-    border: solid 3px #000000
 }
