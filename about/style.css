@@ -96,3 +96,6 @@ footer{
     border-radius: 8px;
     border: solid 3px #000000
 }
+.member_num{
+    text-align: right;
+}

@@ -15,7 +15,7 @@ button {
     border-radius: 4px;
 }
 button a{
-    color: #000000;
+    text-decoration: none;
 }
 a{
     color: #000000;
