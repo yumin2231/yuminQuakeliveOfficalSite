@@ -1,38 +1,70 @@
 body{
     background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
     background-size: cover;
-    background-repeat: no-repeat;
     background-color: #01B0F1;
 }
 header{
     text-align: center;
-    max-width: 944px;
+    width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
-    overflow: hidden;
     margin:0 auto;
     border: solid 3px #000000
 }
+.info{
+    width: 800px;
+    margin:0 auto;
+}
 .title{
     text-align: center;
-    max-width: 944px;
+    width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
-    overflow: hidden;
     margin:0 auto;
     border: solid 3px #000000
 }
 .main{
-    font-size: 30px;
+    width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+.date{
+    text-align: right;
+    width: 911px;
+    margin:0 auto;
+}
+#title{
+    text-align: center;
+    width: 944px;
+    background-color: #7F7F7F;
+    color: #ffffff;
+    margin:0 auto;
+    max-width: 500px;
+}
+.content{
+    max-width: 800px;
+    margin:0 auto;
+}
+.reg{
+    width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+footer{
+    text-align: center;
     max-width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
     margin:0 auto;
     border: solid 3px #000000
 }
-.main p{
-    margin: 0 auto;
-    width: 600px;
+a{
+    color: #000000;
+    font-size: 20px;
 }
 ::-webkit-scrollbar{
     width: 15px;
