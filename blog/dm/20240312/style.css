@@ -3,17 +3,6 @@ body{
     background-size: cover;
     background-color: #01B0F1;
 }
-.main{
-    width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin:0 auto;
-    border: solid 3px #000000
-}
-.mes{
-    width: 800px;
-    margin:0 auto;
-}
 .main_center{
     text-align: center;
     width: 944px;
@@ -21,6 +10,17 @@ body{
     border-radius: 8px;
     margin:0 auto;
     border: solid 3px #000000
+}
+.main{
+    width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+.text{
+    width: 800px;
+    margin:0 auto;
 }
 .title{
     text-align: center;
@@ -30,13 +30,20 @@ body{
     margin:0 auto;
     max-width: 500px;
 }
-a{
-    color: #000000;
-}
 .data{
     text-align: right;
     width: 911px;
     margin:0 auto;
+}
+a{
+    color: #000000;
+}
+.main_small{
+    width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
 }
 .b_bag{
     margin: 0 auto;
@@ -55,9 +62,7 @@ a{
     width: 640px;
     margin: 0 auto;
 }
-.mes_blue{
-    width: 800px;
-    margin:0 auto;
+#blue{
     color: #01B0F1;
 }
 ::-webkit-scrollbar{
