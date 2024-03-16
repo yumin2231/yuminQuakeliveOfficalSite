@@ -1,0 +1,15 @@
+.text{
+    width: 500px;
+    height: 400px;
+    padding: 40px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+a{
+    color: #ffffff;
+}
