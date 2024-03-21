@@ -16,7 +16,6 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data
     }, 2*1000)
 
 });
-
     //50秒カウントしたらDelToolに再読み込みを促す
     setTimeout(function(){
         console.log("50秒が経過しました。\n情報を更新するためにまもなく再読込します。")

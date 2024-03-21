@@ -6,20 +6,46 @@
     <title>yumin地震観測所┃EqCopy for Web</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="main">
         <div class="version">Version：1.0.0</div>
         <div id="eqinfo">
-            <span class="loading">取得中...</span>
+            <span class="loading">
+                取得中...
+            </span>
         </div>
-        <div class="reload">1分おきに再読込します。</div>
+        <div id="reload">1分おきに再読込します</div>
         <button>クリップボードにコピー</button>
     </div>
+    <noscript>
+        <div class="error">
+            <h4 class="error_title">Script Error</h4>
+            <div class="error_name">
+                <h2>JavaScriptが無効</h2>
+            </div>
+            <br>
+            <p class="error_description">
+                JavaScriptが無効なため地震情報の取得に
+                <br>
+                失敗しました。
+                <br>
+                JavaScriptを有効に戻してから再度開いて
+                <br>
+                ください。
+            </p>
+        </div>
+    </noscript>
     <footer>
-        &copy;2022 - 2024 yuminQuakelive. <br>Earthquake Information by P2PQuake
+        &copy;2022 - 2024 yuminQuakelive. <br>Earthquake Information by <a href="https://www.p2pquake.net">P2PQuake</a>
     </footer>
+    <noscript>
+        <meta http-equiv="refresh" content="30; url=../../../No-Script/index.html">
+    </noscript>
+<!--JavaScript関連-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
