@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yumin地震観測所┃震度分布図v3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!--OGP-->
+    <meta name="description" content="yumin地震観測所の職員が開発した気象情報や地震情報を表示するWebAppです。" />
+    <meta name="keywords" content="YQL,yumin地震観測所" />
+    <meta property="og:title" content="yumin地震観測所┃震度分布図" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.yuminQuakelive.net/app/WebApp/EqMap/Ver2/index.html" />
+    <meta property="og:site_name" content="yumin地震観測所┃WebApp" />
+    <meta property="og:image" content="https://www.yuminQuakelive.net/imges/OGP/imge.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yuminQuakelive" />
+
+</head>
+<body>
+    <div id="map"></div>
+    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃Earthquake Information by P2PQuake┃Version：3.0.0</p>
+    <div class="eqinfo">
+        <h1 class="title">地震情報</h1>
+        <h3>受信時刻：<span id="eqrece">取得中...</span></h3>
+        <h3>発生時刻：<span id="eqtime">取得中...</span></h3>
+        <br>
+        <h2>震源地：<span id="eqepic">取得中...</span></h2>
+        <h2>マグニチュード：M<span id="eqmagn">取得中....</span></h2>
+        <br>
+        <h1>深さ：<span id="eqdepth">取得中...</span></h1>
+        <h1>最大震度：<span id="eqmint">取得中...</span></h1>
+        <br>
+        <br>
+        <h3 id="eqtsunami">津波情報：取得中...</h3>
+    </div>
+    <div class="time">
+        現在時刻
+        <br>
+        <span id="current-time">----/--/-- --:--:--</span>
+    </div>
+</body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
