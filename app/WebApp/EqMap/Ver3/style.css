@@ -17,6 +17,14 @@
     width: 20%;
     height: 100%;
 }
+.title{
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
 .copyright{
     position: fixed;
     bottom: 0;
@@ -31,10 +39,70 @@
     top: 0;
     left: 20%;
     width: 200px;
+    height: 50px;
     text-align: center;
     background-color: #000000;
     color: #ffffff;
 }
+.shindo_icon{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    border: solid 3px #ffffff
+}
+.ich{
+    width: 260px;
+    margin: 0 auto;
+}
+.ich_text{
+    position: fixed;
+    bottom: 100px;
+    right: 70px;
+    margin: 0;
+}
+
+.error_nse-001{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #ff7878;
+}
+.error_name{
+    text-align: center;
+}
+.error_description{
+    width: 350px;
+    margin: 0 auto;
+}
+.jsinv{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff7878;
+    color: #ffffff;
+    width: 380px;
+    height: 150px;
+    border-radius: 8px;
+    border: solid 3px #ffffff
+    
+}
+.error_title{
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+    margin: 0;
+    border-radius: 8px 8px 0px 0px;
+}
+
 .leaflet-fade-anim .leaflet-popup {
     transition: 0s;
 }
