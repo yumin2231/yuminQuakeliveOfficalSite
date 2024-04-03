@@ -50,9 +50,9 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
     var tsunamiText = data[0]['earthquake']['domesticTsunami'] == "None" ? "この地震による津波の心配はありません。" :
                       data[0]['earthquake']['domesticTsunami'] == "Unknown" ? "不明" :
                       data[0]['earthquake']['domesticTsunami'] == "Checking" ? "津波に関しては現在気象庁で調査しています。" :
-                      data[0]['earthquake']['domesticTsunami'] == "NonEffective" ? "この地震について、若干の海面変動・津波予報が発表中です。<br>津波被害の心配はありません。" :
-                      data[0]['earthquake']['domesticTsunami'] == "Watch" ? "この地震について、津波注意報が発表されています。" :
-                      data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震について、津波警報または大津波警報が発表されています。" : "情報なし";
+                      data[0]['earthquake']['domesticTsunami'] == "NonEffective" ? "この地震について、若干の海面変動\n津波予報が発表中です。\n \n津波被害の心配はありません。" :
+                      data[0]['earthquake']['domesticTsunami'] == "Watch" ? "この地震について、津波注意報が\n発表されています。" :
+                      data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震について、津波警報または\n大津波警報が発表されています。" : "情報なし";
     var Time = data[0]['earthquake']['time'];
     //震源ポップアップ
     shingenIcon.bindPopup('発生時刻：'+Time+'<br>最大震度：'+maxIntText+'<br>震源地：'+Name+'<span style=\"font-size: 85%;\"> ('+data[0]["earthquake"]["hypocenter"]["latitude"]+", "+data[0]["earthquake"]["hypocenter"]["longitude"]+')</span><br>規模：M'+Magnitude+'　深さ：'+Depth+'<br>受信：'+data[0]['issue']['time']+', '+data[0]['issue']['source'],{closeButton: false, zIndexOffset: 10000, maxWidth: 10000});
