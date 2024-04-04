@@ -71,3 +71,11 @@ body {
 a{
     color: #000000;
 }
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #FFE699;
+    border-radius: 8px;
+    border: solid 3px #000000
+}
