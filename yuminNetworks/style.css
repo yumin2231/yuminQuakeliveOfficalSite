@@ -1,45 +1,73 @@
 body {
+    background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #00c3ff;
+}
+.main{
+    
+    max-width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+#center{
     text-align: center;
 }
-
-#title>span {
-    display: block;
-    margin-bottom: .3em;
+.sns{
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 400px;
+    margin: 0 auto;
+    border: solid 3px #000000
 }
-
-#accounts {
+.accounts{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
-
-#accounts>* {
+.accounts>* {
     padding: 1em;
     border-radius: .5em;
 }
-
-#accounts>*:hover {
+.accounts>*:hover {
     background-color: #80808080;
 }
-
-#accounts img {
+.accounts img {
     width: 5em;
 }
-button {
-background-color: #00c3ff;
-border: none;
-padding: 8px 16px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 14px;
-margin: 4px 2px;
-cursor: pointer;
-border-radius: 4px;
+.btn {
+    background-color: #00c3ff;
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.yt_sam{
+    margin: 0 auto;
+    text-align: center;
+    width: 640px;
+    height: 360px;
+    border: solid 3px #ffe699
+}
+.yt_sam img{
+    width: 640px;
+    height: 360px;
+    
+    user-select: none;
+}
+.w850{
+    margin: 0 auto;
+    width: 850px;
 }
 a{
     color: #000000;
-}
-button a{
-    text-decoration: none;
 }
