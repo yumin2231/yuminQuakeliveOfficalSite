@@ -3,15 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.yuminQuakelive.net/discord/CSS/style.css">
-    <title>yumin地震観測所┃ServerGuideline</title>
-    <link rel="icon" href="/imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    <title>yuminQuakelive┃ServerGuideline</title>
+    <link rel="icon" href="../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    <link rel="stylesheet" href="../ServerGuideline/style.css">
 </head>
-
  <body>
     <header>
         <h1>ServerGuideline</h1>
     </header>
-    <img src="https://www.yuminQuakelive.net/discord/imges/yuminQuakeliveDiscordServerEnglishGuideline.png">
-    <h2>©2022 - 2024 yuminQuakelive</h2>
+    <div class="main">
+        <br>
+        DiscordServer participants
+        <br>
+        <br>
+        <p class="right">
+            Japan time Established on August 20, 2023, revised on April 10, 2024
+            <br>
+            <br>
+            yuminQuakelive 　　General Affairs Department Business Management Division
+            <br>
+            same　　　　　　Information Systems Department SNS Monitoring Division
+        </p>
+        <h1>definition</h1>
+        <br>
+        this server：Indicates<a href="../index.html"> yuminQuakeliveOfficalServer</a>
+        <br>
+        this Guideline：Indicates <a href="index.html">Guidelines for using this server</a>
+        <br>
+        participant：Indicates the members participating in yuminQuakeliveOfficalServer.
+        <br>
+        administrator：Indicates participants with moderator and administrator roles.
+        <br>
+        attached File：This refers to images, videos, audio messages, stamps, etc.
+        <br>
+        Personal information: refers to address, real name, phone number, etc.
+        <br>
+        <br>
+        The server is managed and operated by yumiｎ Quakelive.
+        <br>
+        Those who participate in this server and those who use this server must agree to these guidelines.
+        <br>
+        You must be at <span class="red">least 13 years of age as per</span> <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service.</a>
+        <h1>Prohibited matter</h1>
+        <ol>
+            <li>Acts that violate the laws and regulations of the destination country or region</li>
+            <li>Acts that violate<a href="https://discord.com/terms" target="_blank">Discord's Terms</a>and <a href="https://discord.com/guidelines" target="_blank">Discord Community Guidelines</a></li>
+            <li>Sending messages containing personal information</li>
+            <li>Attaching messages and files containing sexual content on channels other than R18</li>
+            <li>Acts of discriminatory remarks or sending messages or attachments that the administrator deems inappropriate.</li>
+            <li>Acts of sending messages or attachments that participants find offensive, such as abusive language or defamation.</li>
+            <li>Sending messages or attachments that promote suicide, self-harm, or substance abuse</li>
+            <li>Other acts of sending messages or attachments that participants find offensive.</li>
+            <li>Repeated calling, spamming, and mentioning a specific role (member role, etc.) without permission</li>
+        </ol>
+        <h2>
+            If the administrator discovers or confirms any act that violates the above, we will take immediate action as soon as it is discovered.
+            <br>
+            <span id="line">We will take action such as time-out or ban.</span>
+        </h2>
+        <form method="POST">
+            <div class="g-recaptcha" data-sitekey="6LeK3pspAAAAAEsP7lHsRwrRQSQ1oBM80ofEgbtJ"></div>
+        </form>
+        <div class="container">
+            <form action="../../Redirect/Discord/index.html">
+                <p><input type="checkbox" id="with-consent" name="with-consent">
+                    <label for="with-consent">agree</label>
+                </p>
+                <div class="right">
+                        <button type="submit" disabled id="submit">join</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <h2>&copy;2022 - 2024 yuminQuakelive. All rights reserved.</h2>
+    </footer>
+    <script>
+        const consent = document.querySelector("#with-consent");
+        const button = document.querySelector("#submit");
+        consent.addEventListener('change', () => {
+        if (consent.checked === true) {
+            button.disabled = false;
+        }
+        else {
+            button.disabled = true;
+        }
+        });
+    </script>
  </body>
+</html>

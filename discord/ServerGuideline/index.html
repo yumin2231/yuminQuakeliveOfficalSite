@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yumin地震観測所┃サーバー利用ガイドライン</title>
+    <link rel="icon" href="../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!--OGP-->
+    <meta name="description" content="yumin地震観測所の公式コミュニティーサーバーのルールです。よくお読みの上ご参加ください。" />
+    <meta name="keywords" content="YQL,yumin地震観測所" />
+    <meta property="og:title" content="yumin地震観測所┃DiscordServer - サーバー利用ガイドライン" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.yuminQuakelive.net/discord/ServerGuideline.html" />
+    <meta property="og:site_name" content="yumin地震観測所┃DiscordServer" />
+    <meta property="og:image" content="https://www.yuminQuakelive.net/discord/imges/yuminQuakeliveDiscordServerThumbnail.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yuminQuakelive" />
+</head>
+ <body>
+    <header>
+        <h1>DiscordServer利用ガイドライン</h1>
+    </header>
+    <div class="main">
+        <br>
+        DiscordServer参加者様各位
+        <br>
+        <br>
+        <p class="right">
+            令和5年8月20日制定・令和6年4月10日改定
+            <br>
+            <br>
+            yumin地震観測所 　　総務部幹部総合管理課
+            <br>　同　　　　情報システム部SNS監視課
+        </p>
+        <h1>定義</h1>
+        <br>
+        本サーバー：<a href="../index.html">yuminQuakeliveOfficalServer</a>のことを示す。
+        <br>
+        本ガイドライン：<a href="index.html">本サーバーを利用する際のガイドライン</a>のことを示す。
+        <br>
+        参加者：yuminQuakeliveOfficalServerに参加しているメンバーのことを示す。
+        <br>
+        管理者：モデレーター及び管理者ロールがついている参加者のことを示す。
+        <br>
+        添付ファイル：画像・動画・ボイスメッセージやスタンプのことを示す。
+        <br>
+        個人情報：住所・本名・電話番号などを示す。
+        <br>
+        <br>
+        サーバーの運営・管理はyumin地震観測所が行っています。
+        <br>
+        本サーバーに参加する方及び本サーバーを利用されている方はこの本ガイドラインに同意しなければなりません
+        <br>
+        本サーバーへの参加は<a href="https://discord.com/terms" target="_blank">Discordの利用規約</a>に基づき<span id="line" class="red">13歳以上</span>のみができるものとします。
+        <h1>禁止事項</h1>
+        <ol>
+            <li>移住している国もしくは地域で定められている法令に違反する行為</li>
+            <li><a href="https://discord.com/terms" target="_blank">Discordの規約</a>および<a href="https://discord.com/guidelines" target="_blank">Discordコミュニティガイドライン</a>を違反する行為</li>
+            <li>個人情報を含むメッセージの送信</li>
+            <li>R18チャンネル以外で性的コンテンツを含むメッセージ・及びファイルを添付する行為</li>
+            <li>差別的な発言および管理者が不適切だと判断したメッセージや添付ファイルを送信する行為</li>
+            <li>暴言、中傷などの参加者が不快に思うメッセージや添付ファイルを送信する行為</li>
+            <li>自殺、自傷行為や薬物乱用を進めるメッセージや添付ファイルを送信する行為</li>
+            <li>その他参加者が不快に思うメッセージや添付ファイルを送信する行為</li>
+            <li>連呼・スパム及び許可なく特定のロール（メンバーロール等）をメンションする行為</li>
+        </ol>
+        <h2>
+            上記に違反する参加者を発見・確認した場合は、発見次第
+            <br>
+            <span id="line">タイムアウトもしくはBAN等の処置を取らせていただきます。</span>
+        </h2>
+        <form method="POST">
+            <div class="g-recaptcha" data-sitekey="6LeK3pspAAAAAEsP7lHsRwrRQSQ1oBM80ofEgbtJ"></div>
+        </form>
+        <div class="container">
+            <form action="../../Redirect/Discord/index.html">
+                <p><input type="checkbox" id="with-consent" name="with-consent">
+                    <label for="with-consent">同意する</label>
+                </p>
+                <div class="right">
+                        <button type="submit" disabled id="submit">参加</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <h2>&copy;2022 - 2024 yuminQuakelive. All rights reserved.</h2>
+    </footer>
+    <script>
+        const consent = document.querySelector("#with-consent");
+        const button = document.querySelector("#submit");
+        consent.addEventListener('change', () => {
+        if (consent.checked === true) {
+            button.disabled = false;
+        }
+        else {
+            button.disabled = true;
+        }
+        });
+    </script>
+ </body>
+</html>
