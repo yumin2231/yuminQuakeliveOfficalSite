@@ -36,10 +36,3 @@ button{
     font-size: 14px;
     border-radius: 4px;
 }
-footer{
-    margin: 0;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-}
