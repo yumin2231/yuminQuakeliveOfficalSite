@@ -16,7 +16,6 @@ $.getJSON("prefectures.geojson", function (data) {
 //地震情報
 $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
     //地震情報の処理
-    console.log(data["0"]["earthquake"]["hypocenter"]["name"]);
     var [time, name, shindo, magnitude, depth] = [
         data["0"]["earthquake"]["time"],
         data["0"]["earthquake"]["hypocenter"]["name"],
@@ -24,8 +23,6 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
         data["0"]["earthquake"]["hypocenter"]["magnitude"],
         data["0"]["earthquake"]["hypocenter"]["depth"]
     ]
-    //コンソールに情報表示
-    console.log(time+"ごろ、"+name+"で最大震度"+shindo/10+"の地震が発生しました。マグニチュードは"+magnitude+"、深さ"+depth+"kmと推定されています。");
     //震源にバツ印のピンを配置
     var shingenLatLng = new L.LatLng(data[0]["earthquake"]["hypocenter"]["latitude"], data[0]["earthquake"]["hypocenter"]["longitude"]);
     var shingenIconImage = L.icon({

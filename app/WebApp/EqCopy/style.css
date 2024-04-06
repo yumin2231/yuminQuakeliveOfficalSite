@@ -5,6 +5,11 @@
 .version{
     text-align: right;
     user-select: none;
+    width: 380px;
+}
+.site_title{
+    margin: 0;
+    user-select: none;
 }
 #eqinfo{
     background-color: #000000;
@@ -53,6 +58,22 @@ button{
     width: 330px;
     margin: 0 auto;
 }
+.btn {
+    background-color: #00c3ff;
+    color: rgb(0, 0, 0);
+    border: none; 
+    padding: 8px 16px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
 footer a{
     color: #000000;
+}
+.nekko_surfing_cats{
+    user-select: none;
 }
