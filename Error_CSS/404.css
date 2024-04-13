@@ -1,3 +1,9 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body{
     text-align: center;
     user-select: none;
@@ -21,4 +27,15 @@ footer{
     left: 0;
     text-align: center;
     width: 100%;
-}   
+}
+@media (max-width: 480px){
+    .main{
+      font-size: 32px;
+    }
+    .sub{
+      font-size: 16px;
+    }   
+}
+footer span{
+  display: inline-block;
+}
