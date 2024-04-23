@@ -4,11 +4,10 @@ html,body{
     margin: 0;
     padding: 0;
 }
-body {
+body{
     background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #00c3ff;
+    background-color: #01B0F1;
 }
 .main_center{
     text-align: center;
@@ -38,7 +37,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
     header img{
-        width: 390px;
+        width: 300px;
     }
     .player{
         width: 320px;
@@ -48,4 +47,12 @@ body {
         width: 320px;
         height: 180px;
     }
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #FFE699;
+    border-radius: 8px;
+    border: solid 3px #000000
 }
