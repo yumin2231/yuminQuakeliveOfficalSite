@@ -2,13 +2,6 @@ body{
     background-color: #01B0F1;
     text-align: center;
 }
-header{
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
 .main{
     max-width: 944px;
     background-color: #ffffff;
@@ -17,13 +10,6 @@ header{
     margin:0 auto;
 }
 .appinfo{
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-.download{
     max-width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -45,11 +31,4 @@ a{
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
-}
-footer{
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
 }
