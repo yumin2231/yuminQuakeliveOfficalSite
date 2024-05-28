@@ -1,65 +1,10 @@
 body{
     background-color: #01B0F1;
 }
-header{
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-#eqclock{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-#eqcopy{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-#eqcopyweb{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-#eqmap1{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-#eqmap2{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
-#eqmap3{
-    text-align: center;
-    max-width: 944px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin:0 auto;
-}
 a{
     color: #000000;
 }
-footer{
+.main{
     font-size: 20px;
     text-align: center;
     max-width: 944px;
