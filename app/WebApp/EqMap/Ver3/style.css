@@ -1,4 +1,8 @@
-
+html,body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
 #map {
     position: fixed;
     top: 0;
@@ -103,7 +107,6 @@
     height: 150px;
     border-radius: 8px;
     border: solid 3px #ffffff
-    
 }
 .error_title{
     width: 100%;
@@ -132,4 +135,55 @@
 }
 .leaflet-popup-tip-container {
     display: none;
+}
+.sp_copyright,.all,#sp_eqinfo,.sp_jsinv{
+    display: none;
+}
+@media (max-width: 430px){
+    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv{
+        display: none;
+    }
+    .time{
+        position: fixed;
+        left: 0;
+        width: 50%;
+    }
+    .eqinfo{
+        width: 0;
+        height: 0;
+    }
+    .sp_copyright{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #1d1d1d;
+        color: #ffffff;
+        margin: 0;
+    }
+    #sp_eqinfo{
+        display: block;
+        position: fixed;
+        top: 50px;
+        z-index: 1;
+        background: #00000088;
+        color: #ffffff;
+
+    }
+    .jsinv{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .title{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+    #map{
+        width: 100%;
+    }
 }
