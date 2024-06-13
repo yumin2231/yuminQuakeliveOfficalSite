@@ -17,6 +17,7 @@ html,body{
     position: fixed;
     color: #ffffff;
     background-color: #000000;
+    overflow: auto;
     top: 0;
     left: 0;
     width: 20%;
@@ -133,11 +134,44 @@ html,body{
     font-size: 1.2rem;
     margin: 10px 8px 8px 8px;
 }
-.leaflet-popup-tip-container {
+.sp_copyright,.all,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block.tb_hannrei{
     display: none;
 }
-.sp_copyright,.all,#sp_eqinfo,.sp_jsinv{
-    display: none;
+@media (max-width :1280px){
+    .none,.shindo_icon{
+        display: none;
+    }
+    .block.tb_hannrei{
+        display: block;
+    }
+    .tb_hannrei {
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+        z-index: 999;
+        border-radius: 1rem;
+        padding: 1rem;
+        background-color: #000000;
+        color: #ffffffff;
+        border: solid 3px #ffffff
+    }
+    .tb_hannrei ul{
+        list-style: none;
+        padding: 0;
+    }
+    .tb_hannrei li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: .2rem;
+    }
+    .tb_hannrei .icon{
+        width: 2rem;
+        margin-right: 1rem;
+    }
+    .tb_hannrei span {
+        font-size: 1.2rem;
+    }
 }
 @media (max-width: 430px){
     .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv{
@@ -164,11 +198,11 @@ html,body{
     #sp_eqinfo{
         display: block;
         position: fixed;
+        width: 100%;
         top: 50px;
         z-index: 1;
         background: #00000088;
         color: #ffffff;
-
     }
     .jsinv{
         position: fixed;

@@ -22,16 +22,14 @@
 </head>
 <body>
     <div id="map"></div>
-    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃Version：3.1.0┃地図データ：気象庁 , Natural Earth</p>
-    <p class="sp_copyright">&copy;2022 - 2024 yuminQuakelive. <span class="all">All rights reserved.</span></p>
+    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃<span class="none">Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>Version：3.1.1┃地図データ：気象庁 , Natural Earth</p>
+    <p class="sp_copyright">&copy;2022 - 2024 yuminQuakelive.</p>
     <div class="eqinfo">
         <h1 class="title">地震情報</h1>
-        <h3 class="sp">受信時刻：<span id="eqrece">----/--/-- --:--:--</span></h3>
-        <h3 class="sp">発生時刻：<span id="eqtime">----/--/-- --:--:--</span></h3>
-        <br>
+        <h3 class="sp">受信時刻<span class="none">：</span><br class="block"><span id="eqrece">----/--/-- --:--:--</span></h3>
+        <h3 class="sp">発生時刻<span class="none">：</span><br class="block"><span id="eqtime">----/--/-- --:--:--</span></h3>
         <h2 class="sp">震源地：<span id="eqepic">ー ー ー ー ー</span></h2>
         <h2 class="sp">マグニチュード：M<span id="eqmagn">0.0</span></h2>
-        <br>
         <h1 class="sp">深さ：<span id="eqdepth">約0km</span></h1>
         <h1 class="sp">最大震度：<span id="eqmint">0</span></h1>
         <br>
@@ -108,6 +106,51 @@
             <p>震度7</p>
         </div>
     </div>
+
+    <div class="tb_hannrei">
+        <ul>
+            <li>
+                <img class="icon" src="imges/shingen.png" alt="" style="font-size: 2rem;">
+                <span>震央</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int1.png" alt="">
+                <span>震度１</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int2.png" alt="">
+                <span>震度２</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int3.png" alt="">
+                <span>震度３</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int4.png" alt="">
+                <span>震度４</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int50.png" alt="">
+                <span>震度５弱</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int55.png" alt="">
+                <span>震度５強</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int60.png" alt="">
+                <span>震度６弱</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int65.png" alt="">
+                <span>震度６強</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int7.png" alt="">
+                <span>震度７</span>
+            </li>
+        </ul>
+    </div>
     
     <noscript>
         <div class="error_nse-001">
@@ -126,9 +169,6 @@
             <style>
                 #sp_eqinfo{
                     display: none;
-                }
-                .all{
-                    display: block;
                 }
             </style>
         </div>
@@ -155,9 +195,11 @@
             <br>
         </div>
     </noscript>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="JMAPoints.js"></script>
+
 </body>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="script.js"></script>
-<script src="JMAPoints.js"></script>
 </html>
