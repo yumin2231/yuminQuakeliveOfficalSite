@@ -134,14 +134,14 @@ html,body{
     font-size: 1.2rem;
     margin: 10px 8px 8px 8px;
 }
-.sp_copyright,.all,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block.tb_hannrei{
+.sp_copyright,.all,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei{
     display: none;
 }
 @media (max-width :1280px){
     .none,.shindo_icon{
         display: none;
     }
-    .block.tb_hannrei{
+    .block,.tb_hannrei{
         display: block;
     }
     .tb_hannrei {
