@@ -1,0 +1,90 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url("https://www.yql.jp/imges/Background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+header{
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+header a{
+    text-decoration: none;
+    color: #000000;
+}
+.header{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.header-nav {
+    margin-left: auto;
+}
+ul{
+    display: flex;
+}
+li {
+    width: 100%;
+    margin: 0 auto;
+    list-style-type: none;
+}
+li + li {
+    margin-left: 40px;
+}
+.main{
+    max-width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+.info{
+    width: 800px;
+    margin:0 auto;
+}
+.none{
+    display: none;
+}
+#center{
+    text-align: center;
+}
+#right{
+    text-align: right;
+    width: 911px;
+    margin:0 auto;
+}
+.title{
+    text-align: center;
+    width: 944px;
+    background-color: #7F7F7F;
+    color: #ffffff;
+    margin:0 auto;
+    max-width: 500px;
+}
+@media (max-width: 430px){
+    .header{
+        padding: 0;
+    }
+    .main{
+        width: 90%;
+    }
+    .info{
+        width: 85%;
+    }
+    .none{
+        display: block;
+    }
+    #right{
+        width: 85%;
+    }
+    .title{
+        width: 90%;
+        max-width: 70%;
+    }
+}
