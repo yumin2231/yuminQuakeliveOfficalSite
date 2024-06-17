@@ -78,6 +78,10 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
     var info = ""+tsunamiText+""
     document.getElementById('eqtsunami').innerText = info;
 
+    //スマホ表示
+    var info = "発生時刻："+data[0]["earthquake"]["time"]+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
+    document.getElementById('sp_eqinfo').innerText = info;
+
     //観測点関係
     var JMAPointsJson;
     //観測点の位置データなどのデータを取得
