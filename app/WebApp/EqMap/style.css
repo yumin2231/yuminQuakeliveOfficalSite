@@ -1,0 +1,350 @@
+header {
+    background-color: rgba(28, 28, 28);
+    color: #ffffff;
+}
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    font-size: 14px;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 14px;
+    background-color: #1c1c1c;
+}
+select, input, button {
+    outline: none;
+}
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+} 
+input[type="number"] { 
+    -moz-appearance:textfield; 
+} 
+#map {
+    width: 100%;
+    height: 100%;
+}
+#map.background_nerv {
+    background: #1c1c1c
+}
+#map.background_wni {
+    background: linear-gradient(180deg, rgba(113,163,198,1) 0%, rgba(43,70,119,1) 100%);
+}
+#map.background_quarog {
+    background: #78A0C8;
+}
+.leaflet-popup {
+    margin-bottom: 0;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    user-select: none;
+}
+.leaflet-popup-content {
+    color: black !important;
+    font-size: 1.4rem;
+    margin: 10px 8px 8px 8px;
+}
+.leaflet-popup-tip {
+    display: none;
+}
+.leaflet-fade-anim .leaflet-popup {
+    transition: 0s;
+}
+#title {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    z-index: 10000;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 600;
+    user-select: none;
+}
+#title_text {
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 1.6rem;
+    border: #1f57be 4px solid;
+    background: #ffffff;
+    color: #1f57be;
+    vertical-align: bottom;
+}
+#title_time {
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 1.4rem;
+    background: #00000088;
+    color: white;
+}
+#title_time .small {
+    font-size: 80%;
+    letter-spacing: 2px;
+}
+#info {
+    position: absolute;
+    top: calc(30px + 40px + 1.6rem + 1.4rem + 30px);
+    left: 15px;
+    z-index: 10000;
+    padding: 10px;
+    font-size: 1.4rem;
+    background: #00000088;
+    color: white;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    line-height: 1.8rem;
+    min-width: 13em;
+}
+#info .maxint {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2.2rem;
+}
+#info .maxint img, .shindo_ichiran_kakutitle img {
+    height: 1em;
+    transform: translateY(8%);
+    margin-left: 5px;
+}
+.shindo_ichiran_kakutitle .kasho_small, #shindo_ichiran .small {
+    font-size: 80%;
+}
+.btns {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 10000;
+    user-select: none;
+}
+.setsumei, #quakelist, #reload, #map_ichi, #test, #btn_shindo_ichiran, #autoreload, #display_onoff_point_check, #view_info {
+    display: inline-block;
+    background: #00000088;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+#reload, #autoreload {
+    background: #00000000;
+    padding: 5px;
+    border: none;
+}
+#reload_num, #autoreload_num {
+    background: #00000000;
+    border: 0;
+    width: 2rem;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: white;
+    border-bottom: #ffffff 1px solid;
+}
+.setsumei {
+    cursor: default;
+}
+.autoreload_setsumei.on {
+    background: #ffffff;
+    color: black;
+}
+.autoreload_setsumei.on button, .autoreload_setsumei.on input {
+    color: black!important;
+}
+.autoreload_setsumei.on input {
+    border-bottom: #000000 1px solid!important;
+}
+#shindo_ichiran {
+    width: 30rem;
+    height: 80%;
+    position: absolute;
+    right: 3rem;
+    top: 3%;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 1%;
+    color: #000000;
+    background: #ffffff;
+    border: #1f57be 3px solid;
+    border-radius: 5px;
+    z-index: 10000;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+}
+#shindo_ichiran.display {
+    display: initial;
+    animation: shindo_ichiran_display 0.5s ease-in-out 0s;
+}
+#shindo_ichiran.display_none {
+    animation-fill-mode: forwards;
+    animation: shindo_ichiran_display_back 0.5s ease-in-out 0s;
+}
+
+#shindo_ichiran ruby {
+    white-space: nowrap;
+}
+#shindo_ichiran rt {
+    font-size: 0.7em;
+}
+#shindo_ichiran .display {
+    display: none;
+}
+#shindo_ichiran .shindo_ichiran_title {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    color: #1f57be;
+    padding: 0 calc(100% - 10em);
+}
+#shindo_ichiran #shindoichiran_title_num {
+    text-align: center;
+    margin: 0.25em 0;
+    font-size: 1.5rem;
+    color: #1f57be;
+}
+#shindo_ichiran .shindo_ichiran_title::before,
+#shindo_ichiran .shindo_ichiran_title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: calc(100% - 11em);
+    height: 3px;
+    border-top: 3px solid #1f57be;
+}
+#shindo_ichiran .shindo_ichiran_title::before {left:0;}
+#shindo_ichiran .shindo_ichiran_title::after {right: 0;}
+#shindo__article, #shindo7_article, #shindo65_article, #shindo60_article, #shindo55_article, #shindo50_article, #shindo4_article, #shindo3_article, #shindo2_article, #shindo1_article {
+    margin-top: 0.3em;
+    margin-bottom: 0.7em;
+    font-size: 0.8em;
+    margin-left: 0.5em;
+}
+#shindo_ichiran hr {
+    border-bottom: #1f57be 2px solid;
+    margin: 0.5em 0;
+}
+#shindo_ichiran::-webkit-scrollbar {
+    width: 14px;
+}
+#shindo_ichiran::-webkit-scrollbar-track {
+    background: #e4e4e4;
+}
+#shindo_ichiran::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border: transparent 3.5px solid;
+    border-radius: 16px;
+    background-clip: content-box;
+}
+#theme_set input[type=radio], #icon_theme_set input[type=radio], #display_onoff input[type=checkbox] {
+    display: none;
+}
+#theme_set label, #icon_theme_set label, #display_onoff label {
+    display: inline-block;
+    background: #00000000;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 5px;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+#theme_set label:first-of-type, #icon_theme_set label:first-of-type, #display_onoff label:first-of-type {
+    margin-left: 3px;
+}
+#theme_set input[type=radio]:checked+label, #icon_theme_set input[type=radio]:checked+label, #display_onoff input[type=checkbox]:checked+label {
+    background: #ffffff;
+    color: black;
+}
+.shindoichiran input[type=checkbox], #shindoiconbig_check {
+    display: none;
+}
+.shindoichiran label, #shindoiconbig_check+label {
+    display: inline-block;
+    background: #00000088;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.shindoichiran input[type=checkbox]:checked+label, #shindoiconbig_check:checked+label {
+    background: #ffffff;
+    color: black;
+}
+
+@keyframes shindo_ichiran_display {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes shindo_ichiran_display_back {
+    0% { opacity: 1; }
+    100% { opacity: 0; 
+    }
+}
+#appinfo {
+    display: none;
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #116637;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 5px #5c5c5c;
+    padding: 5vh 10vw;
+    font-family: 'Noto Sans JP';
+    font-size: 1.5rem;
+    color: #ffffff;
+    overflow-y: scroll;
+    z-index: 20000000;
+}
+#appinfo.display {
+    display: block;
+}
+#info_closebtn {
+    position: absolute;
+    font-size: 35px;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.25s ease-in-out 0s;
+}
+#info_closebtn:hover {
+    background-color: #80808080;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+}
+.inyomoto td {
+    padding: 0 5px;
+}
+.footer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    color: #ffffff;
+}
+a{
+    color: #ffffff;
+}
