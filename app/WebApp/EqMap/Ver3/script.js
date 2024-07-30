@@ -14,7 +14,36 @@ $.getJSON("prefectures.geojson", function (data) {
     }).addTo(map);
 });
 //地震情報
-$.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
+//ボタン押下時のイベント設定とローカルストレージの設定
+document.getElementById('reload').addEventListener("click",()=>{
+    if (document.getElementById('reload_num').value != "") {
+        if (document.getElementById('reload_num').value > 100 || document.getElementById('reload_num').value <= 0) {
+            GetQuake(100);
+        } else {
+            GetQuake(document.getElementById('reload_num').value);
+        }
+    } else {
+        GetQuake();
+    }
+    document.getElementById('reload').innerText = "更新中…";
+    setTimeout(() => {
+        document.getElementById('reload').innerText = "更新完了";
+        setTimeout(() => {
+            document.getElementById('reload').innerText = "情報更新";
+        }, 1000);
+    }, 1000);
+});
+
+GetQuake();
+
+function GetQuake(option) {
+    var url;
+    if (!isNaN(option)) {
+        url = "https://api.p2pquake.net/v2/history?codes=551&limit="+option;
+    } else {
+        url = "https://api.p2pquake.net/v2/history?codes=551&limit=20";
+    }
+    $.getJSON(url, function (data) {
     //地震情報の処理
     var [time, name, shindo, magnitude, depth] = [
         data["0"]["earthquake"]["time"],
@@ -55,6 +84,7 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
     shingenIcon.bindPopup('発生時刻：'+Time+'<br>最大震度：'+maxIntText+'<br>震源地：'+Name+'<span style=\"font-size: 85%;\"> ('+data[0]["earthquake"]["hypocenter"]["latitude"]+", "+data[0]["earthquake"]["hypocenter"]["longitude"]+')</span><br>規模：M'+Magnitude+'　深さ：'+Depth+'<br>受信：'+data[0]['issue']['time']+', '+data[0]['issue']['source'],{closeButton: false, zIndexOffset: 10000, maxWidth: 10000});
     shingenIcon.on('mouseover', function (e) {this.openPopup();});
     shingenIcon.on('mouseout', function (e) {this.closePopup();});
+    map.flyTo(shingenLatLng, 7.5, { duration: 0.5 })
 
     //サイドバーの情報関連
     var info = ""+data[0]["issue"]["time"]+""
@@ -159,6 +189,7 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551", function (data) {
     }
     }
 });
+}
 //時計
 function updateCurrentTime() {
     const currentTimeElement = document.getElementById('current-time');
@@ -167,8 +198,3 @@ function updateCurrentTime() {
   }
   updateCurrentTime();
   setInterval(updateCurrentTime, 1000);
-  
-  //自動再読み込み
-  setTimeout(function(){
-    window.location.href = 'index.html';
-}, 60*1000);

@@ -6,6 +6,7 @@
     <title>yumin地震観測所┃震度分布図v3</title>
     <link rel="icon" href="../../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reload.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     
     <!--OGP-->
@@ -22,7 +23,10 @@
 </head>
 <body>
     <div id="map"></div>
-    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃<span class="none">Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>Version：3.1.1┃地図データ：気象庁 , Natural Earth</p>
+    <div class="btns">
+        <span class="setsumei" style="padding: 0;padding-right: 5px;"><button id="reload">情報更新</button> <input type="number" id="reload_num" value="20" max="100">件</span>
+    </div>
+    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃<span class="none">Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>Version：3.1.2┃地図データ：気象庁 , Natural Earth</p>
     <p class="sp_copyright">&copy;2022 - 2024 yuminQuakelive.</p>
     <div class="eqinfo">
         <h1 class="title">地震情報</h1>
@@ -78,7 +82,7 @@
 
         <div class="hannrei-item">
             <img src="../source/jqk_int4.png" width="50" alt="">
-            <p>震度5</p>
+            <p>震度4</p>
         </div>
 
         <div class="hannrei-item">
@@ -115,39 +119,39 @@
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int1.png" alt="">
-                <span>震度１</span>
+                <span>震度1</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int2.png" alt="">
-                <span>震度２</span>
+                <span>震度2</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int3.png" alt="">
-                <span>震度３</span>
+                <span>震度3</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int4.png" alt="">
-                <span>震度４</span>
+                <span>震度4</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int50.png" alt="">
-                <span>震度５弱</span>
+                <span>震度5弱</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int55.png" alt="">
-                <span>震度５強</span>
+                <span>震度5強</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int60.png" alt="">
-                <span>震度６弱</span>
+                <span>震度6弱</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int65.png" alt="">
-                <span>震度６強</span>
+                <span>震度6強</span>
             </li>
             <li>
                 <img class="icon" src="../source/jqk_int7.png" alt="">
-                <span>震度７</span>
+                <span>震度7</span>
             </li>
         </ul>
     </div>
