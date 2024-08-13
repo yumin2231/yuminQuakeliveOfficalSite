@@ -1,51 +1,65 @@
-body{
-    background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url("https://www.yql.jp/imges/Background.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #01B0F1;
+    background-attachment: fixed;
+    background-position: center center;
+    font-family: sans-serif;
 }
-.main{
-    text-align: center;
+.form{
+    width: 944px;
+    background-color: #D9F3FD;
+    border-radius: 8px;    margin: 0 auto;
+    margin: 2rem auto;
+    border: solid 3px #000000
+}
+.carv{
+    border-radius: 8px;
+}
+.pc{
     width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
     margin: 0 auto;
     border: solid 3px #000000;
 }
-.form{
-    text-align: center;
-    width: 944px;
-    height: 2800px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin:0 auto;
-    border: solid 3px #000000
-}
-.pc_only{
-    text-align: left;
+.text{
     margin: 0 auto;
     width: 925px;
-    height: 50px
 }
-.button{
+.right{
     text-align: right;
     margin: 0 auto;
     width: 925px;
-    height: 50px
 }
-button{
+.btn{
     background-color: #00c3ff;
     border: none;
     padding: 8px 16px;
     text-align: center;
+    text-decoration: none;
     font-size: 14px;
     border-radius: 4px;
-}
-a{
     color: #000000;
 }
-button a{
-    text-decoration: none;
+.sp{
+    display: none;
+}
+footer{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+}
+@media (max-width: 430px){
+    .form,footer,.pc{
+        display: none;
+    }
+    .sp{
+        display: block;
+    }
 }
 ::-webkit-scrollbar{
     width: 15px;

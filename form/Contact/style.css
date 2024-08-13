@@ -1,21 +1,24 @@
-body{
-    background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url("https://www.yql.jp/imges/Background.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #01B0F1;
+    background-attachment: fixed;
+    background-position: center center;
+    font-family: sans-serif;
 }
 .form{
     width: 944px;
-    height: 1110px;
     background-color: #D9F3FD;
     border-radius: 8px;
-    margin:0 auto;
+    margin: 2rem auto;
     border: solid 3px #000000
 }
 .carv{
     border-radius: 8px;
 }
-.pc_only{
+.pc{
     width: 944px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -41,13 +44,22 @@ body{
     border-radius: 4px;
     color: #000000;
 }
+.sp{
+    display: none;
+}
 footer{
+    margin: 0;
+    width: 100%;
     text-align: center;
-    width: 944px;
     background-color: #ffffff;
-    border-radius: 8px;
-    margin: 0 auto;
-    border: solid 3px #000000;
+}
+@media (max-width: 430px){
+    .form,footer,.pc{
+        display: none;
+    }
+    .sp{
+        display: block;
+    }
 }
 ::-webkit-scrollbar{
     width: 15px;
