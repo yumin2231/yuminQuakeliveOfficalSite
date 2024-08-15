@@ -2,6 +2,7 @@ html,body{
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: #000000;
 }
 #map {
     position: fixed;
@@ -80,6 +81,24 @@ html,body{
     font-weight: 600;
     margin: 0;
 }
+
+.my-contextmenu {
+    display: none;
+    position: fixed;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    z-index: 1000;
+  }
+  .my-contextmenu.show {
+    display: block;
+  }
+  .my-contextmenu ul {
+    list-style: none;
+    padding:  0;
+  }
+  .my-contextmenu ul li a {
+    color: #ffffff;
+  }
 
 .error_nse-001{
     margin: 0;
@@ -174,7 +193,7 @@ html,body{
     }
 }
 @media (max-width: 430px){
-    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei{
+    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei,.btns{
         display: none;
     }
     .time{

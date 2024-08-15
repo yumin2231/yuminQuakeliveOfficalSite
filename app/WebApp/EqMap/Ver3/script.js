@@ -190,11 +190,3 @@ function GetQuake(option) {
     }
 });
 }
-//時計
-function updateCurrentTime() {
-    const currentTimeElement = document.getElementById('current-time');
-    const currentTime = new Date().toLocaleString('ja-JP');
-    currentTimeElement.textContent = currentTime;
-  }
-  updateCurrentTime();
-  setInterval(updateCurrentTime, 1000);

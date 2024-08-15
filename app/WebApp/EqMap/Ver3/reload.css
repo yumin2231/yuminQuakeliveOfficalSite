@@ -5,7 +5,7 @@
     z-index: 10000;
     user-select: none;
 }
-.setsumei, #quakelist, #reload, #map_ichi, #test, #btn_shindo_ichiran, #autoreload, #display_onoff_point_check, #view_info {
+.setsumei, #quakelist, #reload, #map_ichi, #test, #btn_shindo_ichiran, #autoreload, #display_onoff_point_check, #view_info , .button{
     display: inline-block;
     background: #00000088;
     border: white 2.5px solid;
