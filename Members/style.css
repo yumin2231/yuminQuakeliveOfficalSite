@@ -1,26 +1,17 @@
 html,body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
     background-color: #C8E0FE;
 }
 br{
     user-select: none;
 }
-header{
-    height: 25%;
-    pointer-events: none;
-    user-select: none;
-}
-.header,.main{
+.content{
     text-align: center;
     width: 50%;
     background-color: #ffffff;
     border-radius: 8px;
     margin:0 auto;
 }
-.main a{
+.content a{
     text-decoration: none;
     user-select: none;
     color: #000000;
@@ -30,7 +21,7 @@ header{
     width: 55%;
     margin: 0 auto;
 }
-.main span{
+.content span{
     display: inline-block;
 }
 div p {
@@ -42,21 +33,8 @@ h1 p{
 .center{
     text-align: center;
 }
-::-webkit-scrollbar{
-    width: 10px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #808080;
-}
 @media (max-width: 430px){
-    .header{
-        width: 90%;
-        height: 120px;
-    }
-    .header img{
-        height: 120px;
-    }
-    .main{
+    .content{
         width: 90%;
     }
     .member_name_id{

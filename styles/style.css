@@ -2,10 +2,6 @@ body,html{
     width: 100%;
     height: 100%;
     margin: 0;
-    background-image: url("https://www.yql.jp/imges/Background.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
 }
 header{
     background-color: #ffffff;
@@ -59,16 +55,6 @@ header li + li {
     width: 100%;
     background-color: #ffffff;
 } 
-.white{
-    width: 100%;
-    background-color: #ffffff;
-}
-.slider{
-    text-align: center;
-    align-items: center;
-    width: 94%;
-    margin: 0 auto;
-}
 .main{
     background-color: #ffffff;
     margin: 2rem auto;
@@ -77,15 +63,6 @@ header li + li {
 }
 .text{
     width: 950px;
-    margin: 0 auto;
-}
-.window{
-    display: flex;
-    margin: 0 auto;
-}
-.window div{
-    text-align: center;
-    width: 60%;
     margin: 0 auto;
 }
 #page_top{
@@ -123,6 +100,11 @@ header li + li {
   }
 .none{
     display: none;
+}
+ul{
+	margin:0;
+	padding: 0;
+	list-style: none;
 }
 @media (max-width:430px){
     .header{

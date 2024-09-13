@@ -4,13 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>yumin地震観測所┃Home</title>
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 	<link rel="stylesheet" href="https://yuminnet.works/footer.css">
 	<link rel="stylesheet" href="https://yumin019.com/Slider/reset.css">
 	<link rel="stylesheet" href="https://yumin019.com/Slider/Slide02/style.css">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/b-img.css">
+	<link rel="stylesheet" href="styles/header.css">
+
 	<link rel="icon" href="imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
 </head>
 <body id="top">
@@ -43,7 +47,7 @@
 						<a href="news/index.html">News</a>
 					</li>
 					<li>
-						<a href="form/Staff/index.html">Staff application</a>
+						<a href="form/Staff/index.html">Staff Recruitment</a>
 					</li>
 					<li>
 						<a href="https://www.yuminnet.works">yuminNetworksSite</a>
@@ -86,7 +90,7 @@
 					<a href="news/index.html">News</a>
 				</li>
 				<li>
-					<a href="form/Staff/index.html">Staff application</a>
+					<a href="form/Staff/index.html">Staff Recruitment</a>
 				</li>
 				<li>
 					<a href="https://www.yuminnet.works">yuminNetworksSite</a>
@@ -164,7 +168,7 @@
 	<div id="page_top"><a href="#top"></a></div>
 	<footer class="footer">
         <div class="md-flex md-justify-between">
-          <a href="https://www.yuminquakelive.net" class="footer__logo">
+          <a href="index.html" class="footer__logo">
             <img src="imges/1500x500.png" width="285" height="95"/>
           </a>
           <div class="grid">
@@ -193,7 +197,7 @@
 					<a href="news/index.html">News</a>
 				</li>
 				<li>
-					<a href="form/Staff/index.html">Staff application</a>
+					<a href="form/Staff/index.html">Staff Recruitment</a>
 				</li>
 				<li>
 					<a href="https://www.yuminnet.works">yuminNetworksSite</a>
@@ -208,6 +212,8 @@
 				<li><a href="https://misskey.io/@yuminQuakelive" target="_blank">Misskey</a></li>
 				<li><a href="https://taittsuu.com/users/yuminquakelive" target="_blank">タイッツー</a></li>
 				<li><a href="https://bsky.app/profile/official.yuminquakelive.net" target="_blank">Bluesky</a></li>
+				<br>
+				<li><a href="accountlist/index.html">Account List</a></li>
 				</ul>
             </div>
             <div>
@@ -236,14 +242,13 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://yumin019.com/Slider/Slide02/script.js"></script>
-<script>
-	const responsive_menu_btn = document.querySelector('.responsive_btn');
-	responsive_menu_btn.addEventListener('click', menuToggle);
-
-	function menuToggle() {
-	const header_menu_detail = document.querySelector('.header_nav');
-	header_menu_detail.classList.toggle('menu_active');
-	}
-</script>
+<script src="script.js"></script>
+<noscript>
+	<style>
+		.responsive_btn,.white{
+			display: none;
+		}
+	</style>
+</noscript>
 </body>
 </html>
