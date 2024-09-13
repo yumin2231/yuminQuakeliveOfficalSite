@@ -10,10 +10,16 @@
 }
 .window{
     display: flex;
+    flex-direction: row;
     margin: 0 auto;
 }
 .window div{
     text-align: center;
     width: 60%;
     margin: 0 auto;
+}
+@media (max-width: 430px){
+.window{
+    flex-direction: column;
+}
 }
