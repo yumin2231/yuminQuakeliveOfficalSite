@@ -5,3 +5,17 @@ function menuToggle() {
 const header_menu_detail = document.querySelector('.header_nav');
 header_menu_detail.classList.toggle('menu_active');
 }
+
+function DeleteArc(url,message){
+    if(confirm(message)){
+        location.href = url;
+    }
+}
+
+$(function () {
+    $(document).ready(function () {
+        $('.banner-close').click(function() {
+            $(this).parent().hide();
+        });
+    });
+});
