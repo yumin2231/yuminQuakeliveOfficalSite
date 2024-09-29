@@ -11,11 +11,3 @@ function DeleteArc(url,message){
         location.href = url;
     }
 }
-
-$(function () {
-    $(document).ready(function () {
-        $('.banner-close').click(function() {
-            $(this).parent().hide();
-        });
-    });
-});

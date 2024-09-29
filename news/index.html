@@ -10,26 +10,13 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles//footer.css">
     <link rel="stylesheet" href="../styles/b-img.css">
+    <link rel="stylesheet" href="../styles/bunner.css">
     <link rel="stylesheet" href="../styles/style.css">
 
     <style>
-        body{
-            text-align: center;
-        }
-        .bunner{
-            width: 100%;
-            background-color: #87cefa;
-            height: 50px;
-            margin: 0;
-            line-height: 50px;
-        }
-        .bunner a{
-            text-decoration: underline;
-        }
-        #close{
-            position: fixed;
-            right: 10px;
-        }
+      .bunner{
+        background-color: #87cefa;
+      }
     </style>
 
     <meta property="og:url" content="/https://www.yuminquakelive.net/news/index.html" />
@@ -123,7 +110,7 @@
 			</nav>
 		  </div>
 	</div>
-    <p class="bunner">ニュースページ移動のお知らせ：<a href="javascript:DeleteArc('https://news.yql.jp','ニュースページをWordPressでの運用に切り替えました。\n今後の記事更新はWordPress版で行ってまいります。\n\nWordPress版にアクセスするには「OK」ボタンを押してください。');">詳細</a><a id="close" class="banner-close">閉じる</a>
+  <p class="bunner">ニュースページ移動のお知らせ：<a href="javascript:DeleteArc('https://news.yql.jp','ニュースページをWordPressでの運用に切り替えました。\n今後の記事更新はWordPress版で行ってまいります。\n\nWordPress版にアクセスするには「OK」ボタンを押してください。');">詳細</a><a id="close" class="banner-close">閉じる</a>
     <div class="main">
         <h1>NEWS</h1>
 
@@ -135,9 +122,6 @@
 
         <h3>2023年9月8日</h3>
         <a href="23/0908.html">台風13号接近に伴う業務停止について</a>
-
-        <h3>2023年11月12日</h3>
-        <a href="23/1112.html"><span style="color: #ff0000;">【重要】</span>団体情報ページ有効期限切れに伴う怪しいサイトへのリダイレクトについて</a>
 
         <h3>2024年1月21日</h3>
         <a href="https://news.yql.jp/2024/youtube-change1/">YouTubeの乗っ取り被害について（報告）</a>
@@ -228,6 +212,14 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
+    <script src="../bunner.js"></script>
+    <script>
+      function DeleteArc(url,message){
+          if(confirm(message)){
+              location.href = url;
+          }
+      }
+    </script>
     <noscript>
         <style>
             .responsive_btn,.bunner{
