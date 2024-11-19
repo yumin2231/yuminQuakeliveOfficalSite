@@ -1,11 +1,10 @@
 .main{
-    width: 380px;
-    
+    width: 370px;
 }
 .version{
     text-align: right;
     user-select: none;
-    width: 380px;
+    width: 370px;
 }
 .site_title{
     margin: 0;
@@ -14,8 +13,10 @@
 #eqinfo{
     background-color: #000000;
     color: #ffffff;
-    width: 380px;
+    width: 370px;
     height: 170px;
+    resize: both;
+    overflow: hidden;
 }
 .loading{
     font-size: 60px;
@@ -27,16 +28,13 @@ footer{
     left: 0;
     bottom: 0;
 }
-.reload{
-    user-select: none;
-}
-button{
+.reload,.btn,.copy_btn{
     user-select: none;
 }
 .error{
     background-color: #ff7878;
     color: #ffffff;
-    width: 380px;
+    width: 370px;
     height: 220px;
     position: absolute;
     top: 35px;
@@ -58,7 +56,7 @@ button{
     width: 330px;
     margin: 0 auto;
 }
-.btn {
+.btn,.copy_btn {
     background-color: #00c3ff;
     color: rgb(0, 0, 0);
     border: none; 

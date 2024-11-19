@@ -21,13 +21,12 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data
                       data[0]['earthquake']['domesticTsunami'] == "NonEffective" ? "この地震について、若干の海面変動・津波予報が発表中されていますが、津波被害の心配はありません。" :
                       data[0]['earthquake']['domesticTsunami'] == "Watch" ? "この地震について、津波注意報が発表されています。" :
                       data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震について、津波警報または大津波警報が発表されています。" : "情報なし";
-    var Time = data[0]['earthquake']['time'];
-
-    var hypocenter = data[0]["earthquake"]["hypocenter"];
-    var info = "地震についての情報です。\n"+data[0]["earthquake"]["time"]+"頃、〇〇地方で最大震度"+data[0]["earthquake"]["maxScale"] / 10+"を観測する地震がありました。\n震源地は"+hypocenter["name"]+"で、震源の深さは"+hypocenter["depth"]+"km、地震の規模を示すマグニチュードは"+hypocenter["magnitude"]+"とされています。\n";
+    var Time = data[0]['issue']['time'];
+    var Pref = data[0]['points']['0']['pref'];
+    
     document.getElementById('eqinfo').innerText = info;
     
-    var info = "地震についての情報です。\n"+Time+"頃、〇〇地方で最大震度"+maxIntText+"を観測する地震がありました。\n震源地は"+Name+"で、震源の深さは"+Depth+"、地震の規模を示すマグニチュードは"+Magnitude+"とされています。\n"+tsunamiText+""
+    var info = "地震についての情報です。\n"+Time+"頃、"+Pref+"付近で最大震度"+maxIntText+"を観測する地震がありました。\n震源地は"+Name+"で、震源の深さは"+Depth+"、地震の規模を示すマグニチュードは"+Magnitude+"とされています。\n"+tsunamiText+""
     document.getElementById('eqinfo').innerText = info;
 
     //地震情報が受信できたらDevToolに取得完了と表示する
@@ -48,3 +47,17 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data
     setTimeout(function(){
         window.location.href = 'index.html';
     }, 60*1000);
+
+
+    $(function() {
+        $('.copy_btn').on('click', function(){
+            let text = $('#eqinfo').text();
+            let textarea = $('<textarea></textarea>');
+            textarea.text(text);
+            $(this).append(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            textarea.remove();
+            alert('「'+text+'」をコピーしました');
+        });
+    });
