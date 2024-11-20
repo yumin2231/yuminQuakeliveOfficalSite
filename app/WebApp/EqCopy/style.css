@@ -17,6 +17,7 @@
     height: 170px;
     resize: both;
     overflow: hidden;
+    white-space: pre-wrap;
 }
 .loading{
     font-size: 60px;
@@ -28,7 +29,7 @@ footer{
     left: 0;
     bottom: 0;
 }
-.reload,.btn,.copy_btn{
+.reload,.btn,#copy_btn{
     user-select: none;
 }
 .error{
@@ -56,7 +57,7 @@ footer{
     width: 330px;
     margin: 0 auto;
 }
-.btn,.copy_btn {
+.btn,#copy_btn {
     background-color: #00c3ff;
     color: rgb(0, 0, 0);
     border: none; 

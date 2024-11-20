@@ -48,16 +48,14 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data
         window.location.href = 'index.html';
     }, 60*1000);
 
+    document.getElementById('copy_btn').addEventListener('click', function() {
+        const textDiv = document.getElementById('eqinfo');
+        const textToCopy = textDiv.innerText; // 改行を保持したテキストを取得
 
-    $(function() {
-        $('.copy_btn').on('click', function(){
-            let text = $('#eqinfo').text();
-            let textarea = $('<textarea></textarea>');
-            textarea.text(text);
-            $(this).append(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            textarea.remove();
-            alert('「'+text+'」をコピーしました');
+        // テキストをクリップボードにコピー
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('地震情報をクリップボードにコピーしました。');
+        }).catch(err => {
+            alert('クリップボードにコピーできませんでした。:' + err);
         });
     });
