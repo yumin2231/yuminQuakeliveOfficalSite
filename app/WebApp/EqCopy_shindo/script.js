@@ -129,15 +129,15 @@ function fetchEarthquakeData() {
     });
 }
 
-// 1分50秒カウントしたらDevToolに再読み込みを促す
+// 15sカウントしたらDevToolに再読み込みを促す
 setTimeout(function(){
-    console.log("1分50秒が経過しました。\n情報を更新するためにまもなく再読込します。");
-}, 110*1000);
+    console.log("15秒が経過しました。\n情報を更新するためにまもなく再読込します。");
+}, 15*1000);
 
-// 2分たったら自動的に再読み込みする
+// 20sたったら自動的に再読み込みする
 setTimeout(function(){
     window.location.href = 'index.html';
-}, 120*1000);
+}, 20*1000);
 
 // コピーボタンの処理
 document.getElementById('copy_btn').addEventListener('click', function() {
