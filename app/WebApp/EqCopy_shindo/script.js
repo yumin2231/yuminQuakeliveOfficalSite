@@ -38,15 +38,15 @@ function fetchEarthquakeData() {
         var Magnitude = data[0]['earthquake']['hypocenter']['magnitude'] != -1 ?
                         (data[0]['earthquake']['hypocenter']['magnitude']).toFixed(1) : 'ー.ー';
         var Name = data[0]['earthquake']['hypocenter']['name'] != "" ?
-                   data[0]['earthquake']['hypocenter']['name'] : '情報なし';
+                   data[0]['earthquake']['hypocenter']['name'] : '';
         var Depth = data[0]['earthquake']['hypocenter']['depth'] != -1 ?
                     "約"+data[0]['earthquake']['hypocenter']['depth']+"km" : '不明';
         var tsunamiText = data[0]['earthquake']['domesticTsunami'] == "None" ? "この地震による津波の心配はありません。" :
                           data[0]['earthquake']['domesticTsunami'] == "Unknown" ? "不明" :
                           data[0]['earthquake']['domesticTsunami'] == "Checking" ? "津波に関しては現在気象庁で調査しています。" :
-                          data[0]['earthquake']['domesticTsunami'] == "NonEffective" ? "この地震について、若干の海面変動・津波予報が発表中されていますが、津波被害の心配はありません。" :
-                          data[0]['earthquake']['domesticTsunami'] == "Watch" ? "この地震について、津波注意報が発表されています。" :
-                          data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震について、津波警報または大津波警報が発表されています。" : "情報なし";
+                          data[0]['earthquake']['domesticTsunami'] == "NonEffective" ? "この地震により、日本の沿岸では若干の海面変動があるかもしれませんが、被害の心配はありません。" :
+                          data[0]['earthquake']['domesticTsunami'] == "Watch" ? "この地震で、津波注意報が発表されています。" :
+                          data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震で、津波警報または大津波警報が発表されています。今すぐ高いところ！　逃げて！/n A tsunami warning or a major tsunami warning has been issued for this earthquake. Get to higher ground now! Run! /n 此次地震已发布海啸警报或大海啸警报。快去高处！逃跑！ /n 這次地震發出了海嘯警報或大海嘯警報。快去高處！逃跑！ /n 이번 지진으로 쓰나미 경고 또는 대쓰나미 경고가 발표되었습니다. 지금 바로 높은 곳으로! 도망쳐!" : "";
         var Time = data[0]['earthquake']['time'];
 
         // 震度情報の処理
@@ -100,9 +100,11 @@ function fetchEarthquakeData() {
         // 震度情報のテキスト作成
         var scaleOrder = ["7", "6強", "6弱", "5強", "5弱", "4", "3", "2", "1"];
         var pointsInfo = "";
+        var hasPoints = false;
 
         scaleOrder.forEach(function(scale) {
             if (scalePoints[scale]) {
+                hasPoints = true;
                 pointsInfo += `\n震度${scale}\n`;
                 Object.keys(scalePoints[scale]).sort().forEach(function(pref) {
                     if (scalePoints[scale][pref].size > 0) {
@@ -112,9 +114,14 @@ function fetchEarthquakeData() {
             }
         });
 
+        // 震度情報がある場合のみ、ヘッダーを追加
+        if (hasPoints) {
+            pointsInfo = "\n\n各地の震度は以下の通りです。" + pointsInfo;
+        }
+
         // 最終的な情報テキストの作成
         var info = "地震についての情報です。\n" +
-                   Time + "頃、" + Name + "で最大震度" + maxIntText + "の地震がありました。\n" +tsunamiText +"\n震源の深さは" + Depth + "、地震の規模を示すマグニチュードは" + Magnitude + "と推定されています。" + "\n\n各地の震度は以下の通りです。" + pointsInfo;
+                   Time + "頃、" + Name + "で最大震度" + maxIntText + "の地震がありました。\n" +tsunamiText +"\n震源の深さは" + Depth + "、地震の規模を示すマグニチュードは" + Magnitude + "と推定されています。" + pointsInfo;
 
         // コメントがある場合は追加し、※印の説明も表示
         if (data[0].comments && data[0].comments.freeFormComment) {
