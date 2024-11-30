@@ -114,10 +114,7 @@ function fetchEarthquakeData() {
 
         // 最終的な情報テキストの作成
         var info = "地震についての情報です。\n" +
-                   Time + "頃、" + Name + "で最大震度" + maxIntText + "の地震がありました。\n" +
-                   "震源の深さは" + Depth + "、地震の規模を示すマグニチュードは" + Magnitude + "と推定されています。\n" +
-                   tsunamiText + "\n\n" +
-                   "各地の震度は以下の通りです。" + pointsInfo;
+                   Time + "頃、" + Name + "で最大震度" + maxIntText + "の地震がありました。\n" +tsunamiText +"\n震源の深さは" + Depth + "、地震の規模を示すマグニチュードは" + Magnitude + "と推定されています。" + "\n\n各地の震度は以下の通りです。" + pointsInfo;
 
         // コメントがある場合は追加し、※印の説明も表示
         if (data[0].comments && data[0].comments.freeFormComment) {
