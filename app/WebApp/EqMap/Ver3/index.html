@@ -27,19 +27,39 @@
         <span class="setsumei" style="padding: 0;padding-right: 5px;"><button id="reload">自動更新</button> <input type="number" id="reload_num" value="20" max="100">件</span>
         <a href="index.html" class="button" style="text-decoration: none;">情報更新</a>
     </div>
-    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃<span class="none">Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>Version：3.1.3┃地図データ：気象庁 , Natural Earth</p>
+    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃<span class="none">Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>Version：3.1.4┃地図データ：気象庁 , Natural Earth</p>
     <p class="sp_copyright">&copy;2022 - 2024 yuminQuakelive.</p>
-    <div class="eqinfo" onContextmenu="return false;">
+    <div class="info" onContextmenu="return false;">
         <h1 class="title">地震情報</h1>
-        <h3 class="sp">受信時刻<span class="none">：</span><br class="block"><span id="eqrece">----/--/-- --:--:--</span></h3>
-        <h3 class="sp">発生時刻<span class="none">：</span><br class="block"><span id="eqtime">----/--/-- --:--:--</span></h3>
-        <h2 class="sp">震源地：<span id="eqepic">ー ー ー ー ー</span></h2>
-        <h2 class="sp">マグニチュード：M<span id="eqmagn">0.0</span></h2>
-        <h1 class="sp">深さ：<span id="eqdepth">約0km</span></h1>
-        <h1 class="sp">最大震度：<span id="eqmint">0</span></h1>
         <br>
+        <div class="content">
+            <h2 class="sp">受信時刻</h3>
+            <h2 id="eqrece">----/--/-- --:--:--</h1>
+        </div>
         <br>
-        <h3 class="sp" id="eqtsunami">津波情報取得中...</h3>
+        <div class="content">
+            <h2 class="sp">発生時刻</h2>
+            <h2 id="eqtime">----/--/-- --:--:--</h2>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">震源地</h2>
+            <h1 id="eqepic">ー ー ー ー ー</h1>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">マグニチュード</h2>
+            <h1>M <span id="eqmagn">0.0</span></h1>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">深さ</h2>
+            <h1 id="eqdepth">約0km</h1>
+        </div>
+        <br>
+        <h1 class="sp content">最大震度：<span id="eqmint">0</span></h1>
+        <br>
+        <h2 class="sp" style="text-align: center;" id="eqtsunami">津波情報取得中...</h2>
     </div>
 
     <div id="sp_eqinfo">
@@ -112,6 +132,8 @@
         </div>
     </div>
 
+    <h1 style="display: none;" id="warn">この地震について緊急地震速報（警報）を発表しています。</h1>
+
     <div class="tb_hannrei">
         <ul>
             <li>
@@ -159,11 +181,13 @@
     
     <div class="my-contextmenu" id="js-contextmenu">
         <ul>
-          <li><a href="index.html">最新の情報に更新</a></li>
+          <li><a href="?warn=eew">警報表示</a></li>
+          <li><a href="demo.html">デモモード</a></li>
+          <li><a href="index.html">メインウインドウ</a></li>
         </ul>
       </div>
     
-    <noscript>
+      <noscript>
         <div class="error_nse-001">
             <h1 class="title">Script Error</h1>
             <h1 class="error_name">JavaScript is invalid.</h1>

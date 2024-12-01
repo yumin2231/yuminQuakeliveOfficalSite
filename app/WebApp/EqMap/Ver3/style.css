@@ -24,6 +24,23 @@ html,body{
     width: 20%;
     height: 100%;
 }
+.info{
+    position: fixed;
+    color: #ffffff;
+    background-color: #000000;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
+.content{
+    width: 90%;
+    margin: 0 auto;
+}
+.content h1,h2,h3{
+    margin: 0;
+}
 .title{
     margin: 0;
     background-color: #ffffff;
@@ -54,6 +71,14 @@ html,body{
     background-color: #000000;
     color: #ffffff;
 }
+#warn,.warn{
+    position: fixed;
+    top: 30px;
+    right: 0;
+    margin: 0;
+    color: yellow;
+    background-color: purple;
+}
 .shindo_icon{
     position: fixed;
     bottom: 30px;
@@ -83,6 +108,7 @@ html,body{
 }
 
 .my-contextmenu {
+    text-align: center;
     display: none;
     position: fixed;
     background-color: #000000;
@@ -193,7 +219,7 @@ html,body{
     }
 }
 @media (max-width: 430px){
-    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei,.btns{
+    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei,.btns,#warn{
         display: none;
     }
     .time{
