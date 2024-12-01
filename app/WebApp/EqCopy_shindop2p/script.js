@@ -1,32 +1,8 @@
 // P2P地震情報を取得
 console.log("地震情報を取得中...")
 
-// 観測点情報を読み込む
-let stations = {};
-// stations.jsonを先に読み込んでから、P2Pデータを処理する
-$.getJSON("stations.json", function(stationsData) {
-    // 観測点情報をマッピング（市町村名をキーにする）
-    stationsData.forEach(station => {
-        const cityName = station.city.name;  // 市町村名をキーにする
-        if (!stations[cityName]) {
-            stations[cityName] = {
-                pref: station.pref.name
-            };
-        }
-    });
-
-    // stations.jsonの読み込みが完了してからP2Pデータを取得
-    fetchEarthquakeData();
-});
-
-function extractCityName(addr) {
-    // 市区町村名を抽出する関数
-    const cityMatch = addr.match(/^([^市区町村]+?[市区町村])/);
-    if (cityMatch) {
-        return cityMatch[1];
-    }
-    return addr;  // マッチしない場合は元の名前を返す
-}
+// P2Pデータを処理する
+fetchEarthquakeData();
 
 function fetchEarthquakeData() {
     $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data) {
@@ -52,49 +28,26 @@ function fetchEarthquakeData() {
         // 震度情報の処理
         var points = data[0].points;
         
-        // 市町村ごとの最大震度を記録
-        var cityMaxScale = {};
-        points.forEach(function(point) {
-            // P2Pの観測点名から市町村名を抽出
-            const cityName = extractCityName(point.addr);
-            
-            // その市町村の情報がstations.jsonにあるか確認
-            if (stations[cityName]) {
-                const cityKey = `${stations[cityName].pref}${cityName}`;
-                const currentScale = point.scale;
-                
-                // その市町村の既存データを確認し、より大きい震度があれば更新
-                if (!cityMaxScale[cityKey] || currentScale > cityMaxScale[cityKey].scale) {
-                    cityMaxScale[cityKey] = {
-                        pref: stations[cityName].pref,
-                        city: cityName,
-                        scale: currentScale
-                    };
-                }
-            }
-        });
-
         // 震度ごとにグループ化
         var scalePoints = {};
-        Object.values(cityMaxScale).forEach(function(cityInfo) {
-            const scaleText = cityInfo.scale == 10 ? "1" :
-                             cityInfo.scale == 20 ? "2" :
-                             cityInfo.scale == 30 ? "3" :
-                             cityInfo.scale == 40 ? "4" :
-                             cityInfo.scale == 45 ? "5弱" :
-                             cityInfo.scale == 50 ? "5強" :
-                             cityInfo.scale == 55 ? "6弱" :
-                             cityInfo.scale == 60 ? "6強" :
-                             cityInfo.scale == 70 ? "7" : "不明";
+        points.forEach(function(point) {
+            const scaleText = point.scale == 10 ? "1" :
+                            point.scale == 20 ? "2" :
+                            point.scale == 30 ? "3" :
+                            point.scale == 40 ? "4" :
+                            point.scale == 45 ? "5弱" :
+                            point.scale == 50 ? "5強" :
+                            point.scale == 55 ? "6弱" :
+                            point.scale == 60 ? "6強" :
+                            point.scale == 70 ? "7" : "不明";
 
             if (!scalePoints[scaleText]) {
                 scalePoints[scaleText] = {};
             }
-            if (!scalePoints[scaleText][cityInfo.pref]) {
-                scalePoints[scaleText][cityInfo.pref] = new Set();
+            if (!scalePoints[scaleText][point.pref]) {
+                scalePoints[scaleText][point.pref] = new Set();
             }
-
-            scalePoints[scaleText][cityInfo.pref].add(cityInfo.city);
+            scalePoints[scaleText][point.pref].add(point.addr);
         });
 
         // 震度情報のテキスト作成
