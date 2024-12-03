@@ -20,7 +20,7 @@ $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data
                       data[0]['earthquake']['domesticTsunami'] == "Checking" ? "津波に関しては現在気象庁で調査しています。" :
                       data[0]['earthquake']['domesticTsunami'] == "NonEffective" ? "この地震について、若干の海面変動・津波予報が発表中されていますが、津波被害の心配はありません。" :
                       data[0]['earthquake']['domesticTsunami'] == "Watch" ? "この地震について、津波注意報が発表されています。" :
-                      data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震について、津波警報または大津波警報が発表されています。" : "情報なし";
+                      data[0]['earthquake']['domesticTsunami'] == "Warning" ? "この地震で、津波警報または大津波警報が発表されています。今すぐ高いところ！　逃げて！\n A tsunami warning or a major tsunami warning has been issued for this earthquake. Get to higher ground now! Run! \n 此次地震已发布海啸警报或大海啸警报。快去高处！逃跑！ \n 這次地震發出了海嘯警報或大海嘯警報。快去高處！逃跑！ \n 이번 지진으로 쓰나미 경고 또는 대쓰나미 경고가 발표되었습니다. 지금 바로 높은 곳으로! 도망쳐!" : "情報なし";
     var Time = data[0]['issue']['time'];
     var Pref = data[0]['points']['0']['pref'];
     
