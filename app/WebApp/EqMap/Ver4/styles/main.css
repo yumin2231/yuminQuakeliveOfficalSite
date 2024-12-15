@@ -127,13 +127,13 @@ html, body{
         display: none;
     }
 }
-.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.leaflet-control-scale-line,.block,.tb_hannrei{
+.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.leaflet-control-scale-line,.block,.tb_hannrei,.leaflet-bar,.leaflet-control{
     display: none;
 }
 
 
 @media (max-width: 430px){
-    .sp,.copyright,.shindo_icon,.btns,#warn,.leaflet-control-zoom,.leaflet-bar leaflet-control{
+    .sp,.copyright,.shindo_icon,.btns,#warn,.leaflet-control-zoom{
         display: none;
     }
     .time{

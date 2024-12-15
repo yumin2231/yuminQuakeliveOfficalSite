@@ -54,6 +54,11 @@
             <h1 class="title">地震情報</h1>
             <br>
             <div class="content">
+                <h2 class="sp">発表時刻</h2>
+                <h2 id="eqrele">----/--/-- --:--:--</h2>
+            </div>
+            <br>
+            <div class="content">
                 <h2 class="sp">発生時刻</h2>
                 <h2 id="eqtime">----/--/-- --:--:--</h2>
             </div>
@@ -89,7 +94,6 @@
         <div class="my-contextmenu" id="js-contextmenu">
             <ul>
             <li><a href="?warn=eew">警報表示</a></li>
-            <li><a href="demo.html">デモモード</a></li>
             <li><a href="index.html">メインウインドウ</a></li>
             </ul>
         </div>
@@ -149,6 +153,8 @@
         </div>
     <!--凡例-->
     
+    <h1 style="display: none;" id="warn">この地震について緊急地震速報（警報）を発表しています。</h1>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../Ver3/JMAPoints.js"></script>

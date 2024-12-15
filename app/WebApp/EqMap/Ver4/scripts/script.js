@@ -153,6 +153,9 @@ function QuakeSelect(num) {
     shingenIcon.on('mouseout', function (e) {this.closePopup();});
 
         //サイドバーの情報関連
+        var info = ""+QuakeJson[num]['issue']['time']+""
+        document.getElementById('eqrele').innerText = info;
+
         var info = ""+Time+""
         document.getElementById('eqtime').innerText = info;
     

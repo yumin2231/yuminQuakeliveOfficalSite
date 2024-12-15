@@ -24,3 +24,17 @@ function updateCurrentTime() {
     }
   })
 }());
+//警報表示
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    window.onload = function() {
+      const warn = getQueryParam('warn');
+      const titleElement = document.getElementById('warn');
+      if (warn === 'eew') {
+        titleElement.style.display = 'block'; // 表示
+      } else {
+        titleElement.style.display = 'none'; // 非表示
+      }
+    };
