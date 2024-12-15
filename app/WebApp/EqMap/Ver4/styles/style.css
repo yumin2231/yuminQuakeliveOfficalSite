@@ -1,0 +1,67 @@
+
+.setsumei, #quakelist, #reload, #map_ichi, #test, #btn_shindo_ichiran, #autoreload, #display_onoff_point_check, #view_info {
+    display: inline-block;
+    background: #00000088;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+#reload, #autoreload {
+    background: #00000000;
+    padding: 5px;
+    border: none;
+}
+#reload_num, #autoreload_num {
+    background: #00000000;
+    border: 0;
+    width: 2rem;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: white;
+    border-bottom: #ffffff 1px solid;
+}
+select, input, button {
+    outline: none;
+}
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+} 
+input[type="number"] { 
+    -moz-appearance:textfield; 
+} 
+.setsumei {
+    cursor: default;
+}
+#quakelist {
+    width: 25em;
+    height: calc(2em + 5px);
+}
+
+.leaflet-fade-anim .leaflet-popup {
+    transition: 0s;
+}
+.leaflet-popup-content-wrapper {
+	background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    user-select: none;
+	margin-bottom: 0;
+}
+.leaflet-popup-content {
+    color: black !important;
+    font-size: 1.2rem;
+    margin: 10px 8px 8px 8px;
+}
+.leaflet-popup-tip-container {
+    display: none;
+}

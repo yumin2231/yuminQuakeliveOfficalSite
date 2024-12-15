@@ -1,0 +1,174 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#map {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100%;
+    margin: 0;
+    background: #1d1d1d;
+}
+.info{
+    position: fixed;
+    color: #ffffff;
+    background-color: #000000;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+}
+.content{
+    width: 90%;
+    margin: 0 auto;
+}
+.content h1,h2,h3{
+    margin: 0;
+}
+.title{
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+.copyright{
+    position: fixed;
+    bottom: 0;
+    left: 25%;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    z-index: 1;
+    margin: 0;
+}
+.copyright a{
+    color: #ffffff;
+}
+.time{
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+}
+.my-contextmenu {
+    text-align: center;
+    display: none;
+    position: fixed;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    z-index: 1000;
+  }
+  .my-contextmenu.show {
+    display: block;
+  }
+  .my-contextmenu ul {
+    list-style: none;
+    padding:  0;
+  }
+  .my-contextmenu ul li a {
+    color: #ffffff;
+  }
+
+.btns {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 10000;
+    user-select: none;
+}
+/*PC表示*/
+.shindo_icon{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    border: solid 3px #ffffff
+}
+.hannrei-item {
+    display: flex;
+    gap: 0 30px;
+    align-items: center;
+    margin: 7px 30px;
+    padding: 0;
+}
+.hannrei-item img {
+    width: 50;
+    height: 50;
+}
+.hannrei-item p {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width :1280px){
+    .none,.shindo_icon,.btns{
+        display: none;
+    }
+}
+.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.leaflet-control-scale-line,.block,.tb_hannrei{
+    display: none;
+}
+
+
+@media (max-width: 430px){
+    .sp,.copyright,.shindo_icon,.btns,#warn,.leaflet-control-zoom,.leaflet-bar leaflet-control{
+        display: none;
+    }
+    .time{
+        position: fixed;
+        left: 0;
+        width: 50%;
+    }
+    .info{
+        width: 0;
+        height: 0;
+    }
+    .sp_copyright{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #1d1d1d;
+        color: #ffffff;
+        margin: 0;
+    }
+    #sp_eqinfo{
+        display: block;
+        position: fixed;
+        width: 100%;
+        top: 50px;
+        z-index: 1;
+        background: #00000088;
+        color: #ffffff;
+    }
+    .jsinv{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .title{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+    #map{
+        width: 100%;
+    }
+}
