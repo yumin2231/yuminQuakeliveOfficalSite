@@ -1,0 +1,70 @@
+@font-face {
+	font-family: "uddigikyokasho";
+    font-weight: 300;
+	src: url("https://nanka.cloudfree.jp/static/font/uddigikyokasho/uddigikyokasho.woff2") format("woff2"),
+    url("https://nanka.cloudfree.jp/static/font/uddigikyokasho/uddigikyokasho.woff") format("woff");
+}
+@font-face {
+	font-family: "uddigikyokasho";
+    font-weight: 600;
+	src: url("https://nanka.cloudfree.jp/static/font/uddigikyokasho/uddigikyokasho-B.woff2") format("woff2"),
+    url("https://nanka.cloudfree.jp/static/font/uddigikyokasho/uddigikyokasho-B.woff") format("woff");
+}
+
+@font-face {
+	font-family: "繝偵Λ繧ｮ繝手ｧ偵ざ-Pro";
+    font-weight: 300;
+	src: url("https://nanka.cloudfree.jp/static/font/hiraginokakugo/hiragino_w3.woff2") format("woff2");
+}
+@font-face {
+	font-family: "繝偵Λ繧ｮ繝手ｧ偵ざ-Pro";
+    font-weight: 400;
+	src: url("https://nanka.cloudfree.jp/static/font/hiraginokakugo/hiragino_w4.woff2") format("woff2");
+}
+@font-face {
+	font-family: "繝偵Λ繧ｮ繝手ｧ偵ざ-Pro";
+    font-weight: 500;
+	src: url("https://nanka.cloudfree.jp/static/font/hiraginokakugo/hiragino_w5.woff2") format("woff2");
+}
+@font-face {
+	font-family: "繝偵Λ繧ｮ繝手ｧ偵ざ-Pro";
+    font-weight: 600;
+	src: url("https://nanka.cloudfree.jp/static/font/hiraginokakugo/hiragino_w6.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "password";
+	src: url("https://nanka.cloudfree.jp/static/font/password/pass.woff2") format("woff2");
+}
+@font-face {
+    font-family: "JF-Dot-Ayu";
+    font-weight: 300;
+    src: url("https://nanka.cloudfree.jp/static/font/jfdotayu/JFDotAyu20.woff2") format("woff2"),
+	url("https://nanka.cloudfree.jp/static/font/jfdotayu/JFDotAyu20.woff") format("woff");
+}
+
+@font-face {
+    font-family: "shueimaru";
+    src: url("https://nanka.cloudfree.jp/static/font/shueimaru/shueimaru-B.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "geograph";
+    font-weight: 300;
+    src: url("https://nanka.cloudfree.jp/static/font/geograph/geograph-regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "geograph";
+    font-weight: 400;
+    src: url("https://nanka.cloudfree.jp/static/font/geograph/geograph-medium.woff2") format("woff2");
+}
+@font-face {
+    font-family: "geograph";
+    font-weight: 500;
+    src: url("https://nanka.cloudfree.jp/static/font/geograph/geograph-medium.woff2") format("woff2");
+}
+@font-face {
+    font-family: "geograph";
+    font-weight: 600;
+    src: url("https://nanka.cloudfree.jp/static/font/geograph/geograph-bold.woff2") format("woff2");
+}

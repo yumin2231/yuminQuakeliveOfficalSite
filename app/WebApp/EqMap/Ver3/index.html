@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yumin地震観測所┃震度分布図v3</title>
+    <link rel="icon" href="../../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reload.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!--OGP-->
+    <meta name="description" content="yumin地震観測所の職員が開発した気象情報や地震情報を表示するWebAppです。" />
+    <meta name="keywords" content="YQL,yumin地震観測所" />
+    <meta property="og:title" content="yumin地震観測所┃震度分布図" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.yuminQuakelive.net/app/WebApp/EqMap/Ver3/index.html" />
+    <meta property="og:site_name" content="yumin地震観測所┃WebApp" />
+    <meta property="og:image" content="https://www.yuminQuakelive.net/imges/OGP/imge.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yuminQuakelive" />
+
+</head>
+<body>
+    <div id="map"></div>
+    <div class="btns">
+        <span class="setsumei" style="padding: 0;padding-right: 5px;"><button id="reload">自動更新</button> <input type="number" id="reload_num" value="20" max="100">件</span>
+        <a href="index.html" class="button" style="text-decoration: none;">情報更新</a>
+    </div>
+    <p class="copyright">&copy;2022 - 2024 yuminQuakelive.┃<span class="none">Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>Version：3.1.5┃地図データ：気象庁 , Natural Earth</p>
+    <p class="sp_copyright">&copy;2022 - 2024 yuminQuakelive.</p>
+    <div class="info" onContextmenu="return false;">
+        <h1 class="title">地震情報</h1>
+        <br>
+        <div class="content">
+            <h2 class="sp">受信時刻</h3>
+            <h2 id="eqrece">----/--/-- --:--:--</h1>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">発生時刻</h2>
+            <h2 id="eqtime">----/--/-- --:--:--</h2>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">震源地</h2>
+            <h1 id="eqepic">ー ー ー ー ー</h1>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">マグニチュード</h2>
+            <h1>M <span id="eqmagn">0.0</span></h1>
+        </div>
+        <br>
+        <div class="content">
+            <h2 class="sp">深さ</h2>
+            <h1 id="eqdepth">約0km</h1>
+        </div>
+        <br>
+        <h1 class="sp content">最大震度<span id="eqmint">0</span></h1>
+        <br>
+        <h2 class="sp" style="text-align: center;" id="eqtsunami">津波情報取得中...</h2>
+    </div>
+
+    <div id="sp_eqinfo">
+        発生時刻：----/--/-- --:--:--
+        <br>
+        震源地：ー ー ー ー ー
+        <br>
+        マグニチュード：M0.0
+        <br>
+        深さ：約0km
+        <br>
+        最大震度：0
+        <br>
+        <span id="sp_eqtsunami">津波情報を取得中...</span>
+    </div>
+    <div class="time">
+        現在時刻
+        <br>
+        <span id="current-time">----/--/-- --:--:--</span>
+    </div>
+    <div class="shindo_icon">
+        <div class="hannrei-item">
+            <img src="imges/shingen.png" width="50" alt="">
+            <p>震央</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int1.png" width="50" alt="">
+            <p>震度1</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int2.png" width="50" alt="">
+            <p>震度2</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int3.png" width="50" alt="">
+            <p>震度3</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int4.png" width="50" alt="">
+            <p>震度4</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int50.png" width="50" alt="">
+            <p>震度5弱</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int55.png" width="50" alt="">
+            <p>震度5強</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int60.png" width="50" alt="">
+            <p>震度6弱</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int65.png" width="50" alt="">
+            <p>震度6強</p>
+        </div>
+
+        <div class="hannrei-item">
+            <img src="../source/jqk_int7.png" width="50" alt="">
+            <p>震度7</p>
+        </div>
+    </div>
+
+    <h1 style="display: none;" id="warn">この地震について緊急地震速報（警報）を発表しています。</h1>
+
+    <div class="tb_hannrei">
+        <ul>
+            <li>
+                <img class="icon" src="imges/shingen.png" alt="" style="font-size: 2rem;">
+                <span>震央</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int1.png" alt="">
+                <span>震度1</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int2.png" alt="">
+                <span>震度2</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int3.png" alt="">
+                <span>震度3</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int4.png" alt="">
+                <span>震度4</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int50.png" alt="">
+                <span>震度5弱</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int55.png" alt="">
+                <span>震度5強</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int60.png" alt="">
+                <span>震度6弱</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int65.png" alt="">
+                <span>震度6強</span>
+            </li>
+            <li>
+                <img class="icon" src="../source/jqk_int7.png" alt="">
+                <span>震度7</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="my-contextmenu" id="js-contextmenu">
+        <ul>
+          <li><a href="?warn=eew">警報表示</a></li>
+          <li><a href="demo.html">デモモード</a></li>
+          <li><a href="index.html">メインウインドウ</a></li>
+        </ul>
+      </div>
+    
+      <noscript>
+        <div class="error_nse-001">
+            <h1 class="title">Script Error</h1>
+            <h1 class="error_name">JavaScript is invalid.</h1>
+            <h3 class="error_description">
+                JavaScriptが無効なため地震情報の
+                <br>
+                取得に失敗しました。
+                <br>
+                <br>
+                JavaScriptを有効に戻してから再度
+                <br>
+                開いてください。
+            </h3>
+            <style>
+                #sp_eqinfo,.btns{
+                    display: none;
+                }
+            </style>
+        </div>
+        <div class="jsinv">
+            <h4 class="error_title">Error<span class="sp_jsinv">JavaScript is invalid.</span></h4>
+            <h3 class="error_description">
+                <br>
+                エラーにより地震情報の描画に失敗
+                <br>
+                しました。
+                <br>
+                <br>
+                <span class="sp_jsinv">
+                    JavaScriptが無効なため地震情報の
+                    <br>
+                    取得に失敗しました。
+                    <br>
+                    <br>
+                    JavaScriptを有効に戻してから再度
+                    <br>
+                    開いてください。
+                </span>
+            </h3>
+            <br>
+        </div>
+    </noscript>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="JMAPoints.js"></script>
+    <script src="function.js"></script>
+</body>
+</html>

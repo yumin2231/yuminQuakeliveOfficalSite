@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+.main { 
+	background:linear-gradient(#01B0F1, #ffffff); 
+	border: 1px solid #ffffff;
+}
+@media (max-width: 430px){
+	.w275-5{
+		width: 257.5px;
+	}
+	.clock{
+		display: none;
+	}
+}

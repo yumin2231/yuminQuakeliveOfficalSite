@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yumin地震観測所┃EqCopy for Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+</head>
+<body>
+    <div class="main">
+        <div class="version">
+            Version：1.1.2
+        </div>
+        <p class="site_title">yumin地震観測所<br>地震情報 情報発信支援システム<br><br>EqCopy for Web</p>
+        <div id="eqinfo">
+            <span class="loading">
+                取得中...
+            </span>
+        </div>
+        <div class="reload">1分おきに再読込します</div>
+        <button id="copy_btn">情報Copy</button>
+        <button class="btn" id="url" onclick="postToX()">Xに投稿</button>
+        <a class="btn" href="index.html">リロード</a><br>
+        <a class="btn" href="../../EqCopy/index.html" target="_blank">Windows版ダウンロード</a>
+        <br><br>
+        <a href="maxint/index.html">各地の震度</a>
+        <a href="maxint/p2p/index.html">P2P各地の震度（推奨）</a><br>
+        <a href="USGS/index.html">USGS地震情報</a>
+    </div>
+    <noscript>
+        <div class="error">
+            <h4 class="error_title">Script Error</h4>
+            <div class="error_name">
+                <h2>JavaScriptが無効</h2>
+            </div>
+            <br>
+            <p class="error_description">
+                JavaScriptが無効なため地震情報の取得に
+                <br>
+                失敗しました。
+                <br>
+                JavaScriptを有効に戻してから再度開いて
+                <br>
+                ください。
+            </p>
+        </div>
+        <meta http-equiv="refresh" content="30; url=../../../No-Script/index.html">
+    </noscript>
+    <footer>
+        <br>
+        &copy;2022 - 2024 yuminQuakelive. <br>【Cooperation】<br> Supported by <a href="https://x.com/MiyakoCam" target="_blank">MiyakojimaCam</a><br>Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>
+    </footer>
+<!--JavaScript関連-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

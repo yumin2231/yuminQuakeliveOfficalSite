@@ -1,0 +1,34 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main-contents{
+    text-align: center;
+    width: 75%;
+    padding: 10px;
+    background-color: #ffffff;
+}
+.blue{
+    width: 50%;
+    background-color: #C8E0FE;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+footer{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: #01B0F1;
+}

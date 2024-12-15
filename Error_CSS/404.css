@@ -1,0 +1,41 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+    user-select: none;
+}
+header{
+    pointer-events: none;
+    text-align: left;
+}
+.main {
+    font-size: 64px;
+}
+.sub {
+    font-size: 32px;
+}
+a{
+    color: #000000;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+@media (max-width: 480px){
+    .main{
+      font-size: 32px;
+    }
+    .sub{
+      font-size: 16px;
+    }   
+}
+footer span{
+  display: inline-block;
+}

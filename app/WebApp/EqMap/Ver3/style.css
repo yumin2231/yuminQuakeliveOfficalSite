@@ -1,0 +1,268 @@
+html,body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+#map {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    background: #1d1d1d;
+}
+.eqinfo{
+    text-align: center;
+    position: fixed;
+    color: #ffffff;
+    background-color: #000000;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
+.info{
+    position: fixed;
+    color: #ffffff;
+    background-color: #000000;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
+.content{
+    width: 90%;
+    margin: 0 auto;
+}
+.content h1,h2,h3{
+    margin: 0;
+}
+.title{
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+.copyright{
+    position: fixed;
+    bottom: 0;
+    left: 20%;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    z-index: 1;
+    margin: 0;
+}
+.copyright a{
+    color: #ffffff;
+}
+.time{
+    position: fixed;
+    top: 0;
+    left: 20%;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+}
+#warn,.warn{
+    position: fixed;
+    top: 30px;
+    right: 0;
+    margin: 0;
+    color: yellow;
+    background-color: purple;
+}
+.shindo_icon{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    border: solid 3px #ffffff
+}
+.hannrei-item {
+    display: flex;
+    gap: 0 30px;
+    align-items: center;
+    margin: 7px 30px;
+    padding: 0;
+}
+.hannrei-item img {
+    width: 50;
+    height: 50;
+}
+.hannrei-item p {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.my-contextmenu {
+    text-align: center;
+    display: none;
+    position: fixed;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    z-index: 1000;
+  }
+  .my-contextmenu.show {
+    display: block;
+  }
+  .my-contextmenu ul {
+    list-style: none;
+    padding:  0;
+  }
+  .my-contextmenu ul li a {
+    color: #ffffff;
+  }
+
+.error_nse-001{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #ff7878;
+}
+.error_name{
+    text-align: center;
+}
+.error_description{
+    width: 350px;
+    margin: 0 auto;
+}
+.jsinv{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff7878;
+    color: #ffffff;
+    width: 380px;
+    height: 150px;
+    border-radius: 8px;
+    border: solid 3px #ffffff
+}
+.error_title{
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+    margin: 0;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.leaflet-fade-anim .leaflet-popup {
+    transition: 0s;
+}
+.leaflet-popup-content-wrapper {
+	background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    user-select: none;
+	margin-bottom: 0;
+}
+.leaflet-popup-content {
+    color: black !important;
+    font-size: 1.2rem;
+    margin: 10px 8px 8px 8px;
+}
+.sp_copyright,.all,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei{
+    display: none;
+}
+@media (max-width :1280px){
+    .none,.shindo_icon{
+        display: none;
+    }
+    .block,.tb_hannrei{
+        display: block;
+    }
+    .tb_hannrei {
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+        z-index: 999;
+        border-radius: 1rem;
+        padding: 1rem;
+        background-color: #000000;
+        color: #ffffffff;
+        border: solid 3px #ffffff
+    }
+    .tb_hannrei ul{
+        list-style: none;
+        padding: 0;
+    }
+    .tb_hannrei li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: .2rem;
+    }
+    .tb_hannrei .icon{
+        width: 2rem;
+        margin-right: 1rem;
+    }
+    .tb_hannrei span {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 430px){
+    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei,.btns,#warn{
+        display: none;
+    }
+    .time{
+        position: fixed;
+        left: 0;
+        width: 50%;
+    }
+    .info{
+        width: 0;
+        height: 0;
+    }
+    .sp_copyright{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #1d1d1d;
+        color: #ffffff;
+        margin: 0;
+    }
+    #sp_eqinfo{
+        display: block;
+        position: fixed;
+        width: 100%;
+        top: 50px;
+        z-index: 1;
+        background: #00000088;
+        color: #ffffff;
+    }
+    .jsinv{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        height: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .title{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+    #map{
+        width: 100%;
+    }
+}

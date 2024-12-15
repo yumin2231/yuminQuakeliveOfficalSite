@@ -1,0 +1,52 @@
+body{
+    background-image: url("https://www.yuminQuakelive.net/imges/Background.png");
+    background-size: cover;
+    background-color: #01B0F1;
+}
+.main_center{
+    text-align: center;
+    width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+.main{
+    width: 944px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+.text{
+    width: 850px;
+    margin:0 auto;
+}
+.title{
+    text-align: center;
+    width: 944px;
+    background-color: #7F7F7F;
+    color: #ffffff;
+    margin:0 auto;
+    max-width: 500px;
+}
+.right{
+    text-align: right;
+    width: 911px;
+    margin:0 auto;
+}
+.x{
+    width: 500px;
+    margin: 0 auto;
+}
+a{
+    color: #000000;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #FFE699;
+    border-radius: 8px;
+    border: solid 3px #000000
+}

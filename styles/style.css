@@ -1,0 +1,135 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+header{
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+a:hover {
+    text-decoration: underline; 
+}
+.header{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.header_nav .menu_active{
+    z-index: 9999;
+}
+.btn{
+    background-color: #00c3ff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.header-nav {
+    margin-left: auto;
+}
+header ul{
+    display: flex;
+}
+header li {
+    list-style-type: none;
+}
+header li + li {
+    margin-left: 40px;
+}
+.sp-header{
+    display: none;
+    width: 100%;
+    background-color: #ffffff;
+} 
+.main{
+    background-color: #ffffff;
+    margin: 2rem auto;
+    width: 1000px;
+    border-radius: 20px;
+}
+.text{
+    width: 950px;
+    margin: 0 auto;
+}
+#page_top{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    opacity: 0.6;
+    border-radius: 50%;
+  }
+  #page_top a{
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+  #page_top a::before{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f106';
+    font-size: 25px;
+    color: #000000;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -5px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+  }
+.none{
+    display: none;
+}
+ul{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+@media (max-width:430px){
+    .header{
+        display: none;
+    }
+    .sp-header,.none,.window{
+        display: block;
+    }
+    .sp-header{
+        width: 100%;
+        background-color: #ffffff;
+    }
+    .main,.text{
+        width: 80%;
+    }
+    .window div{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #FFE699;
+    border-radius: 8px;
+    border: solid 3px #000000
+}

@@ -1,0 +1,291 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    font-size: 14px;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 14px;
+}
+select, input, button {
+    outline: none;
+}
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+#map {
+    position: fixed;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background: #1d1d1d;
+}
+.leaflet-popup {
+    margin-bottom: 0;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    user-select: none;
+}
+.leaflet-popup-content {
+    color: black !important;
+    font-size: 1.4rem;
+    margin: 10px 8px 8px 8px;
+}
+.leaflet-popup-tip ,.leaflet-control-scale-line ,.checkbox_whiledisplay,.leaflet-top,.leaflet-righ{
+    display: none;
+}
+.leaflet-fade-anim .leaflet-popup {
+    transition: 0s;
+}
+.title{
+    margin: 0;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+.info{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    width: 20%;
+    height: 100%;
+}
+#info {
+    z-index: 10000;
+    font-size: 1.7rem;
+    color: white;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    line-height: 2rem;
+    min-width: 13em;
+}
+.leaflet-tooltip {
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+.leaflet-tooltip:before, .leaflet-tooltip:after {
+    content: "";
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    padding: 5px;
+}
+.leaflet-tooltip rt {
+    font-size: 0.7em;
+}
+.center_circle_tooltip {
+    line-height: 1.2em;
+    font-weight: 500;
+    padding: 10px;
+}
+.leaflet_datetext {
+    display        : inline-block;
+    white-space: nowrap;
+    color          : #ffffff;            /* 文字の色 */
+    font-size      : 20px;               /* 文字のサイズ */
+    line-height: 1.2em;
+    font-weight: 500;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    text-shadow: 1px 0 0 #000000, 1.5px 0 0 #000000, 2px 0 0 #000000,
+                 0 1px 0 #000000, 0 1.5px 0 #000000, 0 2px 0 #000000, 
+                 -1px 0 0 #000000, -1.5px 0 0 #000000, -2px 0 0 #000000, 
+                 0 -1px 0 #000000, 0 -1.5px 0 #000000, 0 -2px 0 #000000, 
+                 1px 1px 0 #000000, 1.5px 1.5px 0 #000000, 2px 2px 0 #000000,
+                 -1px -1px 0 #000000, -1.5px -1.5px 0 #000000, -2px -2px 0 #000000 ,
+                 -1px 1px 0 #000000, -1.5px 1.5px 0 #000000, -2px 2px 0 #000000,
+                 1px -1px 0 #000000, 1.5px -1.5px 0 #000000, 2px -2px 0 #000000;
+}
+.btns {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+#typhoonlist,#whiledisplay_open{
+    background: #000000;
+    z-index: 100000;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+#typhoonlist {
+    transform: translateY(0);
+}
+#typhoonlist option {
+    line-height: 1.3em;
+}
+
+#whiledisplay {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #00000000;
+    border: white 3px solid;
+    border-radius: 10px;
+    z-index: 100000;
+    padding: 10px;
+    color: white;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    font-size: 1.3rem;
+    display: none;
+}
+#whiledisplay.display {
+    display: block;
+}
+#back_whiledisplay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #000000aa;
+    top: 0;
+    left: 0;
+    z-index: 90000;
+    backdrop-filter: blur(5px);
+    display: none;
+}
+#whiledisplay.display + #back_whiledisplay {
+    display: block;
+}
+#whiledisplay_close {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#whiledisplay table {
+    width: 100%;
+    margin-top: 1em;
+    user-select: none;
+    & td {
+        width: 25%;
+        padding: 5px;
+        text-align: center;
+    }
+}
+#tekiyou_whiledisplay {
+    background: #ffffff88;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    padding: 10px 5px;
+    color: white;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.3rem;
+    min-width: 6em;
+}
+.checkbox_whiledisplay + label {
+    display: inline-block;
+    background: #00000088;
+    border: white 2.5px solid;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 5px;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    cursor: pointer;
+    min-width: 6em;
+}
+.checkbox_whiledisplay:checked+label {
+    background: #ffffff;
+    color: black;
+}
+
+#noinfo {
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    color: white;
+    font-size: 2rem;
+    background-color: #000000aa;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+#noinfo span {
+    text-align: center;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#noinfo.display {
+    display: block;
+}
+
+.sc_error{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #ff7878;
+}
+.error_description{
+    width: 80%;
+    margin: 0 auto;
+}
+.sc_credit{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 20%;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    z-index: 1;
+    margin: 0;
+}
+@media (max-width: 430px){
+    #info,.info,.btns,.footer{
+        display: none;
+    }
+    #map{
+        width: 100%;
+    }
+}

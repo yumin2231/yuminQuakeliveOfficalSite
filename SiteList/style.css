@@ -1,0 +1,18 @@
+.button{
+    text-align: center;
+    max-width: 250px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin:0 auto;
+    border: solid 3px #000000
+}
+.main a>*:hover {
+    background-color: #80808080;
+}
+.credit{
+    text-align: right;
+}
+.credit a{
+    text-decoration: underline;
+}

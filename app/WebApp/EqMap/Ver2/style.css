@@ -1,0 +1,87 @@
+body{
+    background-color: #303030;
+}
+html, body, #map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 0;
+}
+#map {
+    background-color: #303030;
+}
+.leaflet-fade-anim .leaflet-popup {
+    transition: 0s;
+}
+.leaflet-popup-content-wrapper {
+	background-color: #ffffffd9;
+    box-shadow: 0px 3px 7px 2px #00000066;
+    border-radius: 0!important;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
+    font-weight: 500;
+    user-select: none;
+	margin-bottom: 0;
+}
+.leaflet-popup-content {
+    color: #000000 !important;
+    font-size: 1.2rem;
+    margin: 10px 8px 8px 8px;
+}
+.leaflet-popup-tip-container {
+    display: none;
+}
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 1065px;
+    z-index: 10000;
+    color: #ffffff;
+    background-color: #303030;
+    font-size: 1.0rem;
+}
+#footer a{
+    color: #ffffff;
+}
+#title {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    z-index: 10000;
+}
+#title_text {
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 3.5rem;
+    font-weight: 600;
+    background-color: #000000;
+    color: #ffffff;
+    user-select: none;
+}
+#title_time .small {
+    font-size: 80%;
+    letter-spacing: 2px;
+}
+#eq_time {
+    font-size: 1.6rem;
+    color: #ffffff;
+    user-select: none;
+    width: 1080;
+}
+#eqinfo{
+    position: absolute;
+    right: 0;
+    padding: 0.5em 1em;
+    z-index: 1000;
+}
+#fullScreenButton {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.eninfo{
+    font-size: 1.5rem;
+}

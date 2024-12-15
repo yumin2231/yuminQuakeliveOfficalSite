@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+#quakeinfo{
+    background-color: #000000;
+    color: #ffffff;
+    width: 1080;
+    border-radius: 100;
+}
+.point{
+    color: #ff7524;
+}
+#main{
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+    width: 1080;
+    user-select: none;
+}
+#sub{
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    width: 1080;
+    user-select: none;
+}

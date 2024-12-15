@@ -1,0 +1,20 @@
+.main{
+    text-align: center;
+}
+.title{
+    text-align: center;
+    width: 500px;
+    color: #ffffff;
+    background-color: #7F7F7F;
+    margin: 0 auto;
+}
+.name{
+    width: 500px;
+    margin: 0 auto;
+}
+
+@media (max-width:430px){
+    .title,.name,.a{
+        width: 80%;
+    }
+}
