@@ -113,6 +113,14 @@ html, body{
     font-weight: 600;
     margin: 0;
 }
+#warn,.warn{
+    position: fixed;
+    top: 30px;
+    right: 0;
+    margin: 0;
+    color: yellow;
+    background-color: purple;
+}
 
 @media (max-width :1280px){
     .none,.shindo_icon,.btns{
