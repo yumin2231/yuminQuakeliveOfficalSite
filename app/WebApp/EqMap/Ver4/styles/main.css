@@ -127,7 +127,7 @@ html, body{
         display: none;
     }
 }
-.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.leaflet-control-scale-line,.block,.tb_hannrei,.leaflet-bar,.leaflet-control{
+.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.leaflet-control-scale-line,.block,.tb_hannrei,.leaflet-control-zoom-in{
     display: none;
 }
 

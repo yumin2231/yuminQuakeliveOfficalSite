@@ -7,8 +7,8 @@ var map = L.map('map', {
     smoothWheelZoom: true,
     smoothSensitivity: 1.5,
 }).setView([36.575, 137.984], 6);
-L.control.scale({ maxWidth: 150, position: 'bottomright', imperial: false }).addTo(map);
-map.zoomControl.setPosition('topright');
+L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
+map.zoomControl.setPosition('bottomleft');
 
 //地図に表示させる上下の順番
 map.createPane("pane_map1").style.zIndex = 1; //地図（背景）
