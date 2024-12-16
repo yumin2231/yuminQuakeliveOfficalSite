@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yumin地震観測所┃地震情報テロップ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <meta property="og:url" content="/https://www.yuminQuakelive.net/app/WebApp/Telop/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="yumin地震観測所┃地震情報テロップ" />
+    <meta property="og:description" content="yumin地震観測所配信画面用素材・サイト" />
+    <meta property="og:site_name" content="yumin地震観測所┃WebApp" />
+    <meta property="og:image" content="https://www.yuminQuakelive.net/imges/OGP/imge1.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yuminQuakelive" />
+</head>
+<body>
+    
+    <div class="main">
+     <div class="telop">
+        <h1 style="text-align: center;">地震情報</h1>
+        <marquee scrollamount="10" direction="left" behavior="scroll">
+        <div id="info"></div>
+        <script>
+            setInterval(() => {
+                $.getJSON("https://api.p2pquake.net/v2/history?codes=551&limit=1", function(data) {
+                    var hypocenter = data[0]["earthquake"]["hypocenter"];
+                    var info = "地震についての情報です。"+data[0]["earthquake"]["time"]+"頃、最大震度"+data[0]["earthquake"]["maxScale"] / 10+"を観測する地震がありました。震源地は"+hypocenter["name"]+"で、震源の深さは"+hypocenter["depth"]+"km、地震の規模を示すマグニチュードは"+hypocenter["magnitude"]+"とされています。この地震による津波の心配はありません。";
+                    document.getElementById('info').innerText = info;
+                });
+            }, 60000);//1分ごと
+        </script>
+        </marquee>
+        &copy;2022 - 2024 yuminQuakelive.┃Earthquake Information by P2PQuake┃Version：1.0.0
+</body>
+</html>

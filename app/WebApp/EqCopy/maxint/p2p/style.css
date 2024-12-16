@@ -1,0 +1,78 @@
+.main{
+    width: 370px;
+}
+.version{
+    text-align: right;
+    user-select: none;
+    width: 370px;
+}
+.site_title{
+    margin: 0;
+    user-select: none;
+}
+#eqinfo{
+    background-color: #000000;
+    color: #ffffff;
+    width: 1500px;
+    height: 500px;
+    resize: both;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+.loading{
+    font-size: 60px;
+    user-select: none;
+}
+footer{
+    user-select: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.reload,.btn,#copy_btn{
+    user-select: none;
+}
+.error{
+    background-color: #ff7878;
+    color: #ffffff;
+    width: 370px;
+    height: 220px;
+    position: absolute;
+    top: 35px;
+}
+.error_title{
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+    margin: 0;
+}
+.error_name{
+    width: 370px;
+    margin: 0 auto;
+}
+.error_name h2{
+    margin: 0;
+}
+.error_description{
+    width: 330px;
+    margin: 0 auto;
+}
+.btn,#copy_btn {
+    background-color: #00c3ff;
+    color: rgb(0, 0, 0);
+    border: none; 
+    padding: 8px 16px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+footer a{
+    color: #000000;
+}
+.nekko_surfing_cats{
+    user-select: none;
+}

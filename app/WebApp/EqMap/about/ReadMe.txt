@@ -16,4 +16,8 @@ yumin地震観測所お問合せフォームへ記入いただいても対応を
 
 許可なくソースコードの改変を行うことを禁じます。
 
+<<<<<<< HEAD
 CopyRight: ©2022 - 2025 yuminQuakelive. All rights reserved.
+=======
+CopyRight: ©2022 - 2023 yuminQuakelive. All rights reserved.
+>>>>>>> origin/main
