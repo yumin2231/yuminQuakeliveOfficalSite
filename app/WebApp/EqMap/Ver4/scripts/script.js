@@ -37,7 +37,7 @@ var PolygonLayer_Style_nerv = {
 }
 
 var japan_data;
-$.getJSON("https://miyakocam.github.io/geojsons/saibun.geojson", function (data) {
+$.getJSON("source/saibun.geojson", function (data) {
     japan_data = data;
     L.geoJson(data, {
         pane: "pane_map3",
