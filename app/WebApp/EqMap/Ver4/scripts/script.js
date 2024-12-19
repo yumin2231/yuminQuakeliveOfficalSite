@@ -6,9 +6,9 @@ var map = L.map('map', {
     scrollWheelZoom: false,
     smoothWheelZoom: true,
     smoothSensitivity: 1.5,
+    zoomControl: false
 }).setView([36.575, 137.984], 6);
 L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
-map.zoomControl.setPosition('bottomleft');
 
 //地図に表示させる上下の順番
 map.createPane("pane_map1").style.zIndex = 1; //地図（背景）
@@ -43,11 +43,11 @@ $.getJSON("source/saibun.geojson", function (data) {
         pane: "pane_map3",
         style: PolygonLayer_Style_nerv
     }).addTo(map);
-});
-
-$.getJSON("../Ver3/JMAstations.json", function (data) {
-    JMAPointsJson = data;
-    GetQuake();
+    
+    $.getJSON("../Ver3/JMAstations.json", function (data) {
+        JMAPointsJson = data;
+        GetQuake();
+    });
 });
 
 //ボタン押下時のイベント設定とローカルストレージの設定
