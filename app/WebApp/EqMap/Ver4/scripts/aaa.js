@@ -2,13 +2,19 @@ var QuakeJson;
 var JMAPointsJson;
 
 var map = L.map('map', {
-    preferCanvas: true,
+    preferCanvas: false,
     scrollWheelZoom: false,
     smoothWheelZoom: true,
     smoothSensitivity: 1.5,
-    zoomControl: false
 }).setView([36.575, 137.984], 6);
-L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
+L.control.scale({ maxWidth: 150, position: 'bottomright', imperial: false }).addTo(map);
+map.zoomControl.setPosition('topright');
+map.attributionControl.addAttribution(
+    "<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a>"
+);
+map.attributionControl.addAttribution(
+    "<a href='https://github.com/mutsuyuki/Leaflet.SmoothWheelZoom' target='_blank'>SmoothWheelZoom</a>"
+);
 
 //地図に表示させる上下の順番
 map.createPane("pane_map1").style.zIndex = 1; //地図（背景）
@@ -128,6 +134,7 @@ async function GetQuake(option) {
         forEachNum++;
     });
 }
+
 var shingenIcon;
 var shindo_icon;
 var shindo_layer = L.layerGroup();
@@ -166,32 +173,6 @@ async function QuakeSelect(num) {
     shingenIcon.bindPopup('発生時刻：'+Time+'<br>最大震度：'+maxIntText+'<br>震源地：'+Name+'<span style=\"font-size: 85%;\"> ('+QuakeJson[num]["earthquake"]["hypocenter"]["latitude"]+", "+QuakeJson[num]["earthquake"]["hypocenter"]["longitude"]+')</span><br>規模：M'+Magnitude+'　深さ：'+Depth+'<br>受信：'+QuakeJson[num]['issue']['time']+', '+QuakeJson[num]['issue']['source'],{closeButton: false, zIndexOffset: 10000, maxWidth: 10000});
     shingenIcon.on('mouseover', function (e) {this.openPopup();});
     shingenIcon.on('mouseout', function (e) {this.closePopup();});
-
-            //サイドバーの情報関連
-            var info = ""+QuakeJson[num]['issue']['time']+""
-            document.getElementById('eqrele').innerText = info;
-    
-            var info = ""+Time+""
-            document.getElementById('eqtime').innerText = info;
-        
-            var info = ""+maxIntText+""
-            document.getElementById('eqmint').innerText = info;
-        
-            var info = ""+Name+""
-            document.getElementById('eqepic').innerText = info;
-            
-            var info = ""+Magnitude+""
-            document.getElementById('eqmagn').innerText = info;
-        
-            var info = ""+Depth+""
-            document.getElementById('eqdepth').innerText = info;
-        
-            var info = ""+tsunamiText+""
-            document.getElementById('eqtsunami').innerText = info;
-        
-            //スマホ表示
-            var info = "発生時刻："+Time+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
-            document.getElementById('sp_eqinfo').innerText = info;
 
     if (QuakeJson[num]["issue"]["type"] != "ScalePrompt") { //各地の震度に関する情報
         //観測点の震度についてすべての観測点に対して繰り返す
@@ -445,11 +426,11 @@ function hantei_Depth(param) {
     return kaerichi;
 }
 function hantei_tsunamiText(param) {
-    let kaerichi = param == "None" ? "この地震による津波の心配はありません。" :
-    param == "Unknown" ? "津波については現在不明となっています。" :
-    param == "Checking" ? "津波については現在気象庁で調査しています。" :
-    param == "NonEffective" ? "津波予報（若干の海面変動）が発表されています。" :
-    param == "Watch" ? "この地震について、津波注意報が発表されています。" :
-    param == "Warning" ? "大津波警報または津波警報が発表されています。" : "情報なし";
+    let kaerichi = param == "None" ? "なし" :
+    param == "Unknown" ? "不明" :
+    param == "Checking" ? "調査中" :
+    param == "NonEffective" ? "若干の海面変動" :
+    param == "Watch" ? "津波注意報" :
+    param == "Warning" ? "津波警報" : "情報なし";
     return kaerichi;
 }
