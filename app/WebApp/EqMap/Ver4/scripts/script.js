@@ -109,6 +109,7 @@ async function GetQuake(option) {
 
     var forEachNum = 0;
     QuakeJson.forEach(element => {
+        document.getElementById('title').innerText = "地震情報";
         var option = document.createElement("option");
         var text;
         let maxInt_data = element['earthquake']['maxScale'];
