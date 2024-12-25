@@ -296,6 +296,7 @@ async function QuakeSelect(num) {
         }
         });
     } else { //震度速報
+        document.getElementById('title').innerText = "震度速報";
         var icon_theme = "jqk";
         var latlon;
         var latList = [];

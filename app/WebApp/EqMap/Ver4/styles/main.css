@@ -29,7 +29,7 @@ html, body{
 .content h1,h2,h3{
     margin: 0;
 }
-.title{
+#title{
     margin: 0;
     background-color: #ffffff;
     color: #000000;
@@ -170,7 +170,7 @@ html, body{
         height: 50%;
         transform: translate(-50%, -50%);
     }
-    .title{
+    #title{
         position: fixed;
         top: 0;
         right: 0;
