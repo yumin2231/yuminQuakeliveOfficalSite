@@ -88,7 +88,7 @@ async function GetSaibun() {
     }).addTo(map);
 }
 async function GetJson() {
-    const response = await fetch("../Ver3/JMAstations.json");
+    const response = await fetch("source/JMAstations.json");
     JMAPointsJson = await response.json();
 }
 
@@ -237,6 +237,7 @@ async function QuakeSelect(num) {
                 PointShindo = "震度不明";
             }
             if (element["isArea"] == false) { //観測点
+                console.warn(result);
                 let shindo_latlng = new L.LatLng(JMAPointsJson[result]["lat"], JMAPointsJson[result]["lon"]);
                 let shindoIcon = L.icon({
                     iconUrl: ImgUrl,
