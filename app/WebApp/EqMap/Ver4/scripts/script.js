@@ -449,10 +449,10 @@ function hantei_Depth(param) {
 }
 function hantei_tsunamiText(param) {
     let kaerichi = param == "None" ? "この地震による津波の心配はありません。" :
-    param == "Unknown" ? "津波については現在不明となっています。" :
+    param == "Unknown" ? "不明" :
     param == "Checking" ? "津波については現在気象庁で調査しています。" :
-    param == "NonEffective" ? "津波予報（若干の海面変動）が発表されています。" :
+    param == "NonEffective" ? "津波予報（若干の海面変動）が発表されています。\n津波被害の心配はありません。" :
     param == "Watch" ? "この地震について、津波注意報が発表されています。" :
-    param == "Warning" ? "大津波警報または津波警報が発表されています。" : "情報なし";
+    param == "Warning" ? "大津波警報・津波警報・津波予報\nのいずれかが発表されています。" : "情報なし";
     return kaerichi;
 }
