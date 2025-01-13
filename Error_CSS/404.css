@@ -28,14 +28,19 @@ footer{
     text-align: center;
     width: 100%;
 }
+footer span{
+    display: inline-block;
+}
 @media (max-width: 480px){
     .main{
-      font-size: 32px;
+        font-size: 32px;
     }
     .sub{
-      font-size: 16px;
+        font-size: 16px;
     }   
-}
-footer span{
-  display: inline-block;
+    img{
+        text-align: center;
+        width: 375px;
+        height: 125px;
+    }
 }
