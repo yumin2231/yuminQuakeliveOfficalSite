@@ -129,6 +129,7 @@ async function GetQuake(option) {
         forEachNum++;
     });
 }
+
 var shingenIcon;
 var shindo_icon;
 var shindo_layer = L.layerGroup();
@@ -163,6 +164,8 @@ async function QuakeSelect(num) {
         iconAnchor: [20, 20],
         popupAnchor: [0, -40]
     });
+    
+    var icon_theme = "jqk";
     shingenIcon = L.marker(shingenLatLng, {icon: shingenIconImage }).addTo(map);
     shingenIcon.bindPopup('発生時刻：'+Time+'<br>最大震度：'+maxIntText+'<br>震源地：'+Name+'<span style=\"font-size: 85%;\"> ('+QuakeJson[num]["earthquake"]["hypocenter"]["latitude"]+", "+QuakeJson[num]["earthquake"]["hypocenter"]["longitude"]+')</span><br>規模：M'+Magnitude+'　深さ：'+Depth+'<br>受信：'+QuakeJson[num]['issue']['time']+', '+QuakeJson[num]['issue']['source'],{closeButton: false, zIndexOffset: 10000, maxWidth: 10000});
     shingenIcon.on('mouseover', function (e) {this.openPopup();});
@@ -201,7 +204,6 @@ async function QuakeSelect(num) {
         if (result != -1) {
             var ImgUrl = "";
             var PointShindo = "";
-            var icon_theme = "jqk";
             if (element["scale"] == 10) {
                 ImgUrl = "source/"+icon_theme+"_int1.png";
                 PointShindo = "震度1";
@@ -237,7 +239,7 @@ async function QuakeSelect(num) {
                 PointShindo = "震度不明";
             }
             if (element["isArea"] == false) { //観測点
-                //console.warn(result);
+                console.log(result);
                 let shindo_latlng = new L.LatLng(JMAPointsJson[result]["lat"], JMAPointsJson[result]["lon"]);
                 let shindoIcon = L.icon({
                     iconUrl: ImgUrl,
@@ -268,35 +270,35 @@ async function QuakeSelect(num) {
                     filled_list[areaCode] = element["scale"];
                 }
             }
-            //for(... in ...)もforEachと同等。keyに連想配列の名前が入る
-            for (key in filled_list){ 
-                var PointColor;
-                if (filled_list[key] == 10) {
-                    eval('PointColor = '+icon_theme+'_backColor_1');
-                } else if (filled_list[key] == 20) {
-                    eval('PointColor = '+icon_theme+'_backColor_2');
-                } else if (filled_list[key] == 30) {
-                    eval('PointColor = '+icon_theme+'_backColor_3');
-                } else if (filled_list[key] == 40) {
-                    eval('PointColor = '+icon_theme+'_backColor_4');
-                } else if (filled_list[key] == 45) {
-                    eval('PointColor = '+icon_theme+'_backColor_50');
-                } else if (filled_list[key] == 46) {
-                    eval('PointColor = '+icon_theme+'_backColor_50');
-                } else if (filled_list[key] == 50) {
-                    eval('PointColor = '+icon_theme+'_backColor_55');
-                } else if (filled_list[key] == 55) {
-                    eval('PointColor = '+icon_theme+'_backColor_60');
-                } else if (filled_list[key] == 60) {
-                    eval('PointColor = '+icon_theme+'_backColor_65');
-                } else if (filled_list[key] == 70) {
-                    eval('PointColor = '+icon_theme+'_backColor_7');
-                }
-                //引数"key"はエリアコード、"PointColor"は塗りつぶし色のHEX値
-                FillPolygon(key, PointColor);
-            }
         }
         });
+        //for(... in ...)もforEachと同等。keyに連想配列の名前が入る
+        for (key in filled_list){ 
+            var PointColor;
+            if (filled_list[key] == 10) {
+                eval('PointColor = '+icon_theme+'_backColor_1');
+            } else if (filled_list[key] == 20) {
+                eval('PointColor = '+icon_theme+'_backColor_2');
+            } else if (filled_list[key] == 30) {
+                eval('PointColor = '+icon_theme+'_backColor_3');
+            } else if (filled_list[key] == 40) {
+                eval('PointColor = '+icon_theme+'_backColor_4');
+            } else if (filled_list[key] == 45) {
+                eval('PointColor = '+icon_theme+'_backColor_50');
+            } else if (filled_list[key] == 46) {
+                eval('PointColor = '+icon_theme+'_backColor_50');
+            } else if (filled_list[key] == 50) {
+                eval('PointColor = '+icon_theme+'_backColor_55');
+            } else if (filled_list[key] == 55) {
+                eval('PointColor = '+icon_theme+'_backColor_60');
+            } else if (filled_list[key] == 60) {
+                eval('PointColor = '+icon_theme+'_backColor_65');
+            } else if (filled_list[key] == 70) {
+                eval('PointColor = '+icon_theme+'_backColor_7');
+            }
+            //引数"key"はエリアコード、"PointColor"は塗りつぶし色のHEX値
+            FillPolygon(key, PointColor);
+        }
     } else { //震度速報
         document.getElementById('title').innerText = "震度速報";
         var icon_theme = "jqk";
