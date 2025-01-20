@@ -18,6 +18,9 @@
     width: 60%;
     margin: 0 auto;
 }
+.hidden {
+  display: none;
+}
 @media (max-width: 430px){
 .window{
     flex-direction: column;

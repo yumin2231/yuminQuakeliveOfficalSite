@@ -11,6 +11,19 @@ function DeleteArc(url,message){
         location.href = url;
     }
 }
+
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const hideDivId = params.get('loading'); // "hide"パラメーターを取得
+
+    if (hideDivId) {
+        const element = document.getElementById(hideDivId);
+        if (element) {
+            element.style.display = 'none'; // 直接display: none;を適用
+        }
+    }
+})();
+
 let text = '2025';
 let cr = document.getElementById('cr');
   cr.innerHTML = text; 
