@@ -179,7 +179,7 @@ html,body{
     font-size: 1.2rem;
     margin: 10px 8px 8px 8px;
 }
-.sp_copyright,.all,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei{
+.all,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei{
     display: none;
 }
 @media (max-width :1280px){
@@ -219,7 +219,7 @@ html,body{
     }
 }
 @media (max-width: 430px){
-    .sp,.copyright,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei,.btns,#warn{
+    .sp,.shindo_icon,.error_nse-001,.sp_jsinv,.tb_hannrei,.btns,#warn{
         display: none;
     }
     .time{
@@ -231,14 +231,16 @@ html,body{
         width: 0;
         height: 0;
     }
-    .sp_copyright{
-        display: block;
+    .copyright{
         position: fixed;
         bottom: 0;
         left: 0;
         background-color: #1d1d1d;
         color: #ffffff;
         margin: 0;
+    }
+    .sp_copyright{
+        display: none;
     }
     #sp_eqinfo{
         display: block;
