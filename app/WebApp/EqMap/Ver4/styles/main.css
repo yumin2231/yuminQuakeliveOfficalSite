@@ -30,6 +30,8 @@ html, body{
     margin: 0;
 }
 #title{
+    position: sticky;
+    top: 0;
     margin: 0;
     background-color: #ffffff;
     color: #000000;

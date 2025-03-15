@@ -437,19 +437,19 @@ function hantei_maxIntText(param) {
     param == 60 ? "6強" : param == 70 ? "7" : "不明";
     return kaerichi;
 }
-function hantei_Magnitude(param) {
-    let kaerichi = param != -1 ? param.toFixed(1) : 'ー.ー';
+function hantei_Magnitude(param) {//マグニチュード
+    let kaerichi = param != -1 ? param.toFixed(1) : '0.0';
     return kaerichi;
 }
-function hantei_Name(param) {
-    let kaerichi = param != "" ? param : '情報なし';
+function hantei_Name(param) {//震源
+    let kaerichi = param != "" ? param : '震源調査中';
     return kaerichi;
 }
-function hantei_Depth(param) {
-    let kaerichi = param != -1 ? "約"+param+"km" : '不明';
+function hantei_Depth(param) {//規模
+    let kaerichi = param === 0 ? 'ごく浅い' : param != -1 ? "約"+param+"Km" : '現在調査中';
     return kaerichi;
 }
-function hantei_tsunamiText(param) {
+function hantei_tsunamiText(param) {//津波
     let kaerichi = param == "None" ? "この地震による津波の心配はありません。" :
     param == "Unknown" ? "不明" :
     param == "Checking" ? "津波については現在気象庁で調査しています。" :
