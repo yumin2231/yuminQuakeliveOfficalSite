@@ -172,11 +172,13 @@ async function QuakeSelect(num) {
     shingenIcon.on('mouseout', function (e) {this.closePopup();});
 
             //サイドバーの情報関連
-            var info = ""+QuakeJson[num]['issue']['time']+""
-            document.getElementById('eqrele').innerText = info;
+            var datekari = QuakeJson[num]['issue']['time'];
+            let info_1danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 '+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分'+datekari.substring(17,19)+'秒';
+            document.getElementById('eqrele').innerHTML = info_1danme;
     
-            var info = ""+Time+""
-            document.getElementById('eqtime').innerText = info;
+            var datekari = QuakeJson[num]['earthquake']['time'];
+            let info_2danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 '+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分ごろ';
+            document.getElementById('eqtime').innerHTML = info_2danme;
         
             var info = ""+maxIntText+""
             document.getElementById('eqmint').innerText = info;
