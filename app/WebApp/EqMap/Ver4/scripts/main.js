@@ -38,3 +38,12 @@ function updateCurrentTime() {
         titleElement.style.display = 'none'; // 非表示
       }
     };
+
+//リロード
+const params = new URLSearchParams(window.location.search);
+        
+if (params.get("reload") === "on") {
+  setTimeout(function() {
+      window.location.href = 'index.html?reload=on';
+  }, 60 * 1000);
+}
