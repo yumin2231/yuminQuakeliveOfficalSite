@@ -44,6 +44,7 @@ const params = new URLSearchParams(window.location.search);
         
 if (params.get("reload") === "on") {
   setTimeout(function() {
+      console.log('自動更新が有効です。60秒ごとに再読み込みします。');
       window.location.href = 'index.html?reload=on';
   }, 60 * 1000);
 }
