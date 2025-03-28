@@ -198,11 +198,15 @@ async function QuakeSelect(num) {
             let info_2danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 '+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分ごろ';
             document.getElementById('eqtime').innerHTML = info_2danme;
         
-            // 国外地震の場合は深さと最大震度を表示しない
+            // 国外地震の場合は深さと最大震度と凡例を表示しない
             if (QuakeJson[num]["issue"]["type"] == "Foreign") {
-                document.getElementById('eqmint').innerText = "-";
-                document.getElementById('eqdepth').innerText = "-";
+                document.getElementById('depth_wrapper').style.display = "none";
+                document.getElementById('maxint_wrapper').style.display = "none";
+                document.getElementById('shindo_legend').style.display = "none";
             } else {
+                document.getElementById('depth_wrapper').style.display = "";
+                document.getElementById('maxint_wrapper').style.display = "";
+                document.getElementById('shindo_legend').style.display = "";
                 document.getElementById('eqmint').innerText = maxIntText;
                 document.getElementById('eqdepth').innerText = Depth;
             }
