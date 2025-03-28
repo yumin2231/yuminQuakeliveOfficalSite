@@ -12,8 +12,9 @@ L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
 
 //地図に表示させる上下の順番
 map.createPane("pane_map1").style.zIndex = 1; //地図（背景）
-map.createPane("pane_map2").style.zIndex = 2; //地図（市町村）
-map.createPane("pane_map3").style.zIndex = 3; //地図（細分）
+map.createPane("world_map").style.zIndex = 2; //世界地図
+map.createPane("pane_map2").style.zIndex = 3; //地図（市町村）
+map.createPane("pane_map3").style.zIndex = 4; //地図（細分）
 map.createPane("pane_map_filled").style.zIndex = 5; //塗りつぶし
 map.createPane("shindo10").style.zIndex = 10;
 map.createPane("shindo20").style.zIndex = 20;
@@ -78,11 +79,28 @@ async function reloadData(reloadOption) {
 })();
 
 var japan_data;
+var world_data;
 async function GetSaibun() {
-    const response = await fetch("source/saibun.geojson");
-    const data = await response.json();
-    japan_data = data;
-    L.geoJson(data, {
+    const [saibunResponse, worldResponse] = await Promise.all([
+        fetch("source/saibun.geojson"),
+        fetch("source/World_Countries_(Generalized)_9029012925078512962.geojson")
+    ]);
+    
+    japan_data = await saibunResponse.json();
+    world_data = await worldResponse.json();
+
+    L.geoJson(world_data, {
+        pane: "world_map",
+        style: {
+            "color": "#ffffff",
+            "weight": 1,
+            "opacity": 0.5,
+            "fillColor": "#4a4a4a",
+            "fillOpacity": 0.3
+        }
+    }).addTo(map);
+
+    L.geoJson(japan_data, {
         pane: "pane_map3",
         style: PolygonLayer_Style_nerv
     }).addTo(map);
@@ -180,8 +198,14 @@ async function QuakeSelect(num) {
             let info_2danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 '+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分ごろ';
             document.getElementById('eqtime').innerHTML = info_2danme;
         
-            var info = ""+maxIntText+""
-            document.getElementById('eqmint').innerText = info;
+            // 国外地震の場合は深さと最大震度を表示しない
+            if (QuakeJson[num]["issue"]["type"] == "Foreign") {
+                document.getElementById('eqmint').innerText = "-";
+                document.getElementById('eqdepth').innerText = "-";
+            } else {
+                document.getElementById('eqmint').innerText = maxIntText;
+                document.getElementById('eqdepth').innerText = Depth;
+            }
         
             var info = ""+Name+""
             document.getElementById('eqepic').innerText = info;
@@ -189,14 +213,15 @@ async function QuakeSelect(num) {
             var info = ""+Magnitude+""
             document.getElementById('eqmagn').innerText = info;
         
-            var info = ""+Depth+""
-            document.getElementById('eqdepth').innerText = info;
-        
             var info = ""+tsunamiText+""
             document.getElementById('eqtsunami').innerText = info;
         
             //スマホ表示
-            var info = "発生時刻："+Time+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
+            if (QuakeJson[num]["issue"]["type"] == "Foreign") {
+                var info = "発生時刻："+Time+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n"+tsunamiText+""
+            } else {
+                var info = "発生時刻："+Time+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
+            }
             document.getElementById('sp_eqinfo').innerText = info;
 
     if (QuakeJson[num]["issue"]["type"] != "ScalePrompt") { //各地の震度に関する情報
@@ -389,7 +414,15 @@ async function QuakeSelect(num) {
     }
     map.addLayer(shindo_layer);
     map.addLayer(shindo_filled_layer);
-    map.flyTo(shingenLatLng, 8, { duration: 0.5 })
+
+    // 国外地震かどうかを判定
+    if (QuakeJson[num]["issue"]["type"] == "Foreign") {
+        // 国外地震の場合は震源を中心にして縮尺を小さく
+        map.flyTo(shingenLatLng, 4, { duration: 0.5 });
+    } else {
+        // 国内地震の場合は従来通り
+        map.flyTo(shingenLatLng, 8, { duration: 0.5 });
+    }
 }
 
 function AreaNameToCode(Name) {
