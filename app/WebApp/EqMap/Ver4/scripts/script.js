@@ -83,7 +83,7 @@ var world_data;
 async function GetSaibun() {
     const [saibunResponse, worldResponse] = await Promise.all([
         fetch("source/saibun.geojson"),
-        fetch("source/World_Countries_(Generalized)_9029012925078512962.geojson")
+        fetch("https://miyakocam.github.io/geojsons/asia.geojson")
     ]);
     
     japan_data = await saibunResponse.json();
@@ -173,6 +173,7 @@ async function QuakeSelect(num) {
     var Name = hantei_Name(QuakeJson[num]['earthquake']['hypocenter']['name']);
     var Depth = hantei_Depth(QuakeJson[num]['earthquake']['hypocenter']['depth']);
     var tsunamiText = hantei_tsunamiText(QuakeJson[num]['earthquake']['domesticTsunami']);
+    var comment = QuakeJson[num]['comments']['freeFormComment'];
     var Time = QuakeJson[num]['earthquake']['time'];
 
     var shingenLatLng = new L.LatLng(QuakeJson[num]["earthquake"]["hypocenter"]["latitude"], QuakeJson[num]["earthquake"]["hypocenter"]["longitude"]);
@@ -219,6 +220,9 @@ async function QuakeSelect(num) {
         
             var info = ""+tsunamiText+""
             document.getElementById('eqtsunami').innerText = info;
+            
+            var info = ""+comment+""
+            document.getElementById('eqcomment').innerText = info;
         
             //スマホ表示
             if (QuakeJson[num]["issue"]["type"] == "Foreign") {
@@ -423,6 +427,7 @@ async function QuakeSelect(num) {
     if (QuakeJson[num]["issue"]["type"] == "Foreign") {
         // 国外地震の場合は震源を中心にして縮尺を小さく
         map.flyTo(shingenLatLng, 4, { duration: 0.5 });
+        document.getElementById('title').innerText = "遠地地震情報";
     } else {
         // 国内地震の場合は従来通り
         map.flyTo(shingenLatLng, 8, { duration: 0.5 });

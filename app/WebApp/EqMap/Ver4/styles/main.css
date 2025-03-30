@@ -2,6 +2,7 @@ html, body{
     width: 100%;
     height: 100%;
     margin: 0;
+    background-color: #1d1d1d;
 }
 #map {
     position: fixed;
@@ -123,7 +124,15 @@ html, body{
     color: yellow;
     background-color: purple;
 }
-.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.leaflet-control-scale-line,.block,.tb_hannrei,.leaflet-control-zoom-in{
+#eqcomment{
+    position: fixed;
+    top: 30px;
+    right: 0;
+    margin: 0;
+    z-index: 9999;
+    background-color: #ffffff;
+}
+.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei,.leaflet-control-zoom-in{
     display: none;
 }
 
@@ -139,7 +148,7 @@ html, body{
 }
 
 @media (max-width: 430px){
-    .sp,.copyright,.shindo_icon,.btns,#warn,.leaflet-control-zoom{
+    .sp,.copyright,.shindo_icon,.btns,#warn,#eqcomment{
         display: none;
     }
     .time{
