@@ -92,11 +92,12 @@ async function GetSaibun() {
     L.geoJson(world_data, {
         pane: "world_map",
         style: {
+            "type": "Polygon",
             "color": "#ffffff",
-            "weight": 1,
-            "opacity": 0.5,
-            "fillColor": "#4a4a4a",
-            "fillOpacity": 0.3
+            "weight": 1.5,
+            "opacity": 1,
+            "fillColor": "#3a3a3a",
+            "fillOpacity": 1
         }
     }).addTo(map);
 
@@ -136,6 +137,8 @@ async function GetQuake(option) {
         let Time = element['earthquake']['time'];
         if (element["issue"]["type"] == "ScalePrompt") {
             text = "【震度速報】" + element["points"][0]["addr"] + "など " + "\n" + Time.slice(0, -3) + "\n最大震度 : " + maxIntText;
+        } else if (element["issue"]["type"] == "Destination") {
+            text = "【震源情報】" + Time.slice(0, -3) + " " + Name;
         } else if (element["issue"]["type"] == "Foreign") {
             text = "【遠地地震】" + Time.slice(0, -3) + " " + Name;
         } else {
@@ -173,6 +176,7 @@ async function QuakeSelect(num) {
     var Name = hantei_Name(QuakeJson[num]['earthquake']['hypocenter']['name']);
     var Depth = hantei_Depth(QuakeJson[num]['earthquake']['hypocenter']['depth']);
     var tsunamiText = hantei_tsunamiText(QuakeJson[num]['earthquake']['domesticTsunami']);
+    var tsunamiTextabroad = hantei_tsunamiText_abroad(QuakeJson[num]['earthquake']['foreignTsunami']);
     var comment = QuakeJson[num]['comments']['freeFormComment'];
     var Time = QuakeJson[num]['earthquake']['time'];
 
@@ -204,10 +208,17 @@ async function QuakeSelect(num) {
                 document.getElementById('depth_wrapper').style.display = "none";
                 document.getElementById('maxint_wrapper').style.display = "none";
                 document.getElementById('shindo_legend').style.display = "none";
+                document.getElementById('abroadtsunami').style.display = "block";
             } else {
+                document.getElementById('title').innerText = "地震情報";
                 document.getElementById('depth_wrapper').style.display = "";
                 document.getElementById('maxint_wrapper').style.display = "";
                 document.getElementById('shindo_legend').style.display = "";
+                document.getElementById('magn_wrapper').style.display = "";
+                document.getElementById('eir').style.display = "";
+                document.getElementById('eqtsunami').style.display = "";
+                document.getElementById('abroadtsunami').style.display = "none";
+
                 document.getElementById('eqmint').innerText = maxIntText;
                 document.getElementById('eqdepth').innerText = Depth;
             }
@@ -220,6 +231,9 @@ async function QuakeSelect(num) {
         
             var info = ""+tsunamiText+""
             document.getElementById('eqtsunami').innerText = info;
+            
+            var info = ""+tsunamiTextabroad+""
+            document.getElementById('abroadtsunami').innerText = info;
             
             var info = ""+comment+""
             document.getElementById('eqcomment').innerText = info;
@@ -336,6 +350,9 @@ async function QuakeSelect(num) {
         }
     } else { //震度速報
         document.getElementById('title').innerText = "震度速報";
+        document.getElementById('depth_wrapper').style.display = "none";
+        document.getElementById('magn_wrapper').style.display = "none";
+        document.getElementById('eir').style.display = "none";
         var icon_theme = "jqk";
         var latlon;
         var latList = [];
@@ -422,6 +439,12 @@ async function QuakeSelect(num) {
     }
     map.addLayer(shindo_layer);
     map.addLayer(shindo_filled_layer);
+    
+    if (QuakeJson[num]["issue"]["type"] == "Destination") {
+        document.getElementById('title').innerText = "震源情報";
+        document.getElementById('maxint_wrapper').style.display = "none";
+        document.getElementById('shindo_legend').style.display = "none";
+    }
 
     // 国外地震かどうかを判定
     if (QuakeJson[num]["issue"]["type"] == "Foreign") {
@@ -486,19 +509,33 @@ function hantei_Magnitude(param) {//マグニチュード
     return kaerichi;
 }
 function hantei_Name(param) {//震源
-    let kaerichi = param != "" ? param : '震源調査中';
+    let kaerichi = param != "" ? param : '震源 調査中';
     return kaerichi;
 }
 function hantei_Depth(param) {//規模
-    let kaerichi = param === 0 ? 'ごく浅い' : param != -1 ? "約"+param+"Km" : '現在調査中';
+    let kaerichi = param === 0 ? 'ごく浅い' : param != -1 ? "約"+param+"Km" : '不明';
     return kaerichi;
 }
-function hantei_tsunamiText(param) {//津波
+function hantei_tsunamiText(param) {//日本津波
     let kaerichi = param == "None" ? "この地震による津波の心配はありません。" :
     param == "Unknown" ? "不明" :
     param == "Checking" ? "津波については現在気象庁で調査しています。" :
-    param == "NonEffective" ? "津波予報（若干の海面変動）が発表されています。\n津波被害の心配はありません。" :
+    param == "NonEffective" ? "津波予報（若干の海面変動）が予想されますが\n被害の心配はありません。" :
     param == "Watch" ? "この地震について、津波注意報が発表されています。" :
-    param == "Warning" ? "大津波警報・津波警報・津波予報\nのいずれかが発表されています。" : "情報なし";
+    param == "Warning" ? "大津波警報・津波警報\nのいずれかが発表されています。" : "情報なし";
+    return kaerichi;
+}
+
+function hantei_tsunamiText_abroad(param) {//国外津波
+    let kaerichi = param == "None" ? "この地震による津波の心配はありません。" :
+    param == "Unknown" ? "不明" :
+    param == "Checking" ? "津波については現在調査中です。" :
+    param == "NonEffectiveNearby" ? "震源の近傍で小さな津波の可能性がありますが\n津波の影響はありません。" :
+    param == "WarningNearby" ? "震源の近傍で小さな津波発生の可能性があります。" :
+    param == "WarningPacific" ? "太平洋で津波発生の可能性があります。" :
+    param == "WarningPacificWide" ? "太平洋の広域で津波発生の可能性があります。" :
+    param == "WarningIndian" ? "インド洋で津波発生の可能性があります。" :
+    param == "WarningIndianWide" ? "インド洋の広域で津波発生の可能性があります。" :
+    param == "Potential" ? "津波発生の可能性があります。" : "情報なし";
     return kaerichi;
 }

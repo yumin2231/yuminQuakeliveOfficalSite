@@ -38,7 +38,7 @@
         <p class="copyright">
             &copy;2022 - 2025 yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
-            ┃Version：4.1.6
+            ┃Version：4.1.7
             ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
         </p>
         <p class="sp_copyright">&copy;2022 - 2025 yuminQuakelive.</p>
@@ -76,22 +76,23 @@
                 <h2 class="sp">震源地</h2>
                 <h1 id="eqepic">ー ー ー ー ー</h1>
             </div>
-            <br>
-            <div class="content">
+            <br id="eir">
+            <div class="content" id="magn_wrapper">
                 <h2 class="sp">マグニチュード</h2>
                 <h1>M<span id="eqmagn">0.0</span></h1>
             </div>
-            <br>
+            <br id="eir">
             <div class="content" id="depth_wrapper">
                 <h2 class="sp">深さ</h2>
                 <h1 id="eqdepth">約0km</h1>
             </div>
-            <br>
+            <br id="eir">
             <div class="content" id="maxint_wrapper">
                 <h1 class="sp">最大震度<span id="eqmint">0</span></h1>
             </div>
             <br>
             <h3 class="sp" style="text-align: center;" id="eqtsunami">津波情報取得中...</h3>
+            <h3 class="sp" style="text-align: center;" id="abroadtsunami">津波情報取得中...</h3>
         </div>
     <!--地震情報-->
 
@@ -105,6 +106,7 @@
         <div class="my-contextmenu" id="js-contextmenu">
             <ul>
             <li><a href="?warn=eew">警報表示</a></li>
+            <li><a href="?reload=on">自動更新</a></li>
             <li><a href="index.html">メインウインドウ</a></li>
             </ul>
         </div>
@@ -163,7 +165,7 @@
             </div>
         </div>
     <!--凡例-->
-    <h1 style="display: none;" id="warn">この地震について緊急地震速報（警報）を発表しています。</h1>
+    <h1 id="warn">この地震について緊急地震速報（警報）を発表しています。</h1>
     <h1 id="eqcomment"></h1>
 </body>
 

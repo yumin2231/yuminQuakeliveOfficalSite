@@ -132,7 +132,7 @@ html, body{
     z-index: 9999;
     background-color: #ffffff;
 }
-.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei,.leaflet-control-zoom-in{
+.sp_copyright,#sp_eqinfo,.sp_jsinv,.leaflet-popup-tip-container,.block,.tb_hannrei,.leaflet-control-zoom-in,#warn,#abroadtsunami{
     display: none;
 }
 
