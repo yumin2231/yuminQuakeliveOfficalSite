@@ -1,3 +1,4 @@
+document.getElementById('loading').style.display = "block";
 var QuakeJson;
 var JMAPointsJson;
 
@@ -538,4 +539,6 @@ function hantei_tsunamiText_abroad(param) {//国外津波
     param == "WarningIndianWide" ? "インド洋の広域で津波発生の可能性があります。" :
     param == "Potential" ? "津波発生の可能性があります。" : "情報なし";
     return kaerichi;
-}
+}window.onload = function () {
+    document.getElementById('loading').style.display = "none";
+};

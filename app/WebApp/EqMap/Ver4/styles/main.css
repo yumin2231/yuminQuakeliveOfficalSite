@@ -4,6 +4,34 @@ html, body{
     margin: 0;
     background-color: #1d1d1d;
 }
+#loading{
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 12px solid #fafafa;
+    border-radius: 50%;
+    border-top: 12px solid #3498db;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
 #map {
     position: fixed;
     top: 0;
@@ -148,7 +176,7 @@ html, body{
 }
 
 @media (max-width: 430px){
-    .sp,.copyright,.shindo_icon,.btns,#warn,#eqcomment{
+    .sp,.copyright,.shindo_icon,.btns,#warn,#eqcomment,#loading{
         display: none;
     }
     .time{
