@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.yuminQuakelive.net/app/WebApp/EqMap/Ver4/index.html" />
     <meta property="og:site_name" content="yumin地震観測所┃WebApp" />
-    <meta property="og:image" content="https://www.yql.jp/app/WebApp/EqMap/Ver4/source/v4.jpg" />
+    <meta property="og:image" content="https://www.yql.jp/app/WebApp/EqMap/Ver4/source/v4.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@yuminQuakelive" />
 </head>
@@ -25,23 +25,21 @@
         <div class="loader"></div>
     </div>
     <div id="map"></div>
-    <div class="tab">
-        <div class="btns">
-            <select id="quakelist">
-                <option>取得中…</option>
-            </select>
-            <span class="setsumei" style="padding: 0;padding-right: 5px;">
-                <button id="reload">情報更新</button>
-                <input type="number" id="reload_num" value="20">件
-            </span>
+    <div class="btns">
+        <select id="quakelist">
+            <option>取得中…</option>
+        </select>
+        <span class="setsumei" style="padding: 0;padding-right: 5px;">
+            <button id="reload">情報更新</button>
+            <input type="number" id="reload_num" value="20">件
+        </span>
         </div>
-    </div>
 
     <!--著作権表示-->
         <p class="copyright">
             &copy;2022 - 2025 yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
-            ┃Version：4.1.8
+            ┃Version：4.1.9
             ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
         </p>
         <p class="sp_copyright">&copy;2022 - 2025 yuminQuakelive.</p>
@@ -53,7 +51,7 @@
             <br>
             震源地：ー ー ー ー ー
             <br>
-            マグニチュード：M0.0
+            マグニチュード：0.0
             <br>
             深さ：約0km
             <br>
@@ -72,7 +70,7 @@
             <br>
             <div class="content">
                 <h2 class="sp">発生時刻</h2>
-                <h2 id="eqtime">----年--月--日 --時--分--秒</h2>
+                <h2 id="eqtime">----年--月--日 --時--分ごろ</h2>
             </div>
             <br>
             <div class="content">
@@ -116,55 +114,56 @@
     <!--右クリックメニュー-->
 
     <!--凡例-->
-        <div class="shindo_icon" id="shindo_legend">
+        <div class="shindo_icon">
             <div class="hannrei-item">
                 <img src="../source/shingen.png" width="50" alt="">
                 <p>震央</p>
             </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int1.png" width="50" alt="">
-                <p>震度1</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int2.png" width="50" alt="">
-                <p>震度2</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int3.png" width="50" alt="">
-                <p>震度3</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int4.png" width="50" alt="">
-                <p>震度4</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int50.png" width="50" alt="">
-                <p>震度5弱</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int55.png" width="50" alt="">
-                <p>震度5強</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int60.png" width="50" alt="">
-                <p>震度6弱</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int65.png" width="50" alt="">
-                <p>震度6強</p>
-            </div>
-
-            <div class="hannrei-item">
-                <img src="../source/jqk_int7.png" width="50" alt="">
-                <p>震度7</p>
+            <div id="shindo_legend">
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int1.png" width="50" alt="">
+                    <p>震度1</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int2.png" width="50" alt="">
+                    <p>震度2</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int3.png" width="50" alt="">
+                    <p>震度3</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int4.png" width="50" alt="">
+                    <p>震度4</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int50.png" width="50" alt="">
+                    <p>震度5弱</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int55.png" width="50" alt="">
+                    <p>震度5強</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int60.png" width="50" alt="">
+                    <p>震度6弱</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int65.png" width="50" alt="">
+                    <p>震度6強</p>
+                </div>
+    
+                <div class="hannrei-item">
+                    <img src="../source/jqk_int7.png" width="50" alt="">
+                    <p>震度7</p>
+                </div>
             </div>
         </div>
     <!--凡例-->

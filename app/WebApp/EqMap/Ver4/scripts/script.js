@@ -1,6 +1,6 @@
-document.getElementById('loading').style.display = "block";
 var QuakeJson;
 var JMAPointsJson;
+var countries_data;
 
 var map = L.map('map', {
     preferCanvas: true,
@@ -35,6 +35,13 @@ var PolygonLayer_Style_nerv = {
     "weight": 1.5,
     "opacity": 1,
     "fillColor": "#3a3a3a",
+    "fillOpacity": 1
+}
+var PolygonLayer_Style_world = {
+    "color": "#ffffff",
+    "weight": 1.5,
+    "opacity": 1,
+    "fillColor": "#ffffff",
     "fillOpacity": 1
 }
 
@@ -82,29 +89,29 @@ async function reloadData(reloadOption) {
 var japan_data;
 var world_data;
 async function GetSaibun() {
-    const [saibunResponse, worldResponse] = await Promise.all([
+    const [saibunResponse, worldResponse, additionalGeoJsonResponse] = await Promise.all([
         fetch("source/saibun.geojson"),
-        fetch("https://miyakocam.github.io/geojsons/asia.geojson")
+        fetch("source/asia.geojson"),
+        fetch("source/countries.geojson") // 新しいgeojsonファイルを追加
     ]);
     
     japan_data = await saibunResponse.json();
     world_data = await worldResponse.json();
+    countries_data = await additionalGeoJsonResponse.json(); // 新しいデータを格納
 
     L.geoJson(world_data, {
         pane: "world_map",
-        style: {
-            "type": "Polygon",
-            "color": "#ffffff",
-            "weight": 1.5,
-            "opacity": 1,
-            "fillColor": "#3a3a3a",
-            "fillOpacity": 1
-        }
+        style: PolygonLayer_Style_world,
     }).addTo(map);
 
     L.geoJson(japan_data, {
         pane: "pane_map3",
         style: PolygonLayer_Style_nerv
+    }).addTo(map);
+
+    L.geoJson(countries_data, {
+        pane: "pane_map3",
+        style: PolygonLayer_Style_world
     }).addTo(map);
 }
 async function GetJson() {
@@ -241,9 +248,9 @@ async function QuakeSelect(num) {
         
             //スマホ表示
             if (QuakeJson[num]["issue"]["type"] == "Foreign") {
-                var info = "発生時刻："+Time+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n"+tsunamiText+""
+                var info = "発生時刻："+Time+"ごろ\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n"+tsunamiText+""
             } else {
-                var info = "発生時刻："+Time+"\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
+                var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
             }
             document.getElementById('sp_eqinfo').innerText = info;
 
@@ -539,6 +546,7 @@ function hantei_tsunamiText_abroad(param) {//国外津波
     param == "WarningIndianWide" ? "インド洋の広域で津波発生の可能性があります。" :
     param == "Potential" ? "津波発生の可能性があります。" : "情報なし";
     return kaerichi;
-}window.onload = function () {
+}
+window.onload = function () {
     document.getElementById('loading').style.display = "none";
 };
