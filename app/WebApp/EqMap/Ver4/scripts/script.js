@@ -143,11 +143,11 @@ async function GetQuake(option) {
         let maxIntText = hantei_maxIntText(maxInt_data);
         let Name = hantei_Name(element['earthquake']['hypocenter']['name']);
         let Time = element['earthquake']['time'];
-        if (element["issue"]["type"] == "ScalePrompt") {
-            text = "【震度速報】" + element["points"][0]["addr"] + "など " + "\n" + Time.slice(0, -3) + "\n最大震度 : " + maxIntText;
-        } else if (element["issue"]["type"] == "Destination") {
+        if (element["issue"]["type"] == "ScalePrompt") { //震度速報
+            text = "【震度速報】" + element["points"][0]["addr"] + "など" + "\n" + Time.slice(0, -3) + "\n最大震度 : " + maxIntText;
+        } else if (element["issue"]["type"] == "Destination") { //震源情報
             text = "【震源情報】" + Time.slice(0, -3) + " " + Name;
-        } else if (element["issue"]["type"] == "Foreign") {
+        } else if (element["issue"]["type"] == "Foreign") { //遠地地震
             text = "【遠地地震】" + Time.slice(0, -3) + " " + Name;
         } else {
             text = Time.slice(0, -3) + " " + Name + " " +  "\n" + "\n最大震度 : " + maxIntText;
@@ -247,11 +247,15 @@ async function QuakeSelect(num) {
             document.getElementById('eqcomment').innerText = info;
         
             //スマホ表示
-            if (QuakeJson[num]["issue"]["type"] == "Foreign") {
-                var info = "発生時刻："+Time+"ごろ\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n"+tsunamiText+""
-            } else {
-                var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+""
-            }
+            if (QuakeJson[num]["issue"]["type"] == "ScalePrompt") {
+                var info ="発生時刻："+Time+"頃\n震源地：調査中\n最大震度："+maxIntText+"\n"+tsunamiText+"" //震度速報
+             } else if (QuakeJson[num]["issue"]["type"] == "Destination") {
+                 "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n\n"+tsunamiText+"" //震源情報
+             } else if (QuakeJson[num]["issue"]["type"] == "Foreign"){
+                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n"+tsunamiText+"" //遠地地震
+             } else {
+                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+"" //通常
+             }
             document.getElementById('sp_eqinfo').innerText = info;
 
     if (QuakeJson[num]["issue"]["type"] != "ScalePrompt") { //各地の震度に関する情報

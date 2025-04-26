@@ -25,7 +25,7 @@
         <div class="loader"></div>
     </div>
     <div id="map"></div>
-    <div class="btns">
+    <div class="btns" id="btns">
         <select id="quakelist">
             <option>取得中…</option>
         </select>
@@ -33,16 +33,17 @@
             <button id="reload">情報更新</button>
             <input type="number" id="reload_num" value="20">件
         </span>
-        </div>
+    </div>
 
     <!--著作権表示-->
         <p class="copyright">
             &copy;2022 - 2025 yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
-            ┃Version：4.1.9
-            ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
+            <span class="sp_info">
+                ┃Version：4.2.0
+                ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
+            </span>
         </p>
-        <p class="sp_copyright">&copy;2022 - 2025 yuminQuakelive.</p>
     <!--著作権表示-->
 
     <!--地震情報-->
@@ -106,9 +107,9 @@
     <!--右クリックメニュー-->
         <div class="my-contextmenu" id="js-contextmenu">
             <ul>
-            <li><a href="?warn=eew">警報表示</a></li>
-            <li><a href="?reload=on">自動更新</a></li>
-            <li><a href="index.html">メインウインドウ</a></li>
+                <li><a href="?reload=on">自動更新</a></li>
+                <li><a href="javascript:eqis();">地震情報切替</a></li>
+                <li><a href="index.html">メインウインドウ</a></li>
             </ul>
         </div>
     <!--右クリックメニュー-->

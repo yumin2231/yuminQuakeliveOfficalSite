@@ -48,3 +48,7 @@ if (params.get("reload") === "on") {
       window.location.href = 'index.html?reload=on';
   }, 60 * 1000);
 }
+
+function eqis() {
+  document.getElementById('btns').style.display = "block";
+}
