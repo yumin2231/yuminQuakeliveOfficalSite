@@ -40,7 +40,7 @@
             &copy;2022 - 2025 yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
             <span class="sp_info">
-                ┃Version：4.2.0
+                ┃Version：4.2.1
                 ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
             </span>
         </p>
@@ -105,17 +105,42 @@
     </div>
 
     <!--右クリックメニュー-->
-        <div class="my-contextmenu" id="js-contextmenu">
-            <ul>
-                <li><a href="?reload=on">自動更新</a></li>
-                <li><a href="javascript:eqis();">地震情報切替</a></li>
-                <li><a href="index.html">メインウインドウ</a></li>
-            </ul>
-        </div>
+    <div id="setting" oncontextmenu="return false;">
+        <a href="?warn=eew" class="decoration smart" id="warnoff">
+            <div class="setting-button">
+                <h1>警報表示</h1>
+            </div>
+        </a>
+        <a href="?reload=on" class="decoration" id="reloadoff">
+            <div class="setting-button">
+                <h1>自動更新</h1>
+            </div>
+        </a>
+        <a href="index.html" class="decoration" id="mainmode">
+            <div class="setting-button">
+                <h1>メインモード</h1>
+            </div>
+        </a>
+        <a href="javascript:eqis()" class="decoration pc" id="eqis">
+            <div class="setting-button">
+                <h1>切り替えボタンを表示</h1>
+            </div>
+        </a>
+        <a href="javascript:eqisnone()" class="decoration pc" id="eqisnone">
+            <div class="setting-button">
+                <h1>切り替えボタンを非表示</h1>
+            </div>
+        </a>
+        <a href="javascript:exit()" class="decoration">
+            <div class="setting-button">
+                <h1>閉じる</h1>
+            </div>
+        </a>
+    </div>
     <!--右クリックメニュー-->
 
     <!--凡例-->
-        <div class="shindo_icon">
+        <div class="shindo_icon" id="shindo_icon">
             <div class="hannrei-item">
                 <img src="../source/shingen.png" width="50" alt="">
                 <p>震央</p>

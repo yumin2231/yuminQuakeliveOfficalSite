@@ -6,49 +6,45 @@ function updateCurrentTime() {
   }
   updateCurrentTime();
   setInterval(updateCurrentTime, 1000);
-
-//右クリックメニュー
-(function(){
-  const myContextMenu = document.getElementById('js-contextmenu');
-
-  document.body.addEventListener('contextmenu', e => {
-    const posX = e.pageX;
-    const posY = e.pageY;
-    myContextMenu.style.left = posX+'px';
-    myContextMenu.style.top = posY+'px';
-    myContextMenu.classList.add('show');
-  });
-  document.body.addEventListener('click', () => {
-    if(myContextMenu.classList.contains('show')) {
-      myContextMenu.classList.remove('show');
-    }
-  })
-}());
 //警報表示
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-    window.onload = function() {
-      const warn = getQueryParam('warn');
-      const titleElement = document.getElementById('warn');
-      if (warn === 'eew') {
-        titleElement.style.display = 'block'; // 表示
-      } else {
-        titleElement.style.display = 'none'; // 非表示
-      }
-    };
-
-//リロード
+const warn = new URLSearchParams(window.location.search);
+if (warn.get("warn") === "eew") {
+  document.getElementById('mainmode').style.display = "block";
+  document.getElementById("warn").style.display = "block";
+  document.getElementById("warnoff").style.display = "none";
+}
+//自動更新
 const params = new URLSearchParams(window.location.search);
-        
 if (params.get("reload") === "on") {
+  document.getElementById('mainmode').style.display = "block";
+  document.getElementById("reloadoff").style.display = "none";
   setTimeout(function() {
       console.log('自動更新が有効です。60秒ごとに再読み込みします。');
       window.location.href = 'index.html?reload=on';
   }, 60 * 1000);
 }
-
+//地震情報表示
 function eqis() {
   document.getElementById('btns').style.display = "block";
+  document.getElementById('eqis').style.display = "none";
+  document.getElementById('eqisnone').style.display = "block";
+  document.getElementById('setting').style.display = "";
 }
+//地震情報非表示
+function eqisnone() {
+  document.getElementById('btns').style.display = "none";
+  document.getElementById('eqis').style.display = "block";
+  document.getElementById('eqisnone').style.display = "none";
+  document.getElementById('setting').style.display = "";
+}
+//設定非表示
+function exit() {
+  document.getElementById('setting').style.display = "none";
+  document.getElementById('shindo_icon').style.display = "";
+}
+//設定
+document.addEventListener('contextmenu', () => {
+  const setting = document.getElementById('setting');
+  setting.style.display = 'block';
+  document.getElementById('shindo_icon').style.display = "none";
+});

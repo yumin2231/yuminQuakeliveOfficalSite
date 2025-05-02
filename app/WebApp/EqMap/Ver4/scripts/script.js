@@ -1,3 +1,4 @@
+//adding features by akki
 var QuakeJson;
 var JMAPointsJson;
 var countries_data;
@@ -5,14 +6,17 @@ var countries_data;
 var map = L.map('map', {
     preferCanvas: true,
     scrollWheelZoom: false,
+    ScaleLine: false,
     smoothWheelZoom: true,
     smoothSensitivity: 1.5,
-    zoomControl: false
+    zoomControl: false,
+    maxZoom: 10,
+    minZoom: 2
 }).setView([36.575, 137.984], 6);
 L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
 
+
 //地図に表示させる上下の順番
-map.createPane("pane_map1").style.zIndex = 1; //地図（背景）
 map.createPane("world_map").style.zIndex = 2; //世界地図
 map.createPane("pane_map2").style.zIndex = 3; //地図（市町村）
 map.createPane("pane_map3").style.zIndex = 4; //地図（細分）
@@ -41,7 +45,7 @@ var PolygonLayer_Style_world = {
     "color": "#ffffff",
     "weight": 1.5,
     "opacity": 1,
-    "fillColor": "#ffffff",
+    "fillColor": "#3a3a3a",
     "fillOpacity": 1
 }
 
@@ -91,13 +95,11 @@ var world_data;
 async function GetSaibun() {
     const [saibunResponse, worldResponse, additionalGeoJsonResponse] = await Promise.all([
         fetch("source/saibun.geojson"),
-        fetch("source/asia.geojson"),
-        fetch("source/countries.geojson") // 新しいgeojsonファイルを追加
+        fetch("source/world.geojson")
     ]);
     
     japan_data = await saibunResponse.json();
     world_data = await worldResponse.json();
-    countries_data = await additionalGeoJsonResponse.json(); // 新しいデータを格納
 
     L.geoJson(world_data, {
         pane: "world_map",
