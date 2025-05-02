@@ -95,7 +95,7 @@ var world_data;
 async function GetSaibun() {
     const [saibunResponse, worldResponse, additionalGeoJsonResponse] = await Promise.all([
         fetch("source/saibun.geojson"),
-        fetch("source/world.geojson")
+        fetch("source/World.geojson")
     ]);
     
     japan_data = await saibunResponse.json();
