@@ -3,6 +3,7 @@ html, body{
     height: 100%;
     margin: 0;
     background-color: #1d1d1d;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
 }
 #loading{
     position: fixed;
@@ -24,14 +25,6 @@ html, body{
     height: 100px;
     animation: spin 1s linear infinite;
 }
-@keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
 #map {
     position: fixed;
     top: 0;
@@ -50,6 +43,7 @@ html, body{
     left: 0;
     width: 25%;
     height: 100%;
+    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
 }
 .content{
     width: 90%;
@@ -105,6 +99,7 @@ html, body{
     color: #ffffff;
     width: 20%;
     border: solid 3px #ffffff;
+    z-index: 9999;
 }
 .setting-button{
     width: 90%;
@@ -181,9 +176,27 @@ html, body{
     display: none;
 }
 
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 @media (max-width :1280px){
-    .none,.shindo_icon,.btns{
+    .none,.shindo_icon,.releace{
         display: none;
+    }
+    .block{
+        display: block;
+    }
+    .btns{
+        bottom: auto;
+        top: 10px;
+        left: auto;
+        right: 10px;
     }
 }
 
@@ -225,8 +238,9 @@ html, body{
         width: 100%;
     }
     .btns{
-        position: fixed;
+        top: auto;
         bottom: 34px;
+        padding: 5px;
     }
     #quakelist{
         width: 50%;

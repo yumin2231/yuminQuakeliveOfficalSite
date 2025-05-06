@@ -6,6 +6,8 @@
     <title>yumin地震観測所┃震度分布図v4</title>
 
     <link rel="icon" href="../../../../imges/YQL_-_icon_-_2022_-_model-removebg-preview.png">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -37,10 +39,10 @@
 
     <!--著作権表示-->
         <p class="copyright">
-            &copy;2022 - 2025 yuminQuakelive.
+            &copy;2022 - <span id="cr"></span> yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
             <span class="sp_info">
-                ┃Version：4.2.1
+                ┃Version：4.2.2
                 ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
             </span>
         </p>
@@ -63,8 +65,8 @@
 
         <div class="info">
             <h1 id="title">地震情報</h1>
-            <br>
-            <div class="content">
+            <br class="releace">
+            <div class="content releace">
                 <h2 class="sp">発表時刻</h2>
                 <h2 id="eqrele">----年--月--日 --時--分--秒</h2>
             </div>
@@ -204,6 +206,7 @@
 <script src="https://nanka.cloudfree.jp/bin/webapps/shindobunpu_qiita/8/source/SmoothWheelZoom.js"></script>
 <script src="https://nanka.cloudfree.jp/bin/webapps/shindobunpu_qiita/9/source/JMAPoints.js"></script>
 
+<script src="../../../../scripts/copy.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/script.js"></script>
 </html>

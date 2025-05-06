@@ -206,11 +206,11 @@ async function QuakeSelect(num) {
 
             //サイドバーの情報関連
             var datekari = QuakeJson[num]['issue']['time'];
-            let info_1danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 '+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分'+datekari.substring(17,19)+'秒';
+            let info_1danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日'+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分'+datekari.substring(17,19)+'秒';
             document.getElementById('eqrele').innerHTML = info_1danme;
     
             var datekari = QuakeJson[num]['earthquake']['time'];
-            let info_2danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 '+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分ごろ';
+            let info_2danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 <br class="block">'+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分ごろ';
             document.getElementById('eqtime').innerHTML = info_2danme;
         
             // 国外地震の場合は深さと最大震度と凡例を表示しない
