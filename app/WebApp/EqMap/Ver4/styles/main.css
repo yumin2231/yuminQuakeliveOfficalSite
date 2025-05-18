@@ -90,6 +90,17 @@ html, body{
     align-items: center;
     justify-content: center;
 }
+#eqrele{
+    position: fixed;
+    left: 25%;
+    bottom: 24px;
+    padding: 2px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    color: #ffffff;
+    background-color: #1d1d1d;
+    border: solid 2px #ffffff;
+}
 #setting{
     position: fixed;
     bottom: 30px;
@@ -136,7 +147,6 @@ html, body{
     right: 20px;
     background-color: #000000;
     color: #ffffff;
-    width: 300px;
     border-radius: 30px;
     border: solid 3px #ffffff
 }
@@ -152,27 +162,24 @@ html, body{
     height: 50;
 }
 .hannrei-item p {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     margin: 0;
 }
-#warn,.warn{
+#warn,#eqcomment{
     position: fixed;
     top: 30px;
     right: 0;
     margin: 0;
+}
+#warn{
     color: yellow;
     background-color: purple;
 }
 #eqcomment{
-    position: fixed;
-    top: 30px;
-    right: 0;
-    margin: 0;
-    z-index: 9999;
     background-color: #ffffff;
 }
-#sp_eqinfo,.block,#abroadtsunami,.pc,#warn,#mainmode,#eqisnone{
+#sp_eqinfo,.block,#abroadtsunami,.pc,#warn,#mainmode,#eqisnone,#Status{
     display: none;
 }
 
@@ -239,8 +246,8 @@ html, body{
     }
     .btns{
         top: auto;
+        left: 10px;
         bottom: 34px;
-        padding: 5px;
     }
     #quakelist{
         width: 50%;

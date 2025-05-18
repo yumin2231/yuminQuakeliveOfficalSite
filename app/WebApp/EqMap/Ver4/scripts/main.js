@@ -16,10 +16,11 @@ if (warn.get("warn") === "eew") {
 //自動更新
 const params = new URLSearchParams(window.location.search);
 if (params.get("reload") === "on") {
+  console.log('自動更新が有効です。60秒ごとに再読み込みします。');
   document.getElementById('mainmode').style.display = "block";
   document.getElementById("reloadoff").style.display = "none";
+  document.getElementById("Status").style.display = "inline-block";
   setTimeout(function() {
-      console.log('自動更新が有効です。60秒ごとに再読み込みします。');
       window.location.href = 'index.html?reload=on';
   }, 60 * 1000);
 }

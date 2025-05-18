@@ -206,7 +206,7 @@ async function QuakeSelect(num) {
 
             //サイドバーの情報関連
             var datekari = QuakeJson[num]['issue']['time'];
-            let info_1danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日'+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分'+datekari.substring(17,19)+'秒';
+            let info_1danme = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日'+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分'+datekari.substring(17,19)+'秒 発表';
             document.getElementById('eqrele').innerHTML = info_1danme;
     
             var datekari = QuakeJson[num]['earthquake']['time'];
@@ -251,12 +251,18 @@ async function QuakeSelect(num) {
             //スマホ表示
             if (QuakeJson[num]["issue"]["type"] == "ScalePrompt") {
                 var info ="発生時刻："+Time+"頃\n震源地：調査中\n最大震度："+maxIntText+"\n"+tsunamiText+"" //震度速報
-             } else if (QuakeJson[num]["issue"]["type"] == "Destination") {
-                 "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n\n"+tsunamiText+"" //震源情報
-             } else if (QuakeJson[num]["issue"]["type"] == "Foreign"){
-                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n"+tsunamiText+"" //遠地地震
-             } else {
-                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード："+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+"" //通常
+             } 
+             
+             else if (QuakeJson[num]["issue"]["type"] == "Destination") {
+                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード：M"+Magnitude+"\n深さ："+Depth+"\n"+tsunamiText+"" //震源情報
+             } 
+             
+             else if (QuakeJson[num]["issue"]["type"] == "Foreign"){
+                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード：M"+Magnitude+"\n"+tsunamiText+"" //遠地地震
+             } 
+             
+             else {
+                 var info = "発生時刻："+Time+"頃\n震源地："+Name+"\nマグニチュード：M"+Magnitude+"\n深さ："+Depth+"\n最大震度："+maxIntText+"\n"+tsunamiText+"" //通常
              }
             document.getElementById('sp_eqinfo').innerText = info;
 
