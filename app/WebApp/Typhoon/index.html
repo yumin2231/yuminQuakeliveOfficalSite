@@ -35,13 +35,13 @@
                 <h2 class="sp">発表遅刻</h2>
                 <h1 id="time"></h1>
             </div>
-            <br>
-            <div class="content">
+            <br id="br1">
+            <div class="content" id="tcscale">
                 <h2 class="sp">大きさ</h2>
                 <h1 id="scale"></h1>
             </div>
-            <br>
-            <div class="content">
+            <br id="br2">
+            <div class="content" id="tcintensity">
                 <h2 class="sp">強さ</h2>
                 <h1 id="intensity"></h1>
             </div>
@@ -61,22 +61,30 @@
                 <h1 id="pressure"></h1>
             </div>
             <br>
-            <div class="content">
+            <div class="content" id="tcms">
                 <h2 class="sp">最大風速</h2>
                 <h1 id="maximumWind_sustained"></h1>
             </div>
             <br>
-            <div class="content">
+            <div class="content" id="tcmg">
                 <h2 class="sp">最大瞬間風速</h2>
                 <h1 id="maximumWind_gust"></h1>
             </div>
         </div>
-        <div id="noinfo"><span>台風情報はありません。</span></div>
+
+        <div id="noinfo">
+            <span>台風情報はありません。</span>
+        </div>
+        <div id="tc" style="display: none;">
+            <a class="close" href="?mode=tc">✕</a>
+            <span>台風は消滅しました。</span>
+        </div>
+        
         <div class="btns">
             <select id="typhoonlist" style="width: 25em;height: calc(2em + 5px);"><option>台風情報待機中...</option></select>
             <button id="whiledisplay_open">設定</button>
         </div>
-        <h4 class="footer">&copy;2022 - <span id="cr"></span> yuminQuakelive. All rights reserved.　/　Powered by：Miyakojima Cam┃Version：1.0.3┃地図データ：<a href="https://www.jma.go.jp/jma/index.html" target="_blank" style="color: white;">気象庁</a></h4>
+        <h4 class="footer">&copy;2022 - <span id="cr"></span> yuminQuakelive. All rights reserved.　/　Powered by：Miyakojima Cam┃Version：1.0.4┃地図データ：<a href="https://www.jma.go.jp/jma/index.html" target="_blank" style="color: white;">気象庁</a></h4>
         <div id="whiledisplay">
             <span id="whiledisplay_close">×</span>
             <h1 style="text-align: center;">表示設定</h1>

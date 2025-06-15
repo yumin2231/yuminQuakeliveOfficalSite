@@ -179,9 +179,23 @@ window.dataLayer = window.dataLayer || [];
                 let nowcastminute = ('0' + nowcastDate.getMinutes()).slice(-2);
                 let nowcastsecond = ('0' + nowcastDate.getSeconds()).slice(-2);
                 let info1 = T_category+' '+T_number+' '+T_name+'('+T_name_en+')';
+
+            if (T_category == "熱帯低気圧") {
+                document.getElementById('tc').style.display = "block";
+                document.getElementById('tcscale').style.display = "none";
+                document.getElementById('tcintensity').style.display = "none";
+                document.getElementById('tcms').style.display = "none";
+                document.getElementById('tcmg').style.display = "none";
+                document.getElementById('br1').style.display = "none";
+                document.getElementById('br2').style.display = "none";
+            }
+            const warn = new URLSearchParams(window.location.search);
+            if (warn.get("mode") === "tc") {
+                document.getElementById('tc').style.display = "";
+            }
             
             //タイトル
-            var info = ""+T_category+''+T_number+'の進路情報';
+            var info = '台風'+T_number+'の進路情報';
             document.getElementById('title').innerText = info;
             
             //発表遅刻
