@@ -1,19 +1,16 @@
-            window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-ZL8HPL24E7');
 
-var map = L.map('map', {
+            var map = L.map('map', {
                 center: [38.333039, 140.26570],
                 zoom: 6,
                 minZoom: 2,
                 scrollWheelZoom: false,
                 smoothWheelZoom: true
             });
-            
-            L.control.scale({ maxWidth: 150, position: 'bottomright', imperial: false }).addTo(map);  // スケールを表示
-            map.zoomControl.setPosition('topright');
             var PolygonLayer_Style_1 = {
                 "fillColor": "#454545",
                 "color": "#ffffff",
@@ -22,10 +19,11 @@ var map = L.map('map', {
                 "fillOpacity": 1,
             }
             var PolygonLayer_Style_2 = {
-                "fillColor": "#ffffff",
-                "weight": 1,
+                "color": "#ffffff",
+                "weight": 1.5,
                 "opacity": 1,
-                "fillOpacity": 0,
+                "fillColor": "#3a3a3a",
+                "fillOpacity": 1,
             }
             map.createPane("pane_map1").style.zIndex = 1; //地図（背景）
             map.createPane("pane_map2").style.zIndex = 2; //地図（市町村）
@@ -53,16 +51,9 @@ var map = L.map('map', {
             var countries_data; //アジア地域を除く世界の低品質ポリゴンデータ
             var cities_data; //市区町村データ
             var japan_back;
-            $.getJSON("https://miyakocam.github.io/geojsons/asia.geojson", function (data) {
+            $.getJSON("../EqMap/Ver4/source/World.geojson", function (data) {
                 asia_data = data;
                 asia = L.geoJson(asia_data, {
-                    pane: "shindo30",
-                    style: PolygonLayer_Style_2,
-                }).addTo(map);
-            });     
-            $.getJSON("https://miyakocam.github.io/geojsons/countries.geojson", function (data) {
-                countries_data = data;
-                countries = L.geoJson(countries_data, {
                     pane: "shindo30",
                     style: PolygonLayer_Style_2,
                 }).addTo(map);
@@ -167,6 +158,7 @@ var map = L.map('map', {
                     if (isNaN(Test_T_DATA[0][0]["typhoonNumber"]) == false) {T_number = '第' + Number(Test_T_DATA[0][0]["typhoonNumber"].substring(2,4)) + '号';} 
                     else {T_number = Test_T_DATA[0][0]["typhoonNumber"];}
                 }
+                T_time = Test_T_DATA[0][0]["issue"]["JST"] ? Test_T_DATA[0][0]["issue"]["JST"] : '-';
                 T_name = Test_T_DATA[0][0]["name"] ? Test_T_DATA[0][0]["name"]["jp"] : '-';
                 T_name_en = Test_T_DATA[0][0]["name"] ? Test_T_DATA[0][0]["name"]["en"] : '-';
                 T_category = Test_T_DATA[0][1]["category"] ? Test_T_DATA[0][1]["category"]["jp"] : '-';
@@ -188,10 +180,14 @@ var map = L.map('map', {
                 let nowcastsecond = ('0' + nowcastDate.getSeconds()).slice(-2);
                 let info1 = T_category+' '+T_number+' '+T_name+'('+T_name_en+')';
             
-            //名前
-            var info = ""+T_category+' '+T_number+'の進路情報';
-            document.getElementById('name').innerText = info;
+            //タイトル
+            var info = ""+T_category+''+T_number+'の進路情報';
+            document.getElementById('title').innerText = info;
             
+            //発表遅刻
+            var info = ""+T_time+'';
+            info = info.substring(5,7)+'月'+info.substring(8,10)+'日 '+info.substring(11,13)+'時'+info.substring(14,16)+'分';
+            document.getElementById('time').innerText = info;
             //大きさ
             var info = ""+T_scale+""
             document.getElementById('scale').innerText = info;
@@ -237,6 +233,7 @@ var map = L.map('map', {
                 });
                 center_latlng = new L.LatLng(J_center[0], J_center[1]);
                 center_marker = L.marker(center_latlng, { icon: centerIcon, pane: "shingen"}).addTo(allList);
+                map.panTo(center_latlng); // 台風の位置にマップを移動
                 Cookies.set('before_center', J_center);
                 divText2 = L.divIcon({
                     html: '<div class="leaflet_datetext">現在</div>',
@@ -313,7 +310,11 @@ var map = L.map('map', {
                 L.polyline(J_h_line_latlng[0] ,{pane: "shindo50", color: "#ffffff", opacity: 1, weight: 4, dashArray: "8 4",lineCap: "butt",lineJoin: "miter"}).addTo(allList);
                 L.polyline(J_h_line_latlng[1] ,{pane: "shindo50", color: "#ffffff", opacity: 1, weight: 4, dashArray: "8 4",lineCap: "butt",lineJoin: "miter"}).addTo(allList);
 
-                L.circleMarker(J_h_latlng, {pane: "shindo40", radius:6, opacity:0,fillColor:"#ffffff", fillOpacity: 1}).addTo(allList);
+                L.circleMarker(J_h_latlng, {pane: "shindo40", radius:6, opacity:0,fillColor:"#ffffff", fillOpacity: 1})
+                    .on('click', function(e) {
+                        map.panTo(e.latlng);
+                    })
+                    .addTo(allList);
                 before_center_mae = Cookies.get('before_center').split(',');
                 before_center = new L.LatLng(before_center_mae[0], before_center_mae[1]);
                 L.polyline( [before_center, J_h_center],{pane: "shindo40", color: "#ffffff", opacity: 1, weight: 3, dashArray: "6 3",lineCap: "butt",lineJoin: "miter"}).addTo(allList);
