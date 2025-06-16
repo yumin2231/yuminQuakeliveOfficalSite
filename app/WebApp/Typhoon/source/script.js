@@ -123,10 +123,15 @@ window.dataLayer = window.dataLayer || [];
                 ).done(function (typhoonList) {
                     if (typhoonList == "") {
                         document.getElementById('noinfo').classList.add('display');
+                        document.getElementById('btns').style.display = "none";
+                        document.getElementById('info').style.display = "none";
+                        document.getElementById('map').style.width = "100%";
+                        document.getElementById('footer').style.left = "0";
+                        map.panTo([38.333039, 132.670898]);
                         return;
                     } else {
-                        document.getElementById('noinfo').classList.add('display');
                         document.getElementById('noinfo').classList.remove('display');
+                        document.getElementById('info').style.display = "";
                     }
                     while (list.lastChild) {
                         list.removeChild(list.lastChild);
@@ -189,13 +194,29 @@ window.dataLayer = window.dataLayer || [];
                 document.getElementById('br1').style.display = "none";
                 document.getElementById('br2').style.display = "none";
             }
+            else {
+                document.getElementById('tc').style.display = "";
+                document.getElementById('tcscale').style.display = "";
+                document.getElementById('tcintensity').style.display = "";
+                document.getElementById('tcms').style.display = "";
+                document.getElementById('tcmg').style.display = "";
+                document.getElementById('br1').style.display = "";
+                document.getElementById('br2').style.display = "";
+            }
+
             const warn = new URLSearchParams(window.location.search);
             if (warn.get("mode") === "tc") {
                 document.getElementById('tc').style.display = "";
+                document.getElementById('tcscale').style.display = "";
+                document.getElementById('tcintensity').style.display = "";
+                document.getElementById('tcms').style.display = "";
+                document.getElementById('tcmg').style.display = "";
+                document.getElementById('br1').style.display = "";
+                document.getElementById('br2').style.display = "";
             }
             
             //タイトル
-            var info = '台風'+T_number+'の進路情報';
+            var info = ''+T_category+''+T_number+'の進路情報';
             document.getElementById('title').innerText = info;
             
             //発表遅刻
@@ -225,6 +246,10 @@ window.dataLayer = window.dataLayer || [];
             //最大風速
             var info = ""+T_maximumWind_sustained+"m/s"+"";
             document.getElementById('maximumWind_sustained').innerText = info;
+            
+            //熱帯低気圧
+            var info = '台風'+T_number+''+T_name+' は熱帯低気圧になりました。';
+            document.getElementById('tloss').innerText = info;
 
             //最大瞬間風速
             var info = ""+T_maximumWind_gust+"m/s"+"";

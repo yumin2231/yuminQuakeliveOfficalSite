@@ -28,7 +28,7 @@
     </head>
     <body>
         <div id="map"></div>
-        <div class="info">
+        <div id="info">
             <h1 id="title">台風情報</h1>
             <br>
             <div class="content">
@@ -73,18 +73,18 @@
         </div>
 
         <div id="noinfo">
-            <span>台風情報はありません。</span>
+            <span>現在、台風に関する情報は発表されていません。</span>
         </div>
         <div id="tc" style="display: none;">
             <a class="close" href="?mode=tc">✕</a>
-            <span>台風は消滅しました。</span>
+            <span id="tloss"></span>
         </div>
         
-        <div class="btns">
+        <div id="btns">
             <select id="typhoonlist" style="width: 25em;height: calc(2em + 5px);"><option>台風情報待機中...</option></select>
             <button id="whiledisplay_open">設定</button>
         </div>
-        <h4 class="footer">&copy;2022 - <span id="cr"></span> yuminQuakelive. All rights reserved.　/　Powered by：Miyakojima Cam┃Version：1.0.4┃地図データ：<a href="https://www.jma.go.jp/jma/index.html" target="_blank" style="color: white;">気象庁</a></h4>
+        <h3 id="footer">&copy;2022 - <span id="cr"></span> yuminQuakelive. All rights reserved. / Powered by：Miyakojima Cam┃Version：1.0.5┃地図データ：<a href="https://www.jma.go.jp/jma/index.html" target="_blank" style="color: white;">気象庁</a> , Natural Earth</h3>
         <div id="whiledisplay">
             <span id="whiledisplay_close">×</span>
             <h1 style="text-align: center;">表示設定</h1>

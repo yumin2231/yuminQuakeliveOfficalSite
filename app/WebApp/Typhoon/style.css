@@ -60,7 +60,7 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 100%;
     height: 50px;
 }
-.info{
+#info{
     position: fixed;
     color: #ffffff;
     background-color: #000000;
@@ -123,7 +123,7 @@ input[type="number"]::-webkit-inner-spin-button {
                  -1px 1px 0 #000000, -1.5px 1.5px 0 #000000, -2px 2px 0 #000000,
                  1px -1px 0 #000000, 1.5px -1.5px 0 #000000, 2px -2px 0 #000000;
 }
-.btns {
+#btns {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -247,17 +247,17 @@ input[type="number"]::-webkit-inner-spin-button {
     border: solid 3px #ffffff;
     z-index: 10000;
     width: 70%;
-    height: 60%;
+    height: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
 }
-#noinfo, #tc span {
+#noinfo span,#tc span {
     text-align: center;
-    width: 90%;
     position: absolute;
+    width: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -286,7 +286,7 @@ input[type="number"]::-webkit-inner-spin-button {
     left: 0;
     margin: 0;
 }
-.footer{
+#footer{
     position: fixed;
     bottom: 0;
     left: 20%;
@@ -296,7 +296,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 @media (max-width: 430px){
-    #info,.info,.btns,.footer{
+    #info,.info,.btns,#footer{
         display: none;
     }
     #map{
