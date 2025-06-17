@@ -7,6 +7,8 @@ html, body{
 }
 #loading{
     position: fixed;
+    top: 0;
+    left: 0;
     background-color: black;
     width: 100%;
     height: 100%;
@@ -99,7 +101,8 @@ html, body{
     margin-left: 5px;
     color: #ffffff;
     background-color: #1d1d1d;
-    border: solid 2px #ffffff;
+    border: solid 2.5px #ffffff;
+    border-radius: 5px;
 }
 #setting{
     position: fixed;
@@ -110,6 +113,7 @@ html, body{
     color: #ffffff;
     width: 20%;
     border: solid 3px #ffffff;
+    border-radius: 10px;
     z-index: 9999;
 }
 .setting-button{
@@ -124,6 +128,13 @@ html, body{
     margin: 0;
     font-size: 20px;
     color: #000000;
+}
+.menutitle{
+    width: 90%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
 }
 .decoration{
     text-decoration: none;
@@ -147,7 +158,7 @@ html, body{
     right: 20px;
     background-color: #000000;
     color: #ffffff;
-    border-radius: 30px;
+    border-radius: 20px;
     border: solid 3px #ffffff
 }
 .hannrei-item {
@@ -166,20 +177,41 @@ html, body{
     font-weight: 600;
     margin: 0;
 }
-#warn,#eqcomment{
+#warn{
     position: fixed;
     top: 30px;
     right: 0;
     margin: 0;
-}
-#warn{
     color: yellow;
     background-color: purple;
 }
-#eqcomment{
-    background-color: #ffffff;
+#eqcommentoff{
+    text-align: right;
 }
-#sp_eqinfo,.block,#abroadtsunami,.pc,#warn,#mainmode,#eqisnone,#Status{
+.comment {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border: solid 3px #ffffff;
+    color: #ffffff;
+    padding: 5px;
+    max-width: 40%;
+    border-radius: 10px;
+    z-index: 1000;
+}
+.titleber{
+    width: 98%;
+    margin: 0 auto;
+    color: #ffffff;
+    text-align: right;
+}
+.comment a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#sp_eqinfo,.block,#abroadtsunami,.pc,#warn,#mainmode,#eqisnone,.comment,#eqcommentoff,#eqcomment,#Status{
     display: none;
 }
 

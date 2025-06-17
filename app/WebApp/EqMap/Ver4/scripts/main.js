@@ -49,3 +49,13 @@ document.addEventListener('contextmenu', () => {
   setting.style.display = 'block';
   document.getElementById('shindo_icon').style.display = "none";
 });
+function eqcommenton(){
+  document.getElementById('eqcomment').style.display = "block";
+  document.getElementById('eqcommenton').style.display = "none";
+  document.getElementById('eqcommentoff').style.display = "block";
+}
+function commentoff() {
+  document.getElementById('eqcomment').style.display = "none";
+  document.getElementById('eqcommentoff').style.display = "none";
+  document.getElementById('eqcommenton').style.display = "block";
+}

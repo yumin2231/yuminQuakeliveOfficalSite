@@ -88,6 +88,8 @@ async function reloadData(reloadOption) {
     ]);
     Cookies.set("listSelectedIndex", 0);
     QuakeSelect(0);
+    // ローディング画面を非表示
+    document.getElementById('loading').style.display = "none";
 })();
 
 var japan_data;
@@ -475,6 +477,13 @@ async function QuakeSelect(num) {
         // 国内地震の場合は従来通り
         map.flyTo(shingenLatLng, 8, { duration: 0.5 });
     }
+
+    //コメントに関する処理
+    if (QuakeJson[num]['comments']['freeFormComment'] == "") {
+        document.getElementsByClassName('comment')[0].style.display = "none";
+    } else {
+        document.getElementsByClassName('comment')[0].style.display = "block";
+    }
 }
 
 function AreaNameToCode(Name) {
@@ -559,6 +568,3 @@ function hantei_tsunamiText_abroad(param) {//国外津波
     param == "Potential" ? "津波発生の可能性があります。" : "情報なし";
     return kaerichi;
 }
-window.onload = function () {
-    document.getElementById('loading').style.display = "none";
-};
