@@ -2,7 +2,7 @@ html, body{
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: #1d1d1d;
+    background-color: #000000;
     font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
 }
 #loading{
@@ -106,14 +106,14 @@ html, body{
 }
 #setting{
     position: fixed;
-    bottom: 30px;
-    right: 20px;
+    bottom: 34px;
+    right: 10px;
     display: none;
     background-color: #000000;
     color: #ffffff;
     width: 20%;
     border: solid 3px #ffffff;
-    border-radius: 10px;
+    border-radius: 15px;
     z-index: 9999;
 }
 .setting-button{
@@ -197,8 +197,10 @@ html, body{
     color: #ffffff;
     padding: 5px;
     max-width: 40%;
+    max-height: 50%;
     border-radius: 10px;
     z-index: 1000;
+    overflow: auto;
 }
 .titleber{
     width: 98%;
@@ -225,7 +227,7 @@ html, body{
 }
 
 @media (max-width :1280px){
-    .none,.shindo_icon,.releace{
+    .none,.shindo_icon{
         display: none;
     }
     .block{
@@ -237,10 +239,15 @@ html, body{
         left: auto;
         right: 10px;
     }
+    .comment{
+        top: auto;
+        bottom: 34px;
+        right: 10px;
+    }
 }
 
 @media (max-width: 430px){
-    .sp,.sp_info,.shindo_icon,.btns,#warn,#eqcomment,.smart{
+    .sp,.sp_info,.shindo_icon,.btns,#warn,#eqcomment,.smart,.comment,.releace{
         display: none;
     }
     .pc{
