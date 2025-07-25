@@ -1,15 +1,21 @@
 body {
     text-align: center;
 }
-.main { 
-	background:linear-gradient(#01B0F1, #ffffff); 
-	border: 1px solid #ffffff;
+.main {
+	text-align: center;
+}
+.main h1,h2,h4 {
+	margin: 0;
+	padding: 0;
+}
+.info{
+	width: 80%;
+	margin: 0 auto;
+	text-align: left;
+	list-style-type: disc;
 }
 @media (max-width: 430px){
-	.w275-5{
-		width: 257.5px;
-	}
-	.clock{
+	.photo{
 		display: none;
 	}
 }

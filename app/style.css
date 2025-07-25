@@ -1,0 +1,12 @@
+.center{
+    text-align: center;
+}
+.main hr{
+    margin: 20px auto;
+    width: 90%;
+}
+@media (max-width: 430px){
+	.photo{
+		display: none;
+	}
+}
