@@ -3,24 +3,41 @@ html,body{
     height: 100%;
     margin: 0;
     padding: 0;
+    /* 読みやすさ: 行間 */
+    line-height: 1.7;
 }
+/* 画像のスケーリング */
+img{ max-width: 100%; height: auto; }
+/* ボックスサイジング統一 */
+*,*::before,*::after{ box-sizing: border-box; }
+
 .main {
     width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    /* 追加: 折り返しと隙間 */
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
 }
 .main-contents{
     text-align: center;
-    width: 75%;
-    padding: 10px;
+    width: 72%;
+    padding: 20px;
     background-color: #ffffff;
+    border-radius: 12px;
+}
+/* サイドバー */
+.sub-contents{
+    width: 26%;
 }
 .blue{
     width: 50%;
     background-color: #C8E0FE;
     border-radius: 8px;
     margin: 0 auto;
+    padding: 12px;
 }
 a{
     text-decoration: none;
@@ -31,4 +48,20 @@ footer{
     text-align: center;
     color: #ffffff;
     background-color: #01B0F1;
+}
+/* 見出しや段落の余白 */
+.main h1{ margin: 0.6em 0; line-height: 1.25; }
+.main p{ margin: 0.75em 0; }
+
+/* 1024px以下: カラム幅をやや広げ、余白最適化 */
+@media(max-width: 1024px){
+  .main{ padding: 12px; gap: 14px; }
+  .main-contents{ width: 68%; padding: 18px; }
+  .sub-contents{ width: 30%; }
+}
+/* 900px以下: 縦並びに切替 */
+@media(max-width: 900px){
+  .main{ flex-direction: column; padding: 12px; }
+  .main-contents, .sub-contents{ width: 100%; }
+  .blue{ width: 100%; }
 }

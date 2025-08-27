@@ -14,6 +14,12 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@yuminQuakelive" />
 
+    <!-- Roboto を事前接続＋読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 5 (既存) -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 	<link rel="stylesheet" href="../styles/footer.css">
 	<link rel="stylesheet" href="../styles/style.css">
@@ -27,7 +33,7 @@
     	<header>
         <div class="header">
 			<a href="../index.html">
-                <img src="../imges/1500x500.png" width="285" height="95">
+                <img src="../imges/1500x500.png" width="285" height="95" alt="yumin地震観測所 ロゴ">
             </a>
             <nav class="header-nav">
                 <ul>
@@ -38,26 +44,24 @@
                         <a href="../about/index.html">About</a>
                     </li>
                     <li>
-                        <a href="../SiteList/index.html">SiteList</a>
+                        <a href="index.html">App</a>
                     </li>
-					<li>
-						<a href="../Members/index.html">MemberList</a>
-					</li>
-					<li>
-						<a href="https://bosaicoco.blog" target="_blank">Blog</a>
-					</li>
-					<li>
-						<a href="index.html">App</a>
-					</li>
-					<li>
-						<a href="https://news.yql.jp" target="_blank">News</a>
-					</li>
-					<li>
-						<a href="../form/Staff/index.html" target="_blank">Staff Recruitment</a>
-					</li>
-					<li>
-						<a href="https://networks.yql.jp/" target="_blank">yuminNetworksSite</a>
-					</li>
+                    <li>
+                        <a href="https://news.yql.jp" target="_blank">News</a>
+                    </li>
+                    <li>
+                        <a href="../form/Staff/index.html" target="_blank">Staff Recruitment</a>
+                    </li>
+                    <!-- More を末尾に配置し、アイコンを追加 -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle has-icon">More <i class="far fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../SiteList/index.html">SiteList</a></li>
+                            <li><a href="../Members/index.html">MemberList</a></li>
+                            <li><a href="https://bosaicoco.blog" target="_blank">Blog</a></li>
+                            <li><a href="https://networks.yql.jp/" target="_blank">yuminNetworksSite</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -65,7 +69,7 @@
 	<div class="sp-header">
 		<div class="header_contents">
 			<a href="../index.html">
-				<img src="../imges/1500x500.png" width="285" height="95">
+				<img src="../imges/1500x500.png" width="285" height="95" alt="yumin地震観測所 ロゴ">
 			</a>
 			<div class="responsive_btn">
 			  <div class="menu_line"></div>
@@ -107,48 +111,48 @@
 	</div>
     <div class="main center">
         <h1>EqMap Ver4</h1>
-        <img class="photo" src="WebApp/EqMap/Ver4/source/v4.png" width="800px">
+        <img class="photo" src="WebApp/EqMap/Ver4/source/v4.png" width="800px" alt="EqMap Ver4 スクリーンショット">
 		<p>EqMap Ver4は、最新の地震情報を提供するアプリです。MiyakojimaCamさんの協力により開発されました。</p>
 		<a class="btn" href="WebApp/EqMap/Ver4/index.html">アクセス</a>
 		<hr>
 		<h1>ダウンロード</h1>
-		<img class="photo" src="EqClock/imges/main.png">
+		<img class="photo" src="EqClock/imges/main.png" alt="EqClock メイン画面">
 		<p>EqClockは地震情報を表示できるWindows専用ソフトウェアです。</p>
 		<a class="btn" href="EqClock/index.html">ダウンロード</a>
     </div>
 	
 	<footer class="footer">
         <div class="md-flex md-justify-between">
-          <a href="../../index.html" class="footer__logo">
-            <img src="../../imges/1500x500.png" width="285" height="95">
+          <a href="../index.html" class="footer__logo">
+            <img src="../imges/1500x500.png" width="285" height="95" alt="yumin地震観測所 ロゴ">
           </a>
           <div class="grid">
             <div>
               <p class="footer__navi-heading">PAGES</p>
               <ul class="footer__navi">
 				<li>
-					<a href="../../index.html?loading=off">Home</a>
+					<a href="../index.html?loading=off">Home</a>
 				</li>
 				<li>
-					<a href="../../about/index.html">About</a>
+					<a href="../about/index.html">About</a>
 				</li>
 				<li>
-					<a href="../../SiteList/index.html">SiteList</a>
+					<a href="../SiteList/index.html">SiteList</a>
 				</li>
 				<li>
-					<a href="../../Members/index.html">MemberList</a>
+					<a href="../Members/index.html">MemberList</a>
 				</li>
 				<li>
 					<a href="https://bosaicoco.blog" target="_blank">Blog</a>
 				</li>
 				<li>
-					<a href="../index.html">App</a>
+					<a href="index.html">App</a>
 				</li>
 				<li>
 					<a href="https://news.yql.jp" target="_blank">News</a>
 				</li>
 				<li>
-					<a href="../../form/Staff/index.html" target="_blank">Staff Recruitment</a>
+					<a href="../form/Staff/index.html" target="_blank">Staff Recruitment</a>
 				</li>
 				<li>
 					<a href="https://networks.yql.jp/" target="_blank">yuminNetworksSite</a>
@@ -164,15 +168,15 @@
 				<li><a href="https://taittsuu.com/users/yuminquakelive" target="_blank">タイッツー</a></li>
 				<li><a href="https://bsky.app/profile/official.yuminquakelive.net" target="_blank">Bluesky</a></li>
                 <br>
-                <li><a href="../../accountlist/index.html">Account List</a></li>
+                <li><a href="../accountlist/index.html">Account List</a></li>
 				</ul>
             </div>
             <div>
               <p class="footer__navi-heading">ABOUT</p>
               <ul class="footer__navi">
-                <li><a href="../../about/index.html">団体情報</a></li>
+                <li><a href="../about/index.html">団体情報</a></li>
                 <li><a href="https://www.staff.yuminquakelive.net/info/index.html">採用情報</a></li>
-                <li><a href="../../form/Contact/index.html">お問い合わせ</a></li>
+                <li><a href="../form/Contact/index.html">お問い合わせ</a></li>
               </ul>
             </div>
           </div>

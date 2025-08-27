@@ -1,26 +1,30 @@
 h1,h2{
     margin: 0;
 }
-.x_window{
+/* カードの基本 */
+.window_item, .mi_window_item{
+    width: 320px;
+    /* 固定高さを撤廃し中身に合わせて伸縮 */
+    height: auto;
+    margin: 12px;
+    border: solid 3px #000000;
+    background: #fff;
+}
+/* 各ウィンドウ行の基本（横並び+折り返し） */
+.x_window,
+.yt_window,
+.mi_window{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;            /* 折り返し */
+    justify-content: center;    /* 中央寄せ配置 */
+    align-items: stretch;       /* 高さを揃える */
+    gap: 16px;                  /* 余白 */
     width: 100%;
-    place-items: center;
 }
-.window_item{
-    width: 300px;
-    height: 365px;
-    margin:0 auto;
-    border: solid 3px #000000
-}
-.yt_window{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    place-items: center;
-}
+/* 既存yt/miの幅70%は撤廃し、親に任せる */
+/* タイトル系 */
 .title_x{
     background-color: #000000;
     color: #ffffff;
@@ -39,19 +43,6 @@ h1,h2{
     color: #ffffff;
     text-decoration: none;
 }
-.mi_window_item{
-    width: 320px;
-    height: 314px;
-    margin:0 auto;
-    border: solid 3px #000000
-}
-.mi_window{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    place-items: center;
-}
 .title_mi{
     background-color: rgb(180, 233, 0);
     color: #ffffff;
@@ -68,32 +59,24 @@ h1,h2{
 .white{
     background-color: #ffffff;
     margin: 1rem auto;
-    width: 80%;
+    /* 80%固定から可変へ */
+    width: min(1200px, 92%);
     border-radius: 20px;
+    padding: 12px;
 }
+/* タブレット: 1020px以下でカード幅を縮小 */
+@media (max-width: 1020px){
+  .window_item, .mi_window_item{ width: clamp(260px, 42vw, 320px); }
+}
+/* スマホ～小型タブレット: 768px以下は1列～2列レイアウト */
+@media (max-width: 768px){
+  .window_item, .mi_window_item{ width: min(92%, 360px); margin: 8px auto; }
+}
+/* 旧ルール: 430px以下で縦積み（維持） */
 @media (max-width: 430px){
-header img{
-    width: 375px;
-    height: 125px;
-}
-.x_window{
-    margin: 0 auto;
-    display: flex;
+  header img{ width: 375px; height: 125px; }
+  .x_window,.yt_window,.mi_window{
     flex-direction: column;
-    place-items: center;
-}
-.yt_window{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    place-items: center;
-}
-.mi_window{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    place-items: center;
-}
+    gap: 12px;
+  }
 }
