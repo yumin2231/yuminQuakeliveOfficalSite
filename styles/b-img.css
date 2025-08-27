@@ -4,3 +4,11 @@ body,html{
     background-attachment: fixed;
     background-position: center center;
 }
+
+/* 小画面では固定を解除してパフォーマンスを改善 */
+@media (max-width: 768px){
+    body,html{
+        background-attachment: scroll;
+        background-size: cover;
+    }
+}

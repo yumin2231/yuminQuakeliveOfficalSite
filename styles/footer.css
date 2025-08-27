@@ -4,7 +4,7 @@ footer ul {
   }
   
   footer a {
-    color: #4b5564;
+    color: #111827; /* 濃色でコントラスト改善 */
     text-decoration: none;
   }
   
@@ -27,13 +27,15 @@ footer ul {
   
   .footer {
     padding: 2rem;
-    font-size: 15px;
-    color: #4b5564;
+    font-size: 16px; /* 15px -> 16px */
+    line-height: 1.65; /* 行間を拡張 */
+    color: #374151; /* テキスト色をやや濃く */
     background: #fff;
   }
   
   .footer__navi-heading {
     font-weight: 600;
+    color: #111827; /* 見出しのコントラスト強化 */
   }
   
   .footer__logo {
@@ -42,13 +44,18 @@ footer ul {
   }
   
   .footer__navi li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8rem; /* タップ間隔を微増 */
   }
   
   .footer__social a {
     display: inline-block;
     width: 24px;
-    opacity: 0.7;
+    opacity: 0.9; /* 0.7 -> 0.9 視認性向上 */
+    transition: opacity .2s ease;
+  }
+
+  .footer__social a:hover {
+    opacity: 1;
   }
   
   .footer__social a:not(:last-child) {
@@ -66,5 +73,12 @@ footer ul {
   
     footer .grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* 追加: 狭幅では1カラム */
+  @media (max-width: 480px) {
+    footer .grid {
+      grid-template-columns: 1fr;
     }
   }
