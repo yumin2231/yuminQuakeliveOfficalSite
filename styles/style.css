@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* スクロールバーによるレイアウトシフト防止（ガター予約は無効化） */
 html{ scrollbar-gutter: auto; overflow-y: auto; }
 
@@ -9,7 +7,7 @@ body,html{
     margin: 0;
 }
 /* 読みやすさ向上: ベース行間 */
-body{ overflow-x: hidden; line-height: 1.7; -webkit-text-size-adjust: 100%; }
+body{ overflow-x: hidden; line-height: 1.7; -webkit-text-size-adjust: 100%; font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'YuGothic', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; }
 /* 横スクロールの予防 */
 body{ overflow-x: hidden; }
 /* 追加: 全要素のボックスサイジング統一 */
@@ -35,6 +33,8 @@ a{
 a:hover {
     text-decoration: underline; 
 }
+/* ヘッダー/スマホヘッダー内リンクは黒で維持 */
+header a, .sp-header a { color: #000000; }
 .header{
     margin: 0;
     display: flex;
