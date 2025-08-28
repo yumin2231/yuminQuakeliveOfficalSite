@@ -9,7 +9,6 @@ var map = L.map('map', {
     ScaleLine: false,
     smoothWheelZoom: true,
     smoothSensitivity: 1.5,
-    zoomControl: false,
     maxZoom: 10,
     minZoom: 2
 }).setView([36.575, 137.984], 6);
@@ -79,8 +78,8 @@ async function reloadData(reloadOption) {
         document.getElementById('reload').innerText = "情報更新";
     }, 1000);
 };
-
 (async () => {
+    document.getElementById('status').innerHTML = "地図データの読み込み中...";
     await Promise.all([
         GetJson(),
         GetSaibun(),
@@ -124,6 +123,7 @@ async function GetJson() {
 }
 
 async function GetQuake(option) {
+    document.getElementById('status').innerHTML = "地震情報の読み込み中...";
     var url;
     if (!isNaN(option)) {
         url = "https://api.p2pquake.net/v2/history?codes=551&limit="+option;
@@ -526,7 +526,6 @@ function FillPolygon(area_Code, PointColor) {
         return latlon;
     }
 }
-
 function hantei_maxIntText(param) {
     let kaerichi = param == 10 ? "1" : param == 20 ? "2" : param == 30 ? "3" : param == 40 ? "4" :
     param == 45 ? "5弱" : param == 46 ? "5弱" : param == 50 ? "5強" : param == 55 ? "6弱" :

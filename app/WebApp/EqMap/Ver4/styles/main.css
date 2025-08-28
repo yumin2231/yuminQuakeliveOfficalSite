@@ -27,6 +27,21 @@ html, body{
     height: 100px;
     animation: spin 1s linear infinite;
 }
+#status{
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    color: #ffffff;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+.scerror{
+    color: #ffffff;
+    position: fixed;
+    margin: 0;
+    display: none;
+    padding: 10px;
+}
 #map {
     position: fixed;
     top: 0;
