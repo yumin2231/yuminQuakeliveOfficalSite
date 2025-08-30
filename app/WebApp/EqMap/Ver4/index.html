@@ -25,7 +25,7 @@
 <body>
     <div id="loading">
         <div class="loader"></div>
-        <p class="scerror">ERROR<br>JavaScript Invalid Error.<br>JavaScriptの読み込みに失敗しました。</p>
+        <p class="scerror">ERROR<br>JavaScript Invalid Error.<br>JavaScriptが無効なため、読み込みに失敗しました。</p>
         <p id="status">読み込み中...</p>
     </div>
     <div id="map"></div>
@@ -44,7 +44,7 @@
             &copy;2022 - <span id="cr"></span> yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
             <span class="sp_info">
-                ┃Version：4.2.6
+                ┃Version：4.2.7
                 ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
             </span>
             <span id="Status"> / AR:ON</span>
@@ -220,7 +220,7 @@
         .scerror{
             display: block;
         }
-        .loader,.status{
+        .loader,#status{
             display: none;
         }
     </style>

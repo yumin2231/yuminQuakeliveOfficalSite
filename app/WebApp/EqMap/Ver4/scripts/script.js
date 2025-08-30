@@ -6,15 +6,12 @@ var countries_data;
 var map = L.map('map', {
     preferCanvas: true,
     scrollWheelZoom: false,
-    ScaleLine: false,
+    zoomControl: false,
     smoothWheelZoom: true,
     smoothSensitivity: 1.5,
     maxZoom: 10,
     minZoom: 2
 }).setView([36.575, 137.984], 6);
-L.control.scale({ maxWidth: 150, imperial: false }).addTo(map);
-
-
 //地図に表示させる上下の順番
 map.createPane("world_map").style.zIndex = 2; //世界地図
 map.createPane("pane_map2").style.zIndex = 3; //地図（市町村）
@@ -123,7 +120,7 @@ async function GetJson() {
 }
 
 async function GetQuake(option) {
-    document.getElementById('status').innerHTML = "地震情報の読み込み中...";
+    document.getElementById('status').innerHTML = "地震情報読み込み中...";
     var url;
     if (!isNaN(option)) {
         url = "https://api.p2pquake.net/v2/history?codes=551&limit="+option;
