@@ -4,17 +4,32 @@ html,body{
     margin: 0;
     background-color: #C8E0FE;
 }
-.main img{
+img{
     margin: 10px;
 }
 .main{
     text-align: center;
-    /* 追加: セクション余白（共通CSSに加えてページ内で微調整） */
+    padding: 20px;
 }
-/* フッターは左寄せに固定（このページのみ） */
-.footer, .footer *{ text-align: left; }
 .main a{
     text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.main a:hover {
+    transform: scale(1.05);
+}
+.main img {
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 15px;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255,255,255,0.8);
+}
+.main a:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    border-color: white;
 }
 .bunner{
     display: none;
@@ -29,78 +44,192 @@ html,body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #00000099;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .close{
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+}
+
+.close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
 }
 
 .profile-container {
     display: flex;
     align-items: center;
-    /* 幅を可変に */
-    width: min(800px, 92%);
-    /* 高さ固定を撤廃し自動に */
-    height: auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    height: 320px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     overflow: hidden;
-    /* 追加: 内側余白・要素間隙間 */
-    gap: 8px;
+    position: relative;
+    transform: translateY(30px) scale(0.97);
+    animation: slideUpFade 0.4s ease forwards;
 }
+
+@keyframes slideUpFade {
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
 .profile-image {
     flex: 1;
-    text-align: center;
-    padding: 20px;
-}  
-.profile-image img {
-    max-width: 100%;
-    border-radius: 50%;
-}  
-.profile-details {
-    flex: 2;
-    padding: 20px;
-    line-height: 1.6;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-right: 1px solid #eee;
 }
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1), transparent);
+}
+
+.profile-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 
+        0 5px 15px rgba(0,0,0,0.2),
+        0 0 0 1px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.25),
+        0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.profile-details {
+    flex: 1.2;
+    padding: 35px;
+    background: white;
+}
+
 .profile-name {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 10px;
-}  
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
 .profile-description {
     font-size: 16px;
     color: #555;
-    margin-bottom: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
-/* 800～900px程度でもレイアウトが詰まらないように調整 */
-@media (max-width: 900px){
-  .profile-container{
-    width: min(680px, 92%);
+.profile-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.profile-links a:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.member_name_id {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.member_name_id ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.member_name_id li {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    display: flex;
     flex-direction: column;
-    text-align: left;
-  }
-  .profile-image, .profile-details{
-    padding: 16px;
-  }
-  .profile-name{ font-size: 22px; }
-  .profile-description{ font-size: 15px; }
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
 }
 
-@media (max-width: 480px){
-  .profile-container{
-    width: 92%;
-  }
-  .profile-image, .profile-details{
-    padding: 14px;
-  }
+.member_name_id li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background-color: #f8f9fa;
+}
+
+.member_name_id li::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #666;
+    border-right: 2px solid #666;
+    transform: rotate(45deg);
+}
+
+.member_name_id span {
+    display: block;
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
 }
