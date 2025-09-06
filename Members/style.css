@@ -37,7 +37,6 @@ img{
     background-color: #ff7878;
 }
 .description{
-    display: none;
     position: fixed;
     top: 0; 
     width: 100%;
