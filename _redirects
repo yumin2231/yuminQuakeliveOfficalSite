@@ -1,7 +1,14 @@
 /discord/ServerGuideline.html /discord/ServerGuideline/index.html 301
+
+/Redirect/Discord/ https://discord.gg/4Yunr4Uv9q 301
 /Redirect/Discord/index.html https://discord.gg/4Yunr4Uv9q 301
-/Redirect/Discord/yuminNetworks.html /https://discord.gg/uGTCVHHB4g 301
-/Redirect/Twitter/index.html /https://x.com/yuminQuakelive 301
-/Redirect/YouTube/1.html /https://www.youtube.com/@yuminQuakeliveOfficial.YQL-1
-/Redirect/YouTube/2.html /https://www.youtube.com/@yuminQuakeliveOfficial.YQL-2
-/Redirect/YouTube/3.html /https://www.youtube.com/@YQL_Games
+
+/Redirect/Discord/yuminNetworks https://discord.gg/uGTCVHHB4g 301
+/Redirect/Discord/yuminNetworks.html https://discord.gg/uGTCVHHB4g 301
+
+/Redirect/Twitter/ https://x.com/yuminQuakelive 301
+/Redirect/Twitter/index.html https://x.com/yuminQuakelive 301
+
+/Redirect/YouTube/1.html https://www.youtube.com/@yuminQuakeliveOfficial.YQL-1 301
+/Redirect/YouTube/2.html https://www.youtube.com/@yuminQuakeliveOfficial.YQL-2 301
+/Redirect/YouTube/3.html https://www.youtube.com/@YQL_Games 301
