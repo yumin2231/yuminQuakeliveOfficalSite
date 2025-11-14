@@ -9,11 +9,13 @@
 /Redirect/Twitter/ https://x.com/yuminQuakelive 301
 /Redirect/Twitter/index.html https://x.com/yuminQuakelive 301
 
+/Redirect/YouTube/1 https://www.youtube.com/@yuminQuakeliveOfficial.YQL-1 301
 /Redirect/YouTube/1.html https://www.youtube.com/@yuminQuakeliveOfficial.YQL-1 301
-/Redirect/YouTube/live/1.html https://www.youtube.com/@yuminQuakeliveOfficial.YQL-1/live 301
 
+/Redirect/YouTube/2 https://www.youtube.com/@yuminQuakeliveOfficial.YQL-2 301
 /Redirect/YouTube/2.html https://www.youtube.com/@yuminQuakeliveOfficial.YQL-2 301
+
+/Redirect/YouTube/3 https://www.youtube.com/@YQL_Games 301
 /Redirect/YouTube/live/2.html https://www.youtube.com/@yuminQuakeliveOfficial.YQL-2/live 301
 
 /Redirect/YouTube/3.html https://www.youtube.com/@YQL_Games 301
-/Redirect/YouTube/live/3.html https://www.youtube.com/@YQL_Games/live 301
