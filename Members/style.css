@@ -44,13 +44,14 @@ img{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
     opacity: 0;
     animation: fadeIn 0.3s ease forwards;
+    z-index: 10000;
 }
 
 @keyframes fadeIn {
@@ -232,4 +233,48 @@ img{
     font-size: 0.85em;
     color: #666;
     margin-top: 5px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+    .main img {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+    .profile-container {
+        width: 95%;
+        max-width: none;
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .profile-image {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 15px;
+    }
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+    .profile-details {
+        padding: 20px;
+    }
+    .profile-name {
+        font-size: 24px;
+    }
+    .member_name_id ol {
+        grid-template-columns: 1fr;
+    }
+    .close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
 }

@@ -42,20 +42,12 @@ function eqisnone() {
 function exit() {
   document.getElementById('setting').style.display = "none";
   document.getElementById('shindo_icon').style.display = "";
-
-  Array.from(document.getElementsByClassName('comment')).forEach(comment => {
-      comment.style.display = "";
-  });
 }
 //設定
 document.addEventListener('contextmenu', () => {
   const setting = document.getElementById('setting');
   setting.style.display = 'block';
   document.getElementById('shindo_icon').style.display = "none";
-
-  Array.from(document.getElementsByClassName('comment')).forEach(comment => {
-      comment.style.display = "none";
-  });
 });
 //コメント表示
 function eqcommenton(){
