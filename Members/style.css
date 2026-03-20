@@ -53,6 +53,10 @@ img{
     animation: fadeIn 0.3s ease forwards;
     z-index: 10000;
 }
+.main a{
+    text-decoration: none;
+    cursor: pointer;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
