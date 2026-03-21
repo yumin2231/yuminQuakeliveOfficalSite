@@ -30,6 +30,11 @@ function eqis() {
   document.getElementById('eqis').style.display = "none";
   document.getElementById('eqisnone').style.display = "block";
   document.getElementById('setting').style.display = "";
+
+  document.getElementById('copyright').style.display = "";
+  document.getElementsByClassName('none')[0].style.display = "";
+  document.getElementsByClassName('sp_info')[0].style.display = "";
+  document.getElementById('ver').style.display = "";
 }
 //地震情報非表示
 function eqisnone() {
@@ -37,17 +42,31 @@ function eqisnone() {
   document.getElementById('eqis').style.display = "block";
   document.getElementById('eqisnone').style.display = "none";
   document.getElementById('setting').style.display = "";
+
+  document.getElementById('copyright').style.display = "";
+  document.getElementsByClassName('none')[0].style.display = "";
+  document.getElementsByClassName('sp_info')[0].style.display = "";
+  document.getElementById('ver').style.display = "";
 }
 //設定非表示
 function exit() {
   document.getElementById('setting').style.display = "none";
   document.getElementById('shindo_icon').style.display = "";
+
+  document.getElementById('copyright').style.display = "";
+  document.getElementsByClassName('none')[0].style.display = "";
+  document.getElementsByClassName('sp_info')[0].style.display = "";
+  document.getElementById('ver').style.display = "";
 }
 //設定
 document.addEventListener('contextmenu', () => {
   const setting = document.getElementById('setting');
   setting.style.display = 'block';
   document.getElementById('shindo_icon').style.display = "none";
+  document.getElementById('copyright').style.display = "none";
+  document.getElementsByClassName('none')[0].style.display = "none";
+  document.getElementsByClassName('sp_info')[0].style.display = "none";
+  document.getElementById('ver').style.display = "inline-block";
 });
 //コメント表示
 function eqcommenton(){

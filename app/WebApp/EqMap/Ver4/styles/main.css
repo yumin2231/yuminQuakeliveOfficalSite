@@ -137,6 +137,7 @@ html, body{
     border: solid 3px #ffffff;
     border-radius: 15px;
     z-index: 9999;
+    user-select: none;
 }
 .setting-button{
     width: 90%;
@@ -269,7 +270,7 @@ html, body{
 }
 
 @media (max-width: 430px){
-    .sp,.sp_info,.shindo_icon,.btns,#warn,#eqcomment,.smart,.comment,.releace{
+    .sp,.sp_info,.shindo_icon,.btns,#warn,#eqcomment,.smart,.comment,.releace,#ver{
         display: none;
     }
     .pc{
