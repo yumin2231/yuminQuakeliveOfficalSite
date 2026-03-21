@@ -224,7 +224,6 @@ async function QuakeSelect(num) {
                 document.getElementById('maxint_wrapper').style.display = "";
                 document.getElementById('shindo_legend').style.display = "";
                 document.getElementById('magn_wrapper').style.display = "";
-                document.getElementById('eir').style.display = "";
                 document.getElementById('eqtsunami').style.display = "";
                 document.getElementById('abroadtsunami').style.display = "none";
 
@@ -371,7 +370,6 @@ async function QuakeSelect(num) {
         document.getElementById('title').innerText = "震度速報";
         document.getElementById('depth_wrapper').style.display = "none";
         document.getElementById('magn_wrapper').style.display = "none";
-        document.getElementById('eir').style.display = "none";
         var icon_theme = "jqk";
         var latlon;
         var latList = [];

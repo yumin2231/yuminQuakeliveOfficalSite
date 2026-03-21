@@ -26,8 +26,15 @@
 <body>
     <div id="loading">
         <div class="loader"></div>
-        <p class="scerror">ERROR<br>JavaScript Invalid Error.<br>JavaScriptが無効なため、読み込みに失敗しました。</p>
-        <p id="status">読み込み中...</p>
+        <p class="scerror">
+            ERROR<br>
+            JavaScript Invalid Error.<br>
+            JavaScriptが無効なため、読み込みに失敗しました。<br><br>
+            対処方法<br>
+            <a href="https://support.google.com/admanager/answer/12654?hl=ja" target="_blank">Chrome</a>
+            <a href="https://support.microsoft.com/ja-jp/office/javascript-%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361" target="_blank">Microsoft Edge</a>
+        </p>
+        <p id="status">読み込み中...</p><br><br>
     </div>
     <div id="map"></div>
     <div class="btns" id="btns">
@@ -45,7 +52,7 @@
             &copy;2022 - <span id="cr"></span> yuminQuakelive.
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a></span>
             <span class="sp_info">
-                ┃Version：4.2.7
+                ┃Version：4.2.8
                 ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
             </span>
             <span id="Status"> / AR:ON</span>
@@ -67,29 +74,24 @@
             <span id="sp_eqtsunami">津波情報を取得中...</span>
         </div>
         <p class="releace" id="eqrele">----年--月--日 --時--分--秒 発表</p>
+        <h1 id="title">地震情報</h1>
         <div class="info">
-            <h1 id="title">地震情報</h1>
-            <br>
-            <div class="content">
+            <div class="content" style="margin-top: 70px;">
                 <h2 class="sp">発生時刻</h2>
                 <h2 id="eqtime">----年--月--日 --時--分ごろ</h2>
             </div>
-            <br>
             <div class="content">
                 <h2 class="sp">震源地</h2>
                 <h1 id="eqepic">ー ー ー ー ー</h1>
             </div>
-            <br id="eir">
             <div class="content" id="magn_wrapper">
                 <h2 class="sp">マグニチュード</h2>
                 <h1>M<span id="eqmagn">0.0</span></h1>
             </div>
-            <br id="eir">
             <div class="content" id="depth_wrapper">
                 <h2 class="sp">深さ</h2>
                 <h1 id="eqdepth">約0km</h1>
             </div>
-            <br id="eir">
             <div class="content" id="maxint_wrapper">
                 <h1 class="sp">最大震度 <span id="eqmint">0</span></h1>
             </div>
@@ -144,52 +146,52 @@
     <!--凡例-->
         <div class="shindo_icon" id="shindo_icon">
             <div class="hannrei-item">
-                <img src="../source/shingen.png" width="30" alt="">
+                <img src="../source/shingen.png" width="30" alt="震央">
                 <p>震央</p>
             </div>
             <div id="shindo_legend">
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int1.png" width="30" alt="">
+                    <img src="../source/jqk_int1.png" width="30" alt="震度1">
                     <p>震度1</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int2.png" width="30" alt="">
+                    <img src="../source/jqk_int2.png" width="30" alt="震度2">
                     <p>震度2</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int3.png" width="30" alt="">
+                    <img src="../source/jqk_int3.png" width="30" alt="震度3">
                     <p>震度3</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int4.png" width="30" alt="">
+                    <img src="../source/jqk_int4.png" width="30" alt="震度4">
                     <p>震度4</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int50.png" width="30" alt="">
+                    <img src="../source/jqk_int50.png" width="30" alt="震度5弱">
                     <p>震度5弱</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int55.png" width="30" alt="">
+                    <img src="../source/jqk_int55.png" width="30" alt="震度5強">
                     <p>震度5強</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int60.png" width="30" alt="">
+                    <img src="../source/jqk_int60.png" width="30" alt="震度6弱">
                     <p>震度6弱</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int65.png" width="30" alt="">
+                    <img src="../source/jqk_int65.png" width="30" alt="震度6強">
                     <p>震度6強</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int7.png" width="30" alt="">
+                    <img src="../source/jqk_int7.png" width="30" alt="震度7">
                     <p>震度7</p>
                 </div>
             </div>

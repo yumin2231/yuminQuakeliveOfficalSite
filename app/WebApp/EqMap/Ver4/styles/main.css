@@ -42,6 +42,9 @@ html, body{
     display: none;
     padding: 10px;
 }
+.scerror a{
+    color: #ffffff;
+}
 #map {
     position: fixed;
     top: 0;
@@ -70,7 +73,7 @@ html, body{
     margin: 0;
 }
 #title{
-    position: sticky;
+    position: fixed;
     top: 0;
     margin: 0;
     background-color: #ffffff;
@@ -78,8 +81,12 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 25%;
     height: 50px;
+    z-index: 9998;
+}
+.content{
+    margin-top: 20px;
 }
 .copyright{
     position: fixed;
@@ -274,8 +281,7 @@ html, body{
         width: 50%;
     }
     .info{
-        width: 0;
-        height: 0;
+        display: none;
     }
     .copyright{
         left: 0;
