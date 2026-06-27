@@ -47,20 +47,26 @@ input[type="number"] {
 .leaflet-fade-anim .leaflet-popup {
     transition: 0s;
 }
-.leaflet-popup-content-wrapper {
-	background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 0!important;
-    font-family: "ヒラギノ角ゴ-Pro",'Noto Sans JP';
-    font-weight: 500;
-    user-select: none;
-	margin-bottom: 0;
-}
-.leaflet-popup-content {
+/* MapLibreポップアップのデザイン調整 */
+.maplibregl-popup-content {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 0 !important;
+    font-family: "ヒラギノ角ゴ-Pro", 'Noto Sans JP' !important;
+    font-weight: 500 !important;
+    user-select: none !important;
     color: black !important;
-    font-size: 1.2rem;
-    margin: 10px 8px 8px 8px;
+    font-size: 1.2rem !important;
+    padding: 10px 8px 8px 8px !important;
+    margin: 0 !important;
 }
-.leaflet-popup-tip-container {
-    display: none;
+
+/* ポップアップの三角の吹き出し（tip）を非表示にする場合 */
+.maplibregl-popup-tip {
+    display: none !important;
+}
+
+/* ポップアップ全体の余白調整 */
+.maplibregl-popup {
+    padding: 0 !important;
 }

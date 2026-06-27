@@ -10,7 +10,7 @@
     <link rel="manifest" href="./manifest.json">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/main.css">
 
@@ -52,7 +52,7 @@
         <p class="copyright">
             <span id="copyright">&copy;2022 - <span id="cr"></span> yuminQuakelive.</span>
             <span class="none">┃Earthquake Information by <a href="https://www.p2pquake.net" target="_blank">P2PQuake</a>┃</span>
-            <span id="ver">Version：4.3.0</span>
+            <span id="ver">Version：4.3.1</span>
             <span class="sp_info">
                 ┃地図データ：<a href='https://www.jma.go.jp/jma/index.html' target='_blank'>気象庁</a> , Natural Earth
             </span>
@@ -147,52 +147,52 @@
     <!--凡例-->
         <div class="shindo_icon" id="shindo_icon">
             <div class="hannrei-item">
-                <img src="../source/shingen.png" width="30" alt="震央">
+                <img src="source/shingen.webp" width="30" alt="震央">
                 <p>震央</p>
             </div>
             <div id="shindo_legend">
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int1.png" width="30" alt="震度1">
+                    <img src="source/jqk_int1.webp" width="30" alt="震度1">
                     <p>震度1</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int2.png" width="30" alt="震度2">
+                    <img src="source/jqk_int2.webp" width="30" alt="震度2">
                     <p>震度2</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int3.png" width="30" alt="震度3">
+                    <img src="source/jqk_int3.webp" width="30" alt="震度3">
                     <p>震度3</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int4.png" width="30" alt="震度4">
+                    <img src="source/jqk_int4.webp" width="30" alt="震度4">
                     <p>震度4</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int50.png" width="30" alt="震度5弱">
+                    <img src="source/jqk_int50.webp" width="30" alt="震度5弱">
                     <p>震度5弱</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int55.png" width="30" alt="震度5強">
+                    <img src="source/jqk_int55.webp" width="30" alt="震度5強">
                     <p>震度5強</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int60.png" width="30" alt="震度6弱">
+                    <img src="source/jqk_int60.webp" width="30" alt="震度6弱">
                     <p>震度6弱</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int65.png" width="30" alt="震度6強">
+                    <img src="source/jqk_int65.webp" width="30" alt="震度6強">
                     <p>震度6強</p>
                 </div>
     
                 <div class="hannrei-item">
-                    <img src="../source/jqk_int7.png" width="30" alt="震度7">
+                    <img src="source/jqk_int7.webp" width="30" alt="震度7">
                     <p>震度7</p>
                 </div>
             </div>
@@ -209,11 +209,10 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-<script src="https://nanka.cloudfree.jp/bin/webapps/shindobunpu_qiita/9/source/SmoothWheelZoom.js"></script>
-<script src="https://nanka.cloudfree.jp/bin/webapps/shindobunpu_qiita/9/source/JMAPoints.js"></script>
+<script src="https:/kottaro123456.com/bin/webapps/shindobunpu_qiita/9/source/JMAPoints.js"></script>
 
 <script src="../../../../scripts/copy.js"></script>
 <script src="scripts/main.js"></script>
