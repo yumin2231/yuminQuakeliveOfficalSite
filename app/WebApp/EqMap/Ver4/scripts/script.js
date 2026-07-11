@@ -212,12 +212,10 @@ function setupPointLayer() {
         source: 'shindo-points',
         layout: {
             'icon-image': ['get', 'icon'], 
-            // 【★ここを調整★】元画像が仮に 100px あったとして、
-            // 0.2 にすれば 20px のサイズで表示されます。
-            // お使いのアイコンの見た目サイズに合わせて調整してください。
             'icon-size': 0.04, 
             'icon-allow-overlap': true,
-            'icon-ignore-placement': true
+            'icon-ignore-placement': true,
+            'symbol-sort-key': ['get', 'sortKey']   // ← 追加
         }
     });
 
@@ -403,7 +401,8 @@ async function QuakeSelect(num) {
                             icon: `shindo-${scaleStr}`,
                             name: element["addr"],
                             furigana: JMAPointsJson[result]["furigana"],
-                            shindoText: PointShindo
+                            shindoText: PointShindo,
+                            sortKey: element["scale"] || 0   // ← 追加
                         }
                     });
 
@@ -449,7 +448,8 @@ async function QuakeSelect(num) {
                         icon: `shindo-${scaleStr}`,
                         name: element["addr"],
                         furigana: AreaNameToKana(element["addr"]),
-                        shindoText: PointShindo
+                        shindoText: PointShindo,
+                        sortKey: element["scale"] || 0   // ← 追加
                     }
                 });
             }
