@@ -348,6 +348,7 @@ async function QuakeSelect(num) {
     document.getElementById('eqtime').innerHTML = datekari.substring(0,4)+'年'+datekari.substring(5,7)+'月'+datekari.substring(8,10)+'日 <br class="block">'+datekari.substring(11,13)+'時'+datekari.substring(14,16)+'分ごろ';
 
     if (eq["issue"]["type"] == "Foreign") {
+        document.getElementById('title').innerText = "遠地地震情報";
         document.getElementById('depth_wrapper').style.display = "none";
         document.getElementById('maxint_wrapper').style.display = "none";
         document.getElementById('shindo_legend').style.display = "none";
